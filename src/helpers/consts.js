@@ -1,7 +1,7 @@
 export const PROFILE_PAGE = "/profile";
 
 export const LOGIN_PAGE = "/login";
-export const HOME_PAGE = "/";
+export const HOME_PAGE = "/Electron";
 export const CART_PAGE = "/cart";
 export const PRODUCTS_PAGE = "/products";
 export const PRODUCT_PAGE = "/products/:id";
