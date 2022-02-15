@@ -8,7 +8,8 @@ export const SCountBlock = styled.div`
   border: 1px solid #bdbdbd;
 
   display: inline-grid;
-  grid-template-columns: 35px 63px 35px;
+  grid-template-columns: 35px ${({ theme, responsive }) =>
+      responsive ? theme.ratio.smallPhone(23, 40) : "63px"} 35px;
 
   span {
     justify-self: center;

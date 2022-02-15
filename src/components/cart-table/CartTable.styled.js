@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const STable = styled.table`
-  margin-bottom: 56px;
+  margin-bottom: ${({ theme }) => theme.ratio.smallPhone(10, 46)};
   width: 100%;
 `;
+
 export const SThead = styled.thead`
   position: relative;
   z-index: 1;
@@ -13,6 +14,10 @@ export const SThead = styled.thead`
   line-height: 1.5;
 
   color: #232323;
+
+  @media screen and (${({ theme }) => theme.media.MaxMobile}) {
+    display: none;
+  }
 
   th:first-child {
     width: 40%;
@@ -33,14 +38,18 @@ export const SThead = styled.thead`
     background: #e2f4ff;
   }
 `;
+
 export const ButtonsContainer = styled.div`
   display: flex;
-  gap: 65px;
+  column-gap: ${({ theme }) => theme.ratio.smallPhone(10, 55)};
+  row-gap: 10px;
+
+  flex-wrap: wrap;
   button {
     border-radius: 35px;
 
     font-weight: 600;
-    font-size: 22px;
+    font-size: ${({ theme }) => theme.ratio.smallPhone(16, 6)};
     line-height: 1.5;
   }
 `;
