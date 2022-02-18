@@ -193,7 +193,7 @@ export const Controls = styled.div`
   @media screen and (${({ theme }) => theme.media.MinTablet}) {
     position: absolute;
     left: 15%;
-    bottom: 52px;
+    bottom: ${({ theme }) => theme.ratio.smallPhone(0, 55)};
     z-index: 1;
   }
 `;
