@@ -16,9 +16,10 @@ const Categories = ({ filter = [], filterTitle, changeHandler, resetHandler, bra
               value={name}
               onChange={changeHandler}
               checked={brands.includes(name)}
+              id={name}
             />
             <div>
-              <span>{name}</span>
+              <label htmlFor={name}>{name}</label>
               <span>{count}</span>
             </div>
           </Category>
