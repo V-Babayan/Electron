@@ -1,59 +1,28 @@
 import styled from "styled-components";
-import smallCheckbird from "../../assets/icons/smallCheckbird.svg";
 
-export const HeadingBlock = styled.div`
+export const Container = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 12px;
+`;
 
-  h5 {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
+export const SInput = styled.input`
+  display: none;
 
-    color: #003f62;
-  }
-  button {
-    font-size: 15px;
-    line-height: 1.5;
-
-    color: #595959;
+  :checked ~ label {
+    border-color: #003f62;
   }
 `;
 
-export const Category = styled.li`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
+export const SLabel = styled.label`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #1b5a7d;
 
-  input {
-    appearance: none;
-    width: 29px;
-    height: 29px;
+  display: inline-block;
+  padding: 10px 30px;
 
-    background: #b3d4e5;
-    border: 1px solid #b3d4e5;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background, border 0.2s linear;
-
-    &:checked {
-      background: #3f3f3f;
-      border: 1px solid #a5a5a5;
-      border-radius: 8px;
-
-      ::after {
-        content: url(${smallCheckbird});
-      }
-    }
-  }
-  div {
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  border: 1px solid #b5b5b5;
+  border-radius: 20px;
 `;
