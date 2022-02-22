@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { ReactComponent as CheckBird } from "../../assets/icons/checkbird.svg";
@@ -32,6 +32,9 @@ const Product = () => {
 
   const [clickHandler, isDisabled] = useChangeElementCount(item, count);
 
+  const incrementHandler = useCallback(() => setCount((prev) => prev + 1), []);
+  const decrementHandler = useCallback(() => setCount((prev) => prev + 1), []);
+
   return (
     <>
       <Container>
@@ -62,7 +65,8 @@ const Product = () => {
               <label>Quantity :</label>
               <CountBlock
                 count={count}
-                setCount={setCount}
+                increment={incrementHandler}
+                decrement={decrementHandler}
                 maxCount={item.count}
               />
             </CountWrapper>
