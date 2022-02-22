@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -10,16 +10,18 @@ import Dropdown from "../dropdown/Dropdown";
 import Logo from "../core-ui/logo/Logo";
 import Menu from "../menu/Menu";
 import { PRODUCTS_PAGE } from "../../helpers/consts";
-const categories = [];
+import { getCategories } from "../../helpers/filters";
 
 const Header = () => {
   const cart = useSelector((state) => state.cart.cart);
+  const products = useSelector((state) => state.products.products);
   const navigate = useNavigate();
   const location = useLocation();
+  const categories = useMemo(() => getCategories(products), [products]);
 
   const [query, setQuery] = useState("");
 
-  const clickHandler = useCallback(() => navigate(PRODUCTS_PAGE, { state: query }), [query]);
+  const clickHandler = useCallback(() => navigate(PRODUCTS_PAGE, { state: { query } }), [query]);
   const changeHandler = useCallback((e) => setQuery(e.target.value), []);
 
   return (
