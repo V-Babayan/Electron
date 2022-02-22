@@ -26,7 +26,7 @@ export const useChangeElementCount = (item, count = 1) => {
         dispatch(
           addElement({
             product: item,
-            count: 1,
+            count,
             id: `${cart.length > 0 ? Number(cart[cart.length - 1].id) + 1 : 1}`,
           })
         );
