@@ -93,6 +93,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
     display: flex;
     flex-flow: column nowrap;
+    gap: ${({ theme }) => theme.ratio.smallPhone(10, 30)};
   }
 
   main {
