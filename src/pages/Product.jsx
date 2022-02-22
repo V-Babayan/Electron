@@ -16,7 +16,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: ${({ theme }) => theme.ratio.smallPhone(10, 40)};
-  margin: 20px 0 ${({ theme }) => theme.ratio.smallPhone(10, 25)};
+  margin-top: 20px;
 
   @media screen and (${({ theme }) => theme.media.MaxTablet}) {
     grid-template-columns: 1fr;
@@ -103,8 +103,7 @@ const FavButton = styled.button`
 `;
 
 const DescriptionWrapper = styled.div`
-  padding: ${({ theme }) =>
-    `${theme.ratio.smallPhone(10, 32)} ${theme.ratio.smallPhone(10, 40)}`};
+  padding: ${({ theme }) => `${theme.ratio.smallPhone(10, 32)} ${theme.ratio.smallPhone(10, 40)}`};
   border: 1px solid #b8b8b8;
   border-radius: 20px;
 
@@ -162,7 +161,10 @@ const Product = () => {
           <InfoContainer>
             <ItemTitle>{item.title}</ItemTitle>
             <Price>${item.price}</Price>
-            <Rating defRating={item.rating} big />
+            <Rating
+              defRating={item.rating}
+              big
+            />
             <Indicator>
               Availability: <CheckBird />
               <span>In stock</span>
@@ -185,7 +187,10 @@ const Product = () => {
             </CountWrapper>
 
             <ButtonsContainer>
-              <Button large onClick={clickHandler} disabled={isDisabled}>
+              <Button
+                large
+                onClick={clickHandler}
+                disabled={isDisabled}>
                 Add to cart
               </Button>
               <Button large>Buy it now</Button>
