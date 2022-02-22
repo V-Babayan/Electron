@@ -17,7 +17,7 @@ export const authRotes = [
 export const publicRotes = [
   {
     path: CART_PAGE,
-    Component: lazy(() => import(/* webpack-chunk-name: 'pages/cart' */ "./pages/Cart")),
+    Component: lazy(() => import(/* webpack-chunk-name: 'pages/cart' */ "./pages/cart/Cart")),
   },
   {
     path: PRODUCTS_PAGE,
