@@ -31,7 +31,9 @@ export const publicRotes = [
   },
   {
     path: PRODUCT_PAGE,
-    Component: lazy(() => import(/* webpack-chunk-name: 'pages/product' */ "./pages/Product")),
+    Component: lazy(() =>
+      import(/* webpack-chunk-name: 'pages/product' */ "./pages/product/Product")
+    ),
   },
   {
     path: HOME_PAGE,
