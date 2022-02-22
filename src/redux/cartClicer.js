@@ -16,8 +16,12 @@ const cartSlice = createSlice({
     addElement(state, action) {
       state.cart.push(action.payload);
     },
+    changeElementCount(state, action) {
+      state.cart[action.payload.index].count = action.payload.count;
+    },
   },
 });
 
-export const { setCart, emptyCart, deleteElement, addElement } = cartSlice.actions;
+export const { setCart, emptyCart, deleteElement, addElement, changeElementCount } =
+  cartSlice.actions;
 export default cartSlice.reducer;
