@@ -9,3 +9,13 @@ export const getFilter = (products, query) => {
 
   return res;
 };
+
+export const getCategories = (products) => {
+  const categories = [];
+
+  for (let element of products) {
+    !categories.includes(element.category) && categories.push(element.category);
+  }
+
+  return categories;
+};
