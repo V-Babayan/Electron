@@ -9,8 +9,7 @@ import { ReactComponent as ProfileIcon } from "../../assets/icons/profile.svg";
 import Dropdown from "../dropdown/Dropdown";
 import Logo from "../core-ui/logo/Logo";
 import Menu from "../menu/Menu";
-import { PRODUCTS_PAGE } from "../../helpers/consts";
-import { getCategories } from "../../helpers/filters";
+import { PRODUCTS_PAGE, getCategories } from "../../helpers";
 
 const Header = () => {
   const cart = useSelector((state) => state.cart.cart);

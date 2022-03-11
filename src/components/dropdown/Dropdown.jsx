@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { DropButton, DropContainer, DropItem, DropList } from "./Dropdown.styled";
 import { ReactComponent as MoreIcon } from "../../assets/icons/more.svg";
-import { PRODUCTS_PAGE } from "../../helpers/consts";
+import { PRODUCTS_PAGE } from "../../helpers";
 
 const Dropdown = ({ defaultTitle, options = [], primary }) => {
   const [show, setShow] = useState(false);

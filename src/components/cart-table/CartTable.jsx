@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { emptyCart } from "../../redux/cartClicer";
 
-import { HOME_PAGE } from "../../helpers/consts";
+import { HOME_PAGE } from "../../helpers";
 import { deleteCartItem } from "../../http";
 
 import { ButtonsContainer, STable, SThead } from "./CartTable.styled";
