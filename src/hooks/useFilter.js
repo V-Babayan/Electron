@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { getFilter } from "../helpers/filters";
+import { getFilter } from "../helpers";
 
 export const useFilter = (products, { query, brands, categories }) => {
   const filteredProducts = useMemo(() => {
