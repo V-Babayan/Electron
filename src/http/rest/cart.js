@@ -25,3 +25,9 @@ export const changeCountInCart = (id, product, count) => {
 export const deleteCartItem = async (deleteId) => {
   return await makeRequest({ url: `cart/${deleteId}`, method: "DELETE" });
 };
+
+export const deleteAllCartItems = async (cart) => {
+  for (let elem of cart) {
+    await deleteCartItem(elem.id);
+  }
+};
