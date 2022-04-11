@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import smallCheckbird from "../../assets/icons/smallCheckbird.svg";
+import smallCheckbird from "assets/icons/smallCheckbird.svg";
 
 export const HeadingBlock = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ export const HeadingBlock = styled.div`
     font-size: 16px;
     line-height: 1.5;
 
-    color: #003f62;
+    color: ${({ theme }) => theme.color.blue};
   }
   button {
     font-size: 15px;
@@ -21,11 +21,12 @@ export const HeadingBlock = styled.div`
   }
 `;
 
-export const StyledUl = styled.ul`
-  @media screen and (${({ theme }) => theme.media.MaxMobile}) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 10px;
+export const Ul = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  @media screen and (${({ theme }) => theme.media("mobileL")}) {
+    display: block;
   }
 `;
 
