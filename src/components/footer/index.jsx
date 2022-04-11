@@ -1,37 +1,21 @@
 import React from "react";
-import {
-  SFooter,
-  FooterTop,
-  SForm,
-  ContactBlock,
-  InfoContainer,
-  FooterBottom,
-  Content,
-  LinksContainer,
-} from "./Footer.styled";
-
-import headphonsIcon from "../../assets/icons/headphons.svg";
-import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
-import Logo from "../core-ui/logo/Logo";
 import { Link } from "react-router-dom";
+
+import headphonsIcon from "assets/icons/headphons.svg";
+import FooterForm from "./Form";
 import Social from "../social/Social";
+import { Logo } from "../core-ui/";
+
+import * as Styled from "./styled";
 
 const Footer = () => {
   return (
-    <SFooter>
-      <FooterTop>
+    <Styled.Footer>
+      <Styled.FooterTop>
         <h5>Subscribe newsletter</h5>
         <div>
-          <SForm>
-            <input
-              placeholder='Email address'
-              type='email'
-            />
-            <button aria-label='send to mail'>
-              <SendIcon />
-            </button>
-          </SForm>
-          <ContactBlock>
+          <FooterForm />
+          <Styled.ContactBlock>
             <img
               src={headphonsIcon}
               alt='Headphons icon'
@@ -43,17 +27,17 @@ const Footer = () => {
               <div>Call us 24/7:</div>
               <a href='tel:(+62) 0123 567 789'>(+62) 0123 567 789</a>
             </div>
-          </ContactBlock>
+          </Styled.ContactBlock>
         </div>
-      </FooterTop>
-      <FooterBottom>
-        <InfoContainer>
+      </Styled.FooterTop>
+      <Styled.FooterBottom>
+        <Styled.InfoContainer>
           <Logo blue />
           <address>64 st james boulevard hoswick , ze2 7zj</address>
           <Social />
-        </InfoContainer>
-        <Content>
-          <LinksContainer>
+        </Styled.InfoContainer>
+        <Styled.Content>
+          <Styled.LinksContainer>
             <h5>Get help</h5>
             <ul>
               <li>
@@ -72,8 +56,8 @@ const Footer = () => {
                 <Link>Payment policy</Link>
               </li>
             </ul>
-          </LinksContainer>
-          <LinksContainer>
+          </Styled.LinksContainer>
+          <Styled.LinksContainer>
             <h5>About us</h5>
             <ul>
               <li>
@@ -92,11 +76,11 @@ const Footer = () => {
                 <Link>Faq's</Link>
               </li>
             </ul>
-          </LinksContainer>
-        </Content>
-      </FooterBottom>
-    </SFooter>
+          </Styled.LinksContainer>
+        </Styled.Content>
+      </Styled.FooterBottom>
+    </Styled.Footer>
   );
 };
 
-export default Footer;
+export { Footer };
