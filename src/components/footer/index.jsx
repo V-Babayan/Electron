@@ -2,8 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import headphonsIcon from "assets/icons/headphons.svg";
-import FooterForm from "./Form";
-import Social from "../social/Social";
+import { Form, Social } from "./children";
 import { Logo } from "../core-ui/";
 
 import * as Styled from "./styled";
@@ -14,7 +13,7 @@ const Footer = () => {
       <Styled.FooterTop>
         <h5>Subscribe newsletter</h5>
         <div>
-          <FooterForm />
+          <Form />
           <Styled.ContactBlock>
             <img
               src={headphonsIcon}

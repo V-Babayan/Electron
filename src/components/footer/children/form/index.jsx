@@ -4,7 +4,7 @@ import { ReactComponent as SendIcon } from "assets/icons/send.svg";
 
 import * as Styled from "./styled";
 
-const FooterForm = () => {
+const Form = () => {
   const [query, setQuery] = useState("");
 
   const changeHandler = useCallback((e) => setQuery(e.target.value), []);
@@ -24,4 +24,4 @@ const FooterForm = () => {
   );
 };
 
-export default FooterForm;
+export { Form };
