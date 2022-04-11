@@ -1,25 +1,22 @@
 import React, { useMemo } from "react";
-
-import Slider from "../components/slider/Slider";
-import List from "../components/list/List";
 import { useSelector } from "react-redux";
 
-const Home = () => {
-  const products = useSelector((state) => state.products.products);
+import { Slider } from "components/slider";
+import List from "components/list/List";
+import { selectRelatedProducts } from "store";
 
-  const sliderProducts = useMemo(
-    () =>
-      products.length
-        ? [...products].sort((a, b) => b.rating - a.rating).slice(0, 4)
-        : [{ id: Date.now() }],
-    [products]
-  );
+const Home = () => {
+  const products = useSelector(selectRelatedProducts);
+
+  const sliderProducts = products.length ? [...products].slice(0, 4) : [{ id: Date.now() }];
+
+  const listProducts = useMemo(() => products.slice(0, 12), [products]);
 
   return (
     <>
-      <Slider pages={sliderProducts.length ? sliderProducts : [{ id: 1 }]} />
+      <Slider products={sliderProducts} />
       <List
-        products={products.slice(0, 12)}
+        products={listProducts}
         title={"Popular products"}
       />
     </>

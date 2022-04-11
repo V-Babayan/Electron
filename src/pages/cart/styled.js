@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column-reverse;
   gap: 20px;
 
-  @media screen and (${({ theme }) => theme.media.MinNotebook}) {
+  @media screen and (${({ theme }) => theme.media("notebook")}) {
     flex-direction: row;
 
     & > div {
@@ -17,7 +18,7 @@ export const Container = styled.div`
   }
 `;
 
-export const EmptyBlock = styled.div`
+export const CartEmptyBlock = styled.div`
   width: 100%;
   height: 20vh;
 
@@ -26,14 +27,14 @@ export const EmptyBlock = styled.div`
   align-items: center;
   gap: 15px;
 
-  font-size: ${({ theme }) => theme.ratio.smallPhone(16, 16)};
+  font-size: ${({ theme }) => theme.ratio(16, 16, "mobileS")};
+`;
 
-  a {
-    color: #008cff;
-    font-weight: 700;
+export const HomeLink = styled(Link)`
+  color: #008cff;
+  font-weight: 700;
 
-    :hover {
-      color: #008cff85;
-    }
+  :hover {
+    color: #008cff85;
   }
 `;

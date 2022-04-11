@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  @media screen and (${({ theme }) => theme.media.MinMobile}) {
+  @media screen and (${({ theme }) => theme.media("mobileL")}) {
     display: flex;
     align-items: flex-start;
 
@@ -17,7 +17,7 @@ export const Container = styled.div`
 
         grid-template-columns: 1fr 1fr;
 
-        @media screen and (${({ theme }) => theme.media.MinNotebook}) {
+        @media screen and (${({ theme }) => theme.media("notebook")}) {
           grid-template-columns: repeat(3, 1fr);
         }
       }
@@ -26,7 +26,7 @@ export const Container = styled.div`
 `;
 
 export const Filter = styled.form`
-  margin-bottom: ${({ theme }) => theme.ratio.smallPhone(12, 40)};
+  margin-bottom: ${({ theme }) => theme.ratio(12, 40, "mobileS")};
 
   display: flex;
   flex-wrap: wrap;
