@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Burger = styled.div`
+const Burger = styled.div`
   position: relative;
   z-index: 20;
   width: 40px;
@@ -31,7 +31,7 @@ export const Burger = styled.div`
   }
 `;
 
-export const Nav = styled.nav`
+const Nav = styled.nav`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -58,3 +58,4 @@ export const Nav = styled.nav`
     margin-left: 0;
   }
 `;
+export { Burger, Nav };

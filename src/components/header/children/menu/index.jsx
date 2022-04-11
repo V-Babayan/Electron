@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useMedia } from "../../../hooks/useMedia";
+import { useMedia } from "hooks";
 
-import * as Styled from "./index.styled";
+import { PRODUCTS_PAGE } from "helpers";
 
-import Dropdown from "../../dropdown/Dropdown";
+import { Dropdown } from "components/dropdown";
 
-import { PRODUCTS_PAGE } from "../../../helpers/constants";
+import * as Styled from "./styled";
 
 const Menu = () => {
   const [menuActive, setMenuActive] = useState(false);
@@ -37,4 +37,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export { Menu };
