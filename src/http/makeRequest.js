@@ -1,4 +1,4 @@
-import { BASE_URL } from "../helpers";
+import { BASE_URL } from "helpers";
 
 export const makeRequest = async ({ url = "/", method = "GET", headers = {}, body }) => {
   return await fetch(BASE_URL + url, {

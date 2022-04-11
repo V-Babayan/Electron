@@ -6,7 +6,7 @@ import {
   PRODUCT_PAGE,
   PROFILE_PAGE,
   HOME_PAGE,
-} from "./helpers";
+} from "helpers";
 
 export const authRotes = [
   {
