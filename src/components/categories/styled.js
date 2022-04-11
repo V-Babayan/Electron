@@ -1,20 +1,20 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 `;
 
-export const SInput = styled.input`
+const Input = styled.input`
   display: none;
 
   :checked ~ label {
-    border-color: #003f62;
+    border-color: ${({ theme }) => theme.color.blue};
   }
 `;
 
-export const SLabel = styled.label`
+const Label = styled.label`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -33,3 +33,4 @@ export const SLabel = styled.label`
     background: #b5b5b5;
   }
 `;
+export { Container, Input, Label };
