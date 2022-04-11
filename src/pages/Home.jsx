@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { useSelector } from "react-redux";
 
 import { Slider } from "components/slider";
-import List from "components/list/List";
+import List from "components/list";
 import { selectRelatedProducts } from "store";
 
 const Home = () => {

@@ -1,7 +1,8 @@
 import React, { Suspense, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { authRotes, publicRotes } from "../routes";
-import Loader from "./loader/Loader";
+
+import { authRotes, publicRotes } from "routes";
+import { Loader } from "./loader";
 
 const AppRouter = () => {
   const [auth, setAuth] = useState(false);
