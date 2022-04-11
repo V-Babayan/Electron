@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ImageBlock = styled.div`
+const ImageBlock = styled.div`
   width: 100%;
   position: relative;
   padding-bottom: 80%;
@@ -19,12 +19,12 @@ export const ImageBlock = styled.div`
   border-radius: 20px;
 `;
 
-export const ChangingBlock = styled.div`
+const ChangingBlock = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 `;
-export const SButton = styled.button`
+const Button = styled.button`
   border: 1px solid #c0c0c0;
   border-radius: 20px;
 
@@ -46,3 +46,4 @@ export const SButton = styled.button`
     border-radius: 20px;
   }
 `;
+export { ImageBlock, ChangingBlock, Button };
