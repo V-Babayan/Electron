@@ -113,13 +113,13 @@ const theme = {
   },
 
   media(deviceType) {
-    return `min-width: ${devices[deviceType].size}px`;
+    return `min-width: ${devices[deviceType]}px`;
   },
 
   ratio(start, devide, deviceType) {
     if (matchMedia("(max-width: 1440px)").matches)
-      return `calc(${start}px + ${devide} * (100vw - ${devices[deviceType].size}px) / ${
-        1440 - devices[deviceType].size
+      return `calc(${start}px + ${devide} * (100vw - ${devices[deviceType]}px) / ${
+        1440 - devices[deviceType]
       })`;
     return start + devide + "px";
   },
