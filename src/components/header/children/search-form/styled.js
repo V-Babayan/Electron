@@ -27,7 +27,7 @@ export const SearchInput = styled.input`
   color: #3a3a3a;
 `;
 
-export const SearchButton = styled(Link)`
+export const SearchButton = styled.button`
   flex: 0 1 132px;
 
   background: ${({ theme }) => theme.color.orange};
