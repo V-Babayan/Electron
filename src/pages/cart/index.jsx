@@ -1,11 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import * as Styled from "./styled";
-
 import { Table, Total } from "components/cart-layout/";
+
 import { HOME_PAGE } from "helpers";
 import { selectCart } from "store";
+
+import * as Styled from "./styled";
 
 const Cart = () => {
   const cart = useSelector(selectCart);

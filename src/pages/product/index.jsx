@@ -4,14 +4,14 @@ import { useChangeElementCount } from "hooks";
 
 import { getProduct } from "http";
 
-import * as Styled from "./styled";
-
 import { ReactComponent as CheckbirdIcon } from "assets/icons/checkbird.svg";
 import { ReactComponent as HeartIcon } from "assets/icons/heart.svg";
 
 import { Button, Rating } from "components/core-ui/";
 import CountBlock from "components/count-block";
 import ProductSlider from "components/product-slider";
+
+import * as Styled from "./styled";
 
 const formReset = (e) => e.preventDefault();
 
@@ -64,11 +64,16 @@ const Product = () => {
             <Styled.ButtonsContainer>
               <Button
                 large
+                color='orange'
                 onClick={clickHandler}
                 disabled={isDisabled}>
                 Add to cart
               </Button>
-              <Button large>Buy it now</Button>
+              <Button
+                large
+                color='orange'>
+                Buy it now
+              </Button>
               <Styled.FavButton>
                 <HeartIcon />
               </Styled.FavButton>

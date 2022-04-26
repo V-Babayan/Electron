@@ -1,15 +1,15 @@
 import React, { useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
+import { useFilter } from "hooks";
 
 import List from "components/list";
 import { Brands, Categories } from "components/products-layout";
 
-import { useFilter } from "hooks";
-
-import * as Styled from "./styled";
 import { filterWithProperty } from "helpers";
 import { selectProducts } from "store";
+
+import * as Styled from "./styled";
 
 const submitReset = (e) => e.preventDefault();
 
