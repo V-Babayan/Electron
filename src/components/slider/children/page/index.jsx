@@ -11,9 +11,7 @@ const Page = ({ product, index }) => {
   const clickHandler = () => navigate(`/products/${product.id}`);
 
   return (
-    <Styled.Page
-      key={product.id}
-      tabIndex={0}>
+    <Styled.Page tabIndex={0}>
       <Styled.PageLeft>
         <Styled.ProductName>{product.title}</Styled.ProductName>
         <Styled.ButtonsContainer>

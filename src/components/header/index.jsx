@@ -8,6 +8,7 @@ import { Logo } from "components/core-ui/";
 import { HeaderTopButtons, Menu, CategoriesMenu, HeaderSearchForm } from "./children";
 
 import * as Styled from "./styled";
+
 const Header = () => {
   const isNotebook = useMedia("notebook");
 
