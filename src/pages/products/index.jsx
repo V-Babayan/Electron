@@ -42,15 +42,17 @@ const Products = () => {
 
   return (
     <Styled.Container>
-      <Brands
-        filter={brands}
-        filterTitle={"Brands"}
-        changeHandler={changeFilterBrands}
-        resetHandler={resetHandler}
-        brands={filter.brands}
-      />
+      <Styled.Sidebar>
+        <Brands
+          filter={brands}
+          filterTitle={"Brands"}
+          changeHandler={changeFilterBrands}
+          resetHandler={resetHandler}
+          brands={filter.brands}
+        />
+      </Styled.Sidebar>
 
-      <div>
+      <Styled.MainContent>
         <Styled.Filter onSubmit={submitReset}>
           <input
             type='text'
@@ -64,7 +66,7 @@ const Products = () => {
           />
         </Styled.Filter>
         <List products={filteredProducts} />
-      </div>
+      </Styled.MainContent>
     </Styled.Container>
   );
 };

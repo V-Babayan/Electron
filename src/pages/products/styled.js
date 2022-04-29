@@ -6,22 +6,28 @@ export const Container = styled.div`
     align-items: flex-start;
 
     gap: 20px;
-    & > aside {
-      flex: 0 2 315px;
+  }
+`;
+
+export const MainContent = styled.div`
+  @media screen and (${({ theme }) => theme.media("mobileL")}) {
+    width: 100%;
+
+    & > ul {
+      flex: 1 1 auto;
+
+      grid-template-columns: 1fr 1fr;
     }
-    & > div {
-      width: 100%;
-
-      & > div {
-        flex: 1 1 auto;
-
-        grid-template-columns: 1fr 1fr;
-
-        @media screen and (${({ theme }) => theme.media("notebook")}) {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
+  }
+  & > ul {
+    @media screen and (${({ theme }) => theme.media("notebook")}) {
+      grid-template-columns: repeat(3, 1fr);
     }
+  }
+`;
+export const Sidebar = styled.aside`
+  @media screen and (${({ theme }) => theme.media("mobileL")}) {
+    flex: 0 2 315px;
   }
 `;
 
