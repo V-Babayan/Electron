@@ -3,7 +3,7 @@ import styled from "styled-components";
 const ImageBlock = styled.div`
   position: relative;
   text-align: center;
-  padding-top: 50%;
+  height: 63%;
 `;
 
 const Image = styled.img`

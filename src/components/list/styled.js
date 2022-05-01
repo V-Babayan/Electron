@@ -5,7 +5,7 @@ const ProductList = styled.ul`
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-auto-rows: minmax(200px, auto);
+  grid-auto-rows: 355px;
   gap: ${({ theme }) => theme.ratio(10, 15, "mobileS")};
 
   @media screen and (${({ theme }) => theme.media("mobile")}) {

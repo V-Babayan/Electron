@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
 const ButtonsContainer = styled.div`
+  height: calc(37% - 25px);
+
   margin-top: 25px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 5px;
   font-size: 16px;
 `;
@@ -31,21 +34,20 @@ const Button = styled.button`
   &:hover {
     background: #51a3d0;
   }
+`;
+const IconBlock = styled.div`
+  height: 30px;
+  width: 30px;
 
-  div {
-    height: 30px;
-    width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: ${({ theme }) => theme.color.orange};
-    border-radius: 50%;
-    svg {
-      height: 17px;
-    }
+  background: ${({ theme }) => theme.color.orange};
+  border-radius: 50%;
+  svg {
+    height: 17px;
   }
 `;
 
-export { ButtonsContainer, Button };
+export { ButtonsContainer, Button, IconBlock };

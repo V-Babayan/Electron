@@ -9,20 +9,20 @@ import * as Styled from "./styled";
 
 const CardButtons = ({ item }) => {
   const navigate = useNavigate();
+  const isDesctop = useMedia("desctop");
 
-  const clickHandler = useCallback(() => navigate(`${`/products/${item.id}`}`), []);
+  const clickHandler = useCallback(() => navigate(`${`/products/${item.id}`}`), [item.id]);
 
   const [addToCart] = useChangeElementCount(item);
-  const isDesctop = useMedia("desctop");
 
   return (
     <Styled.ButtonsContainer>
       <Styled.Button onClick={addToCart}>
         <span>Add to Cart</span>
         {isDesctop && (
-          <div>
+          <Styled.IconBlock>
             <CartIcon />
-          </div>
+          </Styled.IconBlock>
         )}
       </Styled.Button>
       <Styled.Button onClick={clickHandler}>
