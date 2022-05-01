@@ -13,6 +13,7 @@ import { Page } from "components/slider/children/";
 
 const Home = () => {
   const products = useSelector(selectRelatedProducts);
+
   const isMobile = useMedia("mobile");
   const isTablet = useMedia("tablet");
   const isNotebook = useMedia("notebook");

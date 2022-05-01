@@ -9,13 +9,13 @@ const CountBlock = ({ count, maxCount, responsive, increment, decrement, setCoun
   return (
     <Styled.CountBlock responsive={responsive}>
       <button
-        onClick={decrementHandler}
+        onClick={decrement ? decrement : decrementHandler}
         disabled={count === 1}>
         -
       </button>
       <span>{count}</span>
       <button
-        onClick={incrementHandler}
+        onClick={increment ? increment : incrementHandler}
         disabled={count === maxCount}>
         +
       </button>
