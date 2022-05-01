@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { useFilter } from "hooks";
 
-import List from "components/list";
+import { List } from "components/list";
 import { Brands, Categories } from "components/products-layout";
 
 import { filterWithProperty } from "helpers";

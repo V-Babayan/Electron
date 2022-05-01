@@ -1,90 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useChangeElementCount } from "hooks";
+import { useSelector } from "react-redux";
 
 import { getProduct } from "http";
+import { selectRelatedProducts } from "store";
 
-import { ReactComponent as CheckbirdIcon } from "assets/icons/checkbird.svg";
-import { ReactComponent as HeartIcon } from "assets/icons/heart.svg";
-
-import { Button, Rating } from "components/core-ui/";
-import CountBlock from "components/count-block";
-import ProductSlider from "components/product-slider";
+import { Slider, Info, Description } from "components/product-layout";
+import { Heading } from "components/core-ui";
+import { List } from "components/list";
 
 import * as Styled from "./styled";
-
-const formReset = (e) => e.preventDefault();
 
 const Product = () => {
   const { id } = useParams();
   const [item, setItem] = useState({});
-  const [count, setCount] = useState(1);
 
-  const [clickHandler, isDisabled] = useChangeElementCount(item, count);
+  const productsInRating = useSelector(selectRelatedProducts);
+
+  const relatedProducts = useMemo(() => productsInRating.slice(0, 4), []);
 
   useEffect(() => {
     getProduct(id).then((data) => setItem(data));
-  }, []);
+  }, [id]);
 
   return (
     <>
       <Styled.Container>
-        <div>
-          <ProductSlider images={item.images} />
-        </div>
-        <div>
-          <Styled.InfoContainer>
-            <Styled.ProductName>{item.title}</Styled.ProductName>
-            <Styled.ProductPrice>${item.price}</Styled.ProductPrice>
-            <Rating
-              defRating={item.rating}
-              big
-            />
-            <Styled.ProductHaveIndicator>
-              Availability: <CheckbirdIcon />
-              <span>In stock</span>
-            </Styled.ProductHaveIndicator>
-            <div>
-              {item.count
-                ? `Hurry up! only ${item.count} product left in stock!`
-                : "Sory this product isn't in stock"}
-            </div>
-          </Styled.InfoContainer>
-
-          <form onSubmit={formReset}>
-            <Styled.CountWrapper>
-              <label>Quantity :</label>
-              <CountBlock
-                count={count}
-                setCount={setCount}
-                maxCount={item.count}
-              />
-            </Styled.CountWrapper>
-
-            <Styled.ButtonsContainer>
-              <Button
-                large
-                color='orange'
-                onClick={clickHandler}
-                disabled={isDisabled}>
-                Add to cart
-              </Button>
-              <Button
-                large
-                color='orange'>
-                Buy it now
-              </Button>
-              <Styled.FavButton>
-                <HeartIcon />
-              </Styled.FavButton>
-            </Styled.ButtonsContainer>
-          </form>
-        </div>
+        <Slider images={item.images} />
+        <Info product={item} />
       </Styled.Container>
-      <Styled.DescriptionWrapper>
-        <Styled.DescriptionTitle>Description</Styled.DescriptionTitle>
-        <Styled.DescriptionText>{item.description}</Styled.DescriptionText>
-      </Styled.DescriptionWrapper>
+
+      <Description description={item.description} />
+
+      <Heading>Related product</Heading>
+
+      <List products={relatedProducts} />
     </>
   );
 };
