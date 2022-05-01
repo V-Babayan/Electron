@@ -4,14 +4,12 @@ import { useLocation } from "react-router-dom";
 import { useFilter } from "hooks";
 
 import { List } from "components/list";
-import { Brands, Categories } from "components/products-layout";
+import { Brands, SearchForm } from "components/products-layout";
 
 import { filterWithProperty } from "helpers";
 import { selectProducts } from "store";
 
 import * as Styled from "./styled";
-
-const submitReset = (e) => e.preventDefault();
 
 const Products = () => {
   const products = useSelector(selectProducts);
@@ -45,7 +43,7 @@ const Products = () => {
       <Styled.Sidebar>
         <Brands
           filter={brands}
-          filterTitle={"Brands"}
+          filterTitle='Brands'
           changeHandler={changeFilterBrands}
           resetHandler={resetHandler}
           brands={filter.brands}
@@ -53,18 +51,11 @@ const Products = () => {
       </Styled.Sidebar>
 
       <Styled.MainContent>
-        <Styled.Filter onSubmit={submitReset}>
-          <input
-            type='text'
-            placeholder='Search...'
-            value={filter.query}
-            onChange={searchHandler}
-          />
-          <Categories
-            currentCategories={filter.categories}
-            changeHandler={changeFilterCategories}
-          />
-        </Styled.Filter>
+        <SearchForm
+          filter={filter}
+          searchHandler={searchHandler}
+          changeFilterCategories={changeFilterCategories}
+        />
         <List products={filteredProducts} />
       </Styled.MainContent>
     </Styled.Container>

@@ -1,2 +1,2 @@
 export { Brands } from "./brands";
-export { Categories } from "./categories";
+export { SearchForm } from "./search-form";
