@@ -2,7 +2,7 @@ import React, { memo, useState } from "react";
 
 import * as Styled from "./styled";
 
-const ProductSlider = ({ images = [], title }) => {
+const Slider = ({ images = [], title }) => {
   const [imageUrl, setImageUrl] = useState(images[0]);
 
   return (
@@ -32,4 +32,4 @@ const ProductSlider = ({ images = [], title }) => {
   );
 };
 
-export default memo(ProductSlider);
+export default memo(Slider);
