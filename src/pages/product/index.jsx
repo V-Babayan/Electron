@@ -33,7 +33,6 @@ const Product = () => {
       <Description description={item.description} />
 
       <Heading>Related product</Heading>
-
       <List products={relatedProducts} />
     </>
   );
