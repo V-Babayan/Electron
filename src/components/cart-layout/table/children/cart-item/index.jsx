@@ -2,7 +2,10 @@ import React, { useCallback } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { changeElementCount, deleteElement } from "store";
+import {
+  //  changeElementCount,
+  deleteElement,
+} from "store";
 import { changeCountInCart, deleteCartItem } from "api";
 
 import CountBlock from "components/count-block";
@@ -18,15 +21,15 @@ const CartItem = ({ item = {}, count, id, index }) => {
     dispatch(deleteElement(id));
   };
 
-  const incrementHandler = useCallback(() => {
-    changeCountInCart(id, item, count + 1);
-    dispatch(changeElementCount({ index, count: count + 1 }));
-  }, [count, id, item, index, dispatch]);
+  // const incrementHandler = useCallback(() => {
+  //   changeCountInCart(id, item, count + 1);
+  //   dispatch(changeElementCount({ index, count: count + 1 }));
+  // }, [count, id, item, index, dispatch]);
 
-  const decrementHandler = useCallback(() => {
-    changeCountInCart(id, item, count - 1);
-    dispatch(changeElementCount({ index, count: count - 1 }));
-  }, [count, id, item, index, dispatch]);
+  // const decrementHandler = useCallback(() => {
+  //   changeCountInCart(id, item, count - 1);
+  //   dispatch(changeElementCount({ index, count: count - 1 }));
+  // }, [count, id, item, index, dispatch]);
 
   return (
     <Styled.Row>
@@ -47,8 +50,8 @@ const CartItem = ({ item = {}, count, id, index }) => {
       <td data-title='Count'>
         <CountBlock
           count={count}
-          increment={incrementHandler}
-          decrement={decrementHandler}
+          // increment={incrementHandler}
+          // decrement={decrementHandler}
           responsive
         />
       </td>

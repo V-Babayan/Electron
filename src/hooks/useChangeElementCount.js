@@ -1,7 +1,10 @@
 import { useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { addProduct, changeElementCount } from "store";
+import {
+  addProduct,
+  // changeElementCount
+} from "store";
 import { indexOfCart } from "helpers";
 import { addProductToCart, changeCountInCart, getCart } from "api";
 
@@ -22,7 +25,7 @@ export const useChangeElementCount = (product, changingBy = 1) => {
               product,
               cart[index].count + changingBy
             );
-            dispatch(changeElementCount({ index, count: data.count }));
+            // dispatch(changeElementCount({ index, count: data.count }));
           } else {
             const data = await addProductToCart({ product, count: changingBy });
             dispatch(addProduct(data));
