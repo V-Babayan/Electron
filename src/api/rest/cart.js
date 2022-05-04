@@ -1,10 +1,10 @@
 import { makeRequest } from "../makeRequest";
 
-export const getCart = () => {
+const getCart = () => {
   return makeRequest({ url: "cart/", method: "GET" });
 };
 
-export const addProductToCart = (item) => {
+const addProductToCart = (item) => {
   return makeRequest({
     url: "cart",
     method: "POST",
@@ -13,7 +13,7 @@ export const addProductToCart = (item) => {
   });
 };
 
-export const changeCountInCart = (id, product, count) => {
+const changeCountInCart = (id, product, count) => {
   return makeRequest({
     url: `cart/${id}`,
     method: "PUT",
@@ -22,12 +22,14 @@ export const changeCountInCart = (id, product, count) => {
   });
 };
 
-export const deleteCartItem = async (deleteId) => {
+const deleteCartItem = async (deleteId) => {
   return await makeRequest({ url: `cart/${deleteId}`, method: "DELETE" });
 };
 
-export const deleteAllCartItems = async (cart) => {
+const deleteAllCartItems = async (cart) => {
   for (let elem of cart) {
     await deleteCartItem(elem.id);
   }
 };
+
+export { getCart, addProductToCart, changeCountInCart, deleteCartItem, deleteAllCartItems };
