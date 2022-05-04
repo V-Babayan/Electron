@@ -3,6 +3,8 @@ import styled, { css } from "styled-components";
 export const Wrapper = styled.div`
   position: relative;
   width: 100%;
+
+  margin-bottom: ${({ theme }) => theme.ratio(16, 36, "mobileS")};
 `;
 
 export const Container = styled.ul`
