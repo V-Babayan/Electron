@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import { devices } from "helpers";
 
 export const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -102,27 +101,3 @@ export const GlobalStyles = createGlobalStyle`
     flex: 1 1 auto;
   }
 `;
-
-const theme = {
-  color: {
-    blue: "#003f62",
-    lightblue: "#87bcd9",
-    orange: "#a76906",
-    red: "#c33131",
-    grey: "#a9a9a9",
-  },
-
-  media(deviceType) {
-    return `min-width: ${devices[deviceType]}px`;
-  },
-
-  ratio(start, devide, deviceType) {
-    if (matchMedia("(max-width: 1440px)").matches)
-      return `calc(${start}px + ${devide} * (100vw - ${devices[deviceType]}px) / ${
-        1440 - devices[deviceType]
-      })`;
-    return start + devide + "px";
-  },
-};
-
-export default theme;
