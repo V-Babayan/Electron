@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import { changeElementCount, deleteElement } from "store";
-import { changeCountInCart, deleteCartItem } from "http";
+import { changeCountInCart, deleteCartItem } from "api";
 
 import CountBlock from "components/count-block";
 import deleteIcon from "assets/icons/delete.svg";

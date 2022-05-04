@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import { getProduct } from "http";
+import { getProduct } from "api";
 import { selectRelatedProducts } from "store";
 
 import { Slider, Info, Description } from "components/product-layout";

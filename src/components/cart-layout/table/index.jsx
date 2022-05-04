@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { emptyCart, selectCart } from "store";
 import { HOME_PAGE } from "helpers";
-import { deleteAllCartItems } from "http";
+import { deleteAllCartItems } from "api";
 
 import { CartItem, TableHead } from "./children";
 import { Button } from "../../core-ui";
