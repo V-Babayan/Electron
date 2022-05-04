@@ -1,7 +1,9 @@
-import { useChangeElementCount } from "hooks";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 import { ReactComponent as HeartIcon } from "assets/icons/heart.svg";
+
+import { addProduct } from "store";
 
 import CountBlock from "components/count-block";
 import { Button } from "components/core-ui";
@@ -11,9 +13,12 @@ import * as Styled from "./styled";
 const formReset = (e) => e.preventDefault();
 
 const AddToCartForm = ({ product }) => {
+  const dispatch = useDispatch();
   const [count, setCount] = useState(1);
 
-  const [clickHandler, isDisabled] = useChangeElementCount(product, count);
+  const addToCartHandler = () => {
+    dispatch(addProduct({ product, quanity: count }));
+  };
 
   return (
     <form onSubmit={formReset}>
@@ -30,8 +35,7 @@ const AddToCartForm = ({ product }) => {
         <Button
           large
           color='orange'
-          onClick={clickHandler}
-          disabled={isDisabled}>
+          onClick={addToCartHandler}>
           Add to cart
         </Button>
         <Button

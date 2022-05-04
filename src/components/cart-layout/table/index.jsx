@@ -32,13 +32,12 @@ const Table = () => {
       <Styled.Table>
         <TableHead />
         <tbody>
-          {cart.map(({ product, count, id }, index) => (
+          {cart.map(({ product, count, id }) => (
             <CartItem
               key={id}
               item={product}
               count={count}
               id={id}
-              index={index}
             />
           ))}
         </tbody>
