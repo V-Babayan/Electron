@@ -1,39 +1,43 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { indexOfCart } from "helpers";
+import { indexOfCart } from "helpers";
+
+const initialState = { cart: [], quanity: 0, totalAmount: 0 };
 
 const cartSlice = createSlice({
   name: "cartSlice",
-  initialState: { cart: [] },
+  initialState,
   reducers: {
     emptyCart(state) {
-      state.cart = [];
+      state.cart = initialState.cart;
+      state.quanity = initialState.quanity;
+      state.totalAmount = initialState.totalAmount;
     },
 
-    deleteElement(state, action) {
-      state.cart = state.cart.filter((elem) => elem.id !== action.payload);
-    },
-
-    addProduct({ cart }, { payload }) {
-      // const index = indexOfCart(cart, payload.product.id);
-
-      // if (typeof index === "number") cart[index].count += payload.quanity;
-      // else cart.push({ product: payload.product, count: payload.quanity, id: cart.length + 1 });
-
-      let haveInCart = false;
-
-      cart.forEach((cartItem) => {
-        if (cartItem.product.id === payload.product.id) {
-          cartItem.count += payload.quanity;
-          haveInCart = true;
+    deleteElement(state, { payload }) {
+      state.cart = state.cart.filter(({ id, count, product }) => {
+        if (id !== payload) {
+          return true;
         }
-      });
 
-      if (!haveInCart)
-        cart.push({
+        state.quanity -= count;
+        state.totalAmount -= product.price * count;
+        return false;
+      });
+    },
+
+    addProduct(state, { payload }) {
+      const index = indexOfCart(state.cart, payload.product.id);
+
+      if (typeof index === "number") state.cart[index].count += payload.quanity;
+      else
+        state.cart.push({
           product: payload.product,
           count: payload.quanity,
-          id: cart.length + 1,
+          id: state.cart.length + 1,
         });
+
+      state.quanity += payload.quanity;
+      state.totalAmount += payload.product.price * payload.quanity;
     },
   },
 });
