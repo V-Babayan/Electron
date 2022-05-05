@@ -4,6 +4,8 @@ const ImageBlock = styled.div`
   position: relative;
   text-align: center;
   height: 63%;
+
+  overflow: hidden;
 `;
 
 const Image = styled.img`
@@ -14,6 +16,11 @@ const Image = styled.img`
   height: 100%;
 
   object-fit: contain;
+
+  transition: transform 0.3s linear;
+  :hover {
+    transform: scale(1.25);
+  }
 `;
 
 const FavButton = styled.button`
