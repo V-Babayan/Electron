@@ -4,14 +4,14 @@ import { useSelector } from "react-redux";
 import { Table, Total } from "components/cart-layout/";
 
 import { HOME_PAGE } from "helpers";
-import { selectCart } from "store";
+import { selectCartQuanity } from "store";
 
 import * as Styled from "./styled";
 
 const Cart = () => {
-  const cart = useSelector(selectCart);
+  const cart = useSelector(selectCartQuanity);
 
-  return cart.length ? (
+  return cart ? (
     <Styled.Container>
       <Table />
 
