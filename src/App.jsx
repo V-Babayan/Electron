@@ -7,7 +7,7 @@ import AppRouter from "components/AppRouter";
 import { Header } from "components/header/";
 import { Footer } from "components/footer";
 
-import { setProducts, setCart, asyncGetProducts, asyncGetCart } from "store/";
+import { setProducts, asyncGetProducts } from "store/";
 
 function App() {
   const dispatch = useDispatch();
@@ -15,7 +15,6 @@ function App() {
 
   useEffect(() => {
     dispatch(asyncGetProducts(setProducts()));
-    dispatch(asyncGetCart(setCart()));
   }, [dispatch]);
 
   return (
