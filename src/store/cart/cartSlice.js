@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { indexOfCart } from "helpers";
+import { generateId, indexOfCart } from "helpers";
 
 const initialState = { cart: [], quanity: 0, totalAmount: 0 };
 
@@ -33,7 +33,7 @@ const cartSlice = createSlice({
         state.cart.push({
           product: payload.product,
           count: payload.quanity,
-          id: state.cart.length + 1,
+          id: generateId(),
         });
 
       state.quanity += payload.quanity;
