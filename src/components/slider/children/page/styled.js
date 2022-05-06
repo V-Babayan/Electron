@@ -90,9 +90,12 @@ const Page = styled.li`
 `;
 
 const PageLeft = styled.section`
+  text-align: center;
+
   @media screen and (${({ theme }) => theme.media("tablet")}) {
-    flex: 0 0 330px;
-    margin-bottom: ${({ theme }) => theme.ratio(20, 90, "tablet")};
+    flex: 0 0 350px;
+
+    text-align: left;
   }
 `;
 
@@ -106,14 +109,8 @@ const ProductName = styled.h5`
 `;
 
 const ButtonsContainer = styled.div`
-  text-align: center;
-
   button:first-child {
     margin-right: 20px;
-  }
-
-  @media screen and (${({ theme }) => theme.media("tablet")}) {
-    text-align: left;
   }
 `;
 
@@ -125,18 +122,9 @@ const PageRight = styled.div`
 
 const ImageBlock = styled.div`
   position: relative;
-  padding-bottom: 100%;
-  height: 100%;
-  width: 100%;
 
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
+  height: 360px;
+  width: 100%;
 
   &::after {
     content: "Only ${({ price }) => price}$";
@@ -163,4 +151,13 @@ const ImageBlock = styled.div`
   }
 `;
 
-export { Page, PageLeft, ProductName, ButtonsContainer, PageRight, ImageBlock };
+const Image = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+`;
+
+export { Page, PageLeft, ProductName, ButtonsContainer, PageRight, ImageBlock, Image };
