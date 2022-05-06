@@ -3,7 +3,7 @@ import { devices } from "helpers";
 
 export const useMedia = (deviceType) => {
   const mediaQuery = window.matchMedia(`(min-width: ${devices[deviceType]}px)`);
-  const [media, setMedia] = useState(mediaQuery.matches);
+  const [media, setMedia] = useState(() => mediaQuery.matches);
 
   useEffect(() => {
     const changeHandler = () => setMedia((prev) => !prev);
@@ -11,7 +11,7 @@ export const useMedia = (deviceType) => {
     mediaQuery.addEventListener("change", changeHandler);
 
     return () => mediaQuery.removeEventListener("change", changeHandler);
-  }, []);
+  }, [mediaQuery]);
 
   return media;
 };
