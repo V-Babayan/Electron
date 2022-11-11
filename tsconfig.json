@@ -4,7 +4,7 @@
     "jsx": "react",
     "esModuleInterop": true,
     "paths": {
-      "": ["./src/*"]
+      "~/*": ["*"]
     }
   },
   "include": ["src/**/*"],
