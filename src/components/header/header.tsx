@@ -5,12 +5,12 @@ import React, { FC } from "react";
 // import { HOME_PAGE } from "helpers";
 
 // import { Logo } from "components/core-ui/";
-// import {
-//   HeaderTopButtons,
-//   Menu,
-//   CategoriesMenu,
-//   HeaderSearchForm,
-// } from "./children";
+import {
+  HeaderTopButtons,
+  // Menu,
+  // CategoriesMenu,
+  // HeaderSearchForm,
+} from "./children";
 
 import * as Styled from "./styled";
 
@@ -24,9 +24,9 @@ export const Header: FC = () => {
           <Logo />
         </Link>
 
-        <HeaderSearchForm />
+        <HeaderSearchForm /> */}
 
-        <HeaderTopButtons /> */}
+        <HeaderTopButtons />
       </Styled.HeaderTop>
 
       <Styled.HeaderBottom>

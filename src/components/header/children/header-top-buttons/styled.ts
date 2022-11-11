@@ -11,7 +11,7 @@ const ButtonsContainer = styled.div`
   margin-left: auto;
 `;
 
-const HeaderLink = styled.div`
+const HeaderLink = styled.div<{ cartSize?: number }>`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.ratio(5, 7, "mobileS")};

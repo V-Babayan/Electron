@@ -1,17 +1,17 @@
-import React from "react";
+import React, { FC } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { CART_PAGE, LOGIN_PAGE } from "helpers";
-import { selectCartQuanity } from "store";
+import { CART_PAGE, LOGIN_PAGE } from "~/helpers";
+// import { selectCartQuanity } from "store";
 
-import { ReactComponent as CartIcon } from "assets/icons/cart.svg";
-import { ReactComponent as ProfileIcon } from "assets/icons/profile.svg";
+import CartIcon from "~/assets/icons/cart.svg";
+import ProfileIcon from "~/assets/icons/profile.svg";
 
 import * as Styled from "./styled";
 
-const HeaderTopButtons = () => {
-  const quantity = useSelector(selectCartQuanity);
+const HeaderTopButtons: FC = () => {
+  // const quantity = useSelector(selectCartQuanity);
 
   return (
     <Styled.ButtonsContainer>
@@ -23,12 +23,12 @@ const HeaderTopButtons = () => {
       </Link>
 
       <Link to={CART_PAGE}>
-        <Styled.HeaderLink cartSize={quantity}>
+        {/* <Styled.HeaderLink cartSize={quantity}>
           <div>
             <CartIcon />
           </div>
           Cart
-        </Styled.HeaderLink>
+        </Styled.HeaderLink> */}
       </Link>
     </Styled.ButtonsContainer>
   );
