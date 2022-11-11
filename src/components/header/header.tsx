@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 // import { Link } from "react-router-dom";
 // import { useMedia } from "hooks";
 
@@ -12,31 +12,33 @@ import React from "react";
 //   HeaderSearchForm,
 // } from "./children";
 
-// import * as Styled from "./styled";
+import * as Styled from "./styled";
 
-const Header = () => {
+export const Header: FC = () => {
   // const isNotebook = useMedia("notebook");
 
   return (
     <header>
-      {/* <Styled.HeaderTop>
-        <Link to={HOME_PAGE}>
+      <Styled.HeaderTop>
+        {/* <Link to={HOME_PAGE}>
           <Logo />
         </Link>
 
         <HeaderSearchForm />
 
-        <HeaderTopButtons />
+        <HeaderTopButtons /> */}
       </Styled.HeaderTop>
 
       <Styled.HeaderBottom>
-        <CategoriesMenu />
+        {/* <CategoriesMenu />
         <Menu />
 
-        {isNotebook && <Styled.HeaderBottomHeading>30 Days Free Return</Styled.HeaderBottomHeading>}
-      </Styled.HeaderBottom> */}
+        {isNotebook && (
+          <Styled.HeaderBottomHeading>
+            30 Days Free Return
+          </Styled.HeaderBottomHeading>
+        )} */}
+      </Styled.HeaderBottom>
     </header>
   );
 };
-
-export { Header };
