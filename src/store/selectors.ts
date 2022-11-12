@@ -1,10 +1,11 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { getCategoriesByProducts } from "helpers";
+import { getCategoriesByProducts } from "~/helpers";
+import { RootState } from "./store";
 
-const selectProducts = (state) => state.products.products;
-const selectCart = (state) => state.cart.cart;
-const selectCartQuanity = (state) => state.cart.quanity;
-const selectCartTotalAmount = (state) => state.cart.totalAmount;
+const selectProducts = (state: RootState) => state.products.products;
+const selectCart = (state: RootState) => state.cart.cart;
+const selectCartQuanity = (state: RootState) => state.cart.quanity;
+const selectCartTotalAmount = (state: RootState) => state.cart.totalAmount;
 
 const selectCategories = createSelector(selectProducts, (products) =>
   getCategoriesByProducts(products)

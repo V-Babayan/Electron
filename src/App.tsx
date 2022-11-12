@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-// import { useDispatch } from "react-redux";
 import { useMedia } from "~/hooks";
 
 import { Theme } from "~/styles/";
@@ -7,15 +6,15 @@ import { Theme } from "~/styles/";
 import { Header } from "~/components/header";
 // import { Footer } from "components/footer";
 
-// import { setProducts, asyncGetProducts } from "store/";
+import { asyncGetProducts, useAppDispatch } from "~/store";
 
 function App() {
-  // const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const isLargeDisplay = useMedia("desctopL");
 
-  // useEffect(() => {
-  //   dispatch(asyncGetProducts(setProducts()));
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(asyncGetProducts());
+  }, [dispatch]);
 
   return (
     <Theme isLargeDisplay={isLargeDisplay}>

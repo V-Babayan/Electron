@@ -1,5 +1,5 @@
 export const getCategoriesByProducts = (products) => {
-  const categories = new Set();
+  const categories = new Set<any>();
 
   for (let item of products) categories.add(item.category);
 
