@@ -1,15 +1,18 @@
-import { memo } from "react";
-import { Link } from "react-router-dom";
+import React, { FC, memo } from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
-import { addProduct, deleteElement } from "store";
-
-import CountBlock from "components/count-block";
-import deleteIcon from "assets/icons/delete.svg";
+import { DeleteIcon } from "~/assets/icons";
+import { CountBlock } from "~/components";
+import { addProduct, CartProduct, deleteElement } from "~/store";
 
 import * as Styled from "./styled";
 
-const CartItem = ({ cartItem }) => {
+type CartItemProps = {
+  cartItem: CartProduct;
+};
+
+const CartItem: FC<CartItemProps> = ({ cartItem }) => {
   const { id, product, count } = cartItem;
   const dispatch = useDispatch();
 
@@ -18,10 +21,10 @@ const CartItem = ({ cartItem }) => {
   };
 
   const productCountIncrementHandler = () => {
-    dispatch(addProduct({ product, quanity: 1 }));
+    dispatch(addProduct({ product, quantity: 1 }));
   };
   const productCountDecrementHandler = () => {
-    dispatch(addProduct({ product, quanity: -1 }));
+    dispatch(addProduct({ product, quantity: -1 }));
   };
 
   return (
@@ -29,18 +32,15 @@ const CartItem = ({ cartItem }) => {
       <td>
         <Styled.Figure>
           <div>
-            <img
-              src={`${product.imageUrl}`}
-              alt={product.title}
-            />
+            <img src={`${product.imageUrl}`} alt={product.title} />
           </div>
           <figcaption>
             <Link to={`/products/${product.id}`}>{product.title}</Link>
           </figcaption>
         </Styled.Figure>
       </td>
-      <td data-title='Price'>${product.price}</td>
-      <td data-title='Count'>
+      <td data-title="Price">${product.price}</td>
+      <td data-title="Count">
         <CountBlock
           count={count}
           increment={productCountIncrementHandler}
@@ -48,15 +48,10 @@ const CartItem = ({ cartItem }) => {
           responsive
         />
       </td>
-      <td data-title='Subtotal'>${product.price * count}</td>
+      <td data-title="Subtotal">${product.price * count}</td>
       <td>
         <button onClick={deleteCartElement}>
-          <img
-            src={deleteIcon}
-            width='24'
-            height='25'
-            alt='Delete icon'
-          />
+          <DeleteIcon width="24" height="25" />
         </button>
       </td>
     </Styled.Row>

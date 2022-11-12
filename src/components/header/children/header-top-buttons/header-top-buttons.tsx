@@ -1,14 +1,14 @@
-import React, { FC } from "react";
+import React, { type FC } from "react";
 import { Link } from "react-router-dom";
 
-import { CART_PAGE, LOGIN_PAGE } from "~/helpers";
-import { selectCartQuanity, useAppSelector } from "~/store";
 import { CartIcon, ProfileIcon } from "~/assets/icons";
+import { CART_PAGE, LOGIN_PAGE } from "~/helpers";
+import { selectCartQuantity, useAppSelector } from "~/store";
 
 import * as Styled from "./styled";
 
 const HeaderTopButtons: FC = () => {
-  const quantity = useAppSelector(selectCartQuanity);
+  const quantity = useAppSelector(selectCartQuantity);
 
   return (
     <Styled.ButtonsContainer>

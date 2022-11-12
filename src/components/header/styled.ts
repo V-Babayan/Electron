@@ -6,7 +6,8 @@ const HeaderTop = styled.div`
   flex-wrap: wrap;
   gap: ${({ theme }) => theme.ratio(0, 85, "mobileS")};
 
-  padding: ${({ theme }) => theme.ratio(5, 17, "mobileS") + " " + theme.ratio(5, 59, "mobileS")};
+  padding: ${({ theme }) =>
+    theme.ratio(5, 17, "mobileS") + " " + theme.ratio(5, 59, "mobileS")};
 
   background: ${({ theme }) => theme.color.blue};
 
@@ -39,4 +40,4 @@ const HeaderBottomHeading = styled.h5`
   color: ${({ theme }) => theme.color.blue};
 `;
 
-export { HeaderTop, HeaderBottom, HeaderBottomHeading };
+export { HeaderBottom, HeaderBottomHeading, HeaderTop };

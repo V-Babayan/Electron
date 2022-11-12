@@ -1,15 +1,15 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import { useMedia } from "~/hooks";
-
-import { HOME_PAGE } from "~/helpers";
 
 import { Logo } from "~/components/core-ui";
+import { HOME_PAGE } from "~/helpers";
+import { useMedia } from "~/hooks";
+
 import {
-  HeaderTopButtons,
-  Menu,
   CategoriesMenu,
   HeaderSearchForm,
+  HeaderTopButtons,
+  Menu,
 } from "./children";
 
 import * as Styled from "./styled";

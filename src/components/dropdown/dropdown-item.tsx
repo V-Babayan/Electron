@@ -1,9 +1,11 @@
-import React, { useMemo } from "react";
+import React, { FC, useMemo } from "react";
 import { Link } from "react-router-dom";
 
 import { PRODUCTS_PAGE } from "~/helpers";
 
-export const DropdownItem = ({ primary, option }) => {
+type DropdownItemProps = { primary?: boolean; option: string };
+
+export const DropdownItem: FC<DropdownItemProps> = ({ primary, option }) => {
   const navigationState = useMemo(() => ({ categories: [option] }), [option]);
 
   return (

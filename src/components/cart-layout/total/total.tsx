@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, FC, useState } from "react";
 import { useSelector } from "react-redux";
 
+import { ReactComponent as MoreIcon } from "assets/icons/more.svg";
 import { selectCartTotalAmount } from "store";
 
-import { ReactComponent as MoreIcon } from "assets/icons/more.svg";
 import { Button } from "../../core-ui";
 
 import * as Styled from "./styled";
 
-const Total = () => {
+const Total: FC = () => {
   const totalAmount = useSelector(selectCartTotalAmount);
   const [count, setCount] = useState(1);
+
+  const changeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
+    setCount(Number(e.target.value));
+  };
 
   return (
     <Styled.CartTotal>
@@ -21,17 +25,12 @@ const Total = () => {
           <span>${totalAmount}</span>
         </Styled.Subtotal>
         <Styled.Form>
-          <input
-            type='text'
-            placeholder='Enter coupon code'
-          />
+          <input type="text" placeholder="Enter coupon code" />
           <button>Apply</button>
         </Styled.Form>
 
         <Styled.SelectWrapper>
-          <select
-            value={count}
-            onChange={(e) => setCount(e.target.value)}>
+          <select value={count} onChange={changeHandler}>
             <option disabled>County</option>
             {[...Array(10)].map((_, index) => (
               <option key={index}>{index + 1}</option>
@@ -45,7 +44,7 @@ const Total = () => {
           <span>${count * totalAmount}</span>
         </Styled.TotalPrice>
 
-        <Button>Proceed to ckeckout</Button>
+        <Button>Proceed to checkout</Button>
       </Styled.Content>
     </Styled.CartTotal>
   );

@@ -1,9 +1,9 @@
 import React, { FC, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { useMedia } from "~/hooks";
-import { PRODUCTS_PAGE } from "~/helpers";
 import { Dropdown } from "~/components";
+import { PRODUCTS_PAGE } from "~/helpers";
+import { useMedia } from "~/hooks";
 
 import * as Styled from "./styled";
 
@@ -11,7 +11,7 @@ const Menu: FC = () => {
   const [menuActive, setMenuActive] = useState(false);
   const isTablet = useMedia("tablet");
 
-  const burgerHandler = () => setMenuActive((prev) => !prev);
+  const burgerHandler = () => setMenuActive(prev => !prev);
 
   return (
     <>

@@ -1,10 +1,12 @@
-import { useMedia } from "hooks";
-import { useMemo } from "react";
+import React, { FC, useMemo } from "react";
 
-import { ProductList } from "./styled";
+import { useMedia } from "~/hooks";
+
 import { CardSkeleton } from "./card/skeleton";
 
-const ListSkeleton = () => {
+import { ProductList } from "./styled";
+
+const ListSkeleton: FC = () => {
   const isMobile = useMedia("mobile");
   const isTablet = useMedia("tablet");
   const isNotebook = useMedia("notebook");
@@ -21,7 +23,7 @@ const ListSkeleton = () => {
 
   return (
     <ProductList>
-      {cards.map((cardId) => (
+      {cards.map(cardId => (
         <CardSkeleton key={cardId} />
       ))}
     </ProductList>

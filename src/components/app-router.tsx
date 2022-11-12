@@ -1,14 +1,16 @@
-import React, { Suspense, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
 
-import { authRotes, publicRotes } from "routes";
+import { publicRotes } from "~/routes";
+
 import { Loader } from "./loader";
 
 const AppRouter = () => {
-  const [auth, setAuth] = useState(false);
+  // const [auth, setAuth] = useState(false);
+
   return (
     <Routes>
-      {auth &&
+      {/* {auth &&
         authRotes.map(({ path, Component }) => (
           <Route
             path={path}
@@ -19,7 +21,7 @@ const AppRouter = () => {
               </Suspense>
             }
           />
-        ))}
+        ))} */}
       {publicRotes.map(({ path, Component, Skeleton }) => (
         <Route
           path={path}
@@ -35,4 +37,4 @@ const AppRouter = () => {
   );
 };
 
-export default AppRouter;
+export { AppRouter };

@@ -3,6 +3,7 @@ import React, { FC, useCallback, useState } from "react";
 import { MoreIcon } from "~/assets/icons";
 
 import { DropdownItem } from "./dropdown-item";
+
 import * as Styled from "./styled";
 
 type DropdownProps = {
@@ -19,19 +20,19 @@ const Dropdown: FC<DropdownProps> = ({
   const [show, setShow] = useState(false);
 
   const toggleShow = useCallback(() => {
-    setShow((prev) => !prev);
+    setShow(prev => !prev);
   }, []);
 
   return (
     <Styled.DropContainer onMouseEnter={toggleShow} onMouseLeave={toggleShow}>
-      <Styled.DropButton show={show} primary={primary}>
+      <Styled.DropButton $show={show} $primary={primary}>
         {defaultTitle}
         <MoreIcon />
       </Styled.DropButton>
 
       {show && (
-        <Styled.DropList primary={primary}>
-          {options.map((option) => (
+        <Styled.DropList $primary={primary}>
+          {options.map(option => (
             <DropdownItem key={option} primary={primary} option={option} />
           ))}
         </Styled.DropList>
