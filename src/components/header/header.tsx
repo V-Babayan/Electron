@@ -1,43 +1,43 @@
 import React, { FC } from "react";
-// import { Link } from "react-router-dom";
-// import { useMedia } from "hooks";
+import { Link } from "react-router-dom";
+import { useMedia } from "~/hooks";
 
-// import { HOME_PAGE } from "helpers";
+import { HOME_PAGE } from "~/helpers";
 
-// import { Logo } from "components/core-ui/";
+import { Logo } from "~/components/core-ui";
 import {
   HeaderTopButtons,
-  // Menu,
-  // CategoriesMenu,
-  // HeaderSearchForm,
+  Menu,
+  CategoriesMenu,
+  HeaderSearchForm,
 } from "./children";
 
 import * as Styled from "./styled";
 
 export const Header: FC = () => {
-  // const isNotebook = useMedia("notebook");
+  const isNotebook = useMedia("notebook");
 
   return (
     <header>
       <Styled.HeaderTop>
-        {/* <Link to={HOME_PAGE}>
+        <Link to={HOME_PAGE}>
           <Logo />
         </Link>
 
-        <HeaderSearchForm /> */}
+        <HeaderSearchForm />
 
         <HeaderTopButtons />
       </Styled.HeaderTop>
 
       <Styled.HeaderBottom>
-        {/* <CategoriesMenu />
+        <CategoriesMenu />
         <Menu />
 
         {isNotebook && (
           <Styled.HeaderBottomHeading>
             30 Days Free Return
           </Styled.HeaderBottomHeading>
-        )} */}
+        )}
       </Styled.HeaderBottom>
     </header>
   );

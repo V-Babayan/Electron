@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Skeleton } from "styles/";
+import { Skeleton } from "~/styles/";
 
 const Heading = styled.h5`
   font-weight: 600;

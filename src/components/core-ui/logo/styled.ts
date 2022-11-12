@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Logo = styled.div`
+const Logo = styled.div<{ blue?: boolean }>`
   display: flex;
   align-self: center;
   gap: 5px;

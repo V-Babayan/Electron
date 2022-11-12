@@ -11,7 +11,7 @@ const ButtonsContainer = styled.div`
   margin-left: auto;
 `;
 
-const HeaderLink = styled.div<{ cartSize?: number }>`
+const HeaderLink = styled.div<{ $cartSize?: number }>`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.ratio(5, 7, "mobileS")};
@@ -25,11 +25,11 @@ const HeaderLink = styled.div<{ cartSize?: number }>`
     align-items: center;
     gap: 3px;
 
-    ${({ cartSize }) =>
-      cartSize &&
+    ${({ $cartSize }) =>
+      $cartSize &&
       css`
         &::after {
-          content: "${cartSize}";
+          content: "${$cartSize}";
           position: absolute;
           right: -25%;
           top: -25%;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Burger = styled.div`
+const Burger = styled.div<{ active: boolean }>`
   position: relative;
   z-index: 20;
   width: 40px;
@@ -24,10 +24,12 @@ const Burger = styled.div`
     transition: transform 0.2s linear;
   }
   &::before {
-    transform: ${({ active }) => (active ? "rotate(-45deg)" : "translateY(-10px)")};
+    transform: ${({ active }) =>
+      active ? "rotate(-45deg)" : "translateY(-10px)"};
   }
   &::after {
-    transform: ${({ active }) => (active ? "rotate(45deg)" : "translateY(10px)")};
+    transform: ${({ active }) =>
+      active ? "rotate(45deg)" : "translateY(10px)"};
   }
 `;
 

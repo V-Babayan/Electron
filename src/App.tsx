@@ -3,7 +3,7 @@ import { useMedia } from "~/hooks";
 
 import { Theme } from "~/styles/";
 // import AppRouter from "components/AppRouter";
-import { Header } from "~/components/header";
+import { Header } from "~/components";
 // import { Footer } from "components/footer";
 
 import { asyncGetProducts, useAppDispatch } from "~/store";

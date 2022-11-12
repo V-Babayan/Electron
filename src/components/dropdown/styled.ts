@@ -4,7 +4,7 @@ export const DropContainer = styled.div`
   position: relative;
 `;
 
-export const DropButton = styled.div`
+export const DropButton = styled.div<{ show: boolean; primary?: boolean }>`
   padding: ${({ theme }) => theme.ratio(10, 14, "mobileS")};
   font-size: 16px;
   line-height: 1.5;
@@ -29,7 +29,7 @@ export const DropButton = styled.div`
   }
 `;
 
-export const DropList = styled.ul`
+export const DropList = styled.ul<{ primary?: boolean }>`
   position: absolute;
   z-index: 999;
   width: 100%;
@@ -44,7 +44,8 @@ export const DropList = styled.ul`
     }
 
     transition: background 0.1s linear;
-    background: ${({ primary, theme }) => (primary ? theme.color.orange : "#f4f4f4")};
+    background: ${({ primary, theme }) =>
+      primary ? theme.color.orange : "#f4f4f4"};
     ${({ primary }) => primary && "border-top: 1px solid #ffffff"};
 
     &:hover {

@@ -2,13 +2,10 @@ import React, { FC } from "react";
 import { Link } from "react-router-dom";
 
 import { CART_PAGE, LOGIN_PAGE } from "~/helpers";
-import { selectCartQuanity } from "~/store";
-
-import CartIcon from "~/assets/icons/cart.svg";
-import ProfileIcon from "~/assets/icons/profile.svg";
+import { selectCartQuanity, useAppSelector } from "~/store";
+import { CartIcon, ProfileIcon } from "~/assets/icons";
 
 import * as Styled from "./styled";
-import { useAppSelector } from "~/store/hooks";
 
 const HeaderTopButtons: FC = () => {
   const quantity = useAppSelector(selectCartQuanity);
@@ -23,7 +20,7 @@ const HeaderTopButtons: FC = () => {
       </Link>
 
       <Link to={CART_PAGE}>
-        <Styled.HeaderLink cartSize={quantity}>
+        <Styled.HeaderLink $cartSize={quantity}>
           <div>
             <CartIcon />
           </div>

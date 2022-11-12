@@ -1,8 +1,8 @@
-import React from "react";
+import React, { FC } from "react";
 
 import * as Styled from "./styled";
 
-const Heading = (props) => {
+const Heading: FC = (props) => {
   return <Styled.Heading {...props} />;
 };
 
