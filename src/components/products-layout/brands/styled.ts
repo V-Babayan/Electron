@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import smallCheckbird from "assets/icons/smallCheckbird.svg";
+
+import { CheckMarkIcon } from "~/assets/icons";
 
 const HeadingBlock = styled.div`
   display: flex;
@@ -57,7 +58,7 @@ const BrandCheckbox = styled.input`
     border-radius: 8px;
 
     ::after {
-      content: url(${smallCheckbird});
+      content: url(${CheckMarkIcon});
     }
   }
 `;
@@ -68,4 +69,12 @@ const BrandInfo = styled.div`
   align-items: center;
 `;
 
-export { HeadingBlock, Title, ResetButton, BrandList, Brand, BrandCheckbox, BrandInfo };
+export {
+  Brand,
+  BrandCheckbox,
+  BrandInfo,
+  BrandList,
+  HeadingBlock,
+  ResetButton,
+  Title,
+};

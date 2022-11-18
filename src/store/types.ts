@@ -22,6 +22,6 @@ export interface CartProduct {
 
 export interface CartState {
   cart: CartProduct[];
-  quanity: number;
+  quantity: number;
   totalAmount: number;
 }

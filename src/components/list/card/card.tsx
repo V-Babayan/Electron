@@ -1,19 +1,23 @@
-import React, { memo, useState } from "react";
+import React, { FC, memo, useState } from "react";
 
-import { ProductImage, ProductInfo, CardButtons } from "./children";
+import { Product } from "~/store";
+
+import { CardButtons, ProductImage, ProductInfo } from "./children";
 
 import * as Styled from "./styled";
 
-const Card = ({ item }) => {
+type CardProps = {
+  item: Product;
+};
+
+const Card: FC<CardProps> = ({ item }) => {
   const [hover, setHover] = useState(false);
 
   const toggleEnter = () => setHover(true);
   const toggleLeave = () => setHover(false);
 
   return (
-    <Styled.Container
-      onMouseEnter={toggleEnter}
-      onMouseLeave={toggleLeave}>
+    <Styled.Container onMouseEnter={toggleEnter} onMouseLeave={toggleLeave}>
       <ProductImage product={item} />
 
       {hover ? <CardButtons item={item} /> : <ProductInfo product={item} />}

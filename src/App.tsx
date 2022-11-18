@@ -1,12 +1,9 @@
 import React, { useEffect } from "react";
+
+import { AppRouter, Footer, Header } from "~/components";
 import { useMedia } from "~/hooks";
-
-import { Theme } from "~/styles/";
-// import AppRouter from "components/AppRouter";
-import { Header } from "~/components";
-// import { Footer } from "components/footer";
-
 import { asyncGetProducts, useAppDispatch } from "~/store";
+import { Theme } from "~/styles/";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -19,10 +16,10 @@ function App() {
   return (
     <Theme isLargeDisplay={isLargeDisplay}>
       <Header />
-      {/* <main>
+      <main>
         <AppRouter />
       </main>
-      <Footer /> */}
+      <Footer />
     </Theme>
   );
 }

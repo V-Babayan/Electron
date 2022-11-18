@@ -1,10 +1,9 @@
 import React, { ChangeEvent, FC, useState } from "react";
 import { useSelector } from "react-redux";
 
-import { ReactComponent as MoreIcon } from "assets/icons/more.svg";
-import { selectCartTotalAmount } from "store";
-
-import { Button } from "../../core-ui";
+import { MoreIcon } from "~/assets/icons";
+import { Button } from "~/components";
+import { selectCartTotalAmount } from "~/store";
 
 import * as Styled from "./styled";
 

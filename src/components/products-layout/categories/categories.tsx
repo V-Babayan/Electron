@@ -1,19 +1,27 @@
-import React from "react";
+import React, { ChangeEvent, FC } from "react";
 import { useSelector } from "react-redux";
 
-import { selectCategories } from "store";
+import { selectCategories } from "~/store";
 
 import * as Styled from "./styled";
 
-const Categories = ({ currentCategories, changeHandler }) => {
+type CategoriesProps = {
+  currentCategories: string[];
+  changeHandler: (e: ChangeEvent<HTMLInputElement>) => void;
+};
+
+const Categories: FC<CategoriesProps> = ({
+  currentCategories,
+  changeHandler,
+}) => {
   const categories = useSelector(selectCategories);
 
   return (
     <Styled.Container>
-      {categories.map((category) => (
+      {categories.map(category => (
         <div key={category}>
           <Styled.Input
-            type='checkbox'
+            type="checkbox"
             value={category}
             id={category}
             checked={currentCategories.includes(category)}

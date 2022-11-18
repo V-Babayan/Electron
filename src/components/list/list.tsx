@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 import { Product } from "~/store";
 
-import Card from "./card";
+import { Card } from "./card";
 
 import * as Styled from "./styled";
 

@@ -1,10 +1,9 @@
-import React from "react";
 import { ThemeProvider } from "styled-components";
-
-import { GlobalStyles } from "./global-styles";
+import React, { FC, ReactNode } from "react";
 
 import { devices } from "~/helpers";
-import { FC, ReactNode } from "react";
+
+import { GlobalStyles } from "./global-styles";
 
 const theme = {
   color: {
@@ -20,19 +19,18 @@ const theme = {
     return `min-width: ${devices[deviceType]}px`;
   },
 
-  ratio(start: number, devide: number, deviceType: keyof typeof devices) {
-    if (this.isLargeDisplay) return start + devide + "px";
+  ratio(start: number, divide: number, deviceType: keyof typeof devices) {
+    if (this.isLargeDisplay) return start + divide + "px";
 
-    return `calc(${start}px + ${devide} * (100vw - ${
+    return `calc(${start}px + ${divide} * (100vw - ${
       devices[deviceType]
     }px) / ${1440 - devices[deviceType]})`;
   },
 };
 
-const Theme: FC<{ isLargeDisplay: boolean; children?: ReactNode }> = ({
-  isLargeDisplay,
-  children,
-}) => {
+type ThemeProps = { isLargeDisplay: boolean; children?: ReactNode };
+
+const Theme: FC<ThemeProps> = ({ isLargeDisplay, children }) => {
   theme.isLargeDisplay = isLargeDisplay;
 
   return (

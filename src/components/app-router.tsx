@@ -1,16 +1,15 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { publicRotes } from "~/routes";
-
-import { Loader } from "./loader";
+import { Loader } from "~/components";
+import { authRotes, publicRotes } from "~/routes";
 
 const AppRouter = () => {
-  // const [auth, setAuth] = useState(false);
+  const [auth, setAuth] = useState(false);
 
   return (
     <Routes>
-      {/* {auth &&
+      {auth &&
         authRotes.map(({ path, Component }) => (
           <Route
             path={path}
@@ -21,18 +20,25 @@ const AppRouter = () => {
               </Suspense>
             }
           />
-        ))} */}
-      {publicRotes.map(({ path, Component, Skeleton }) => (
-        <Route
-          path={path}
-          key={path}
-          element={
-            <Suspense fallback={Skeleton ? <Skeleton /> : <Loader />}>
-              <Component />
-            </Suspense>
-          }
-        />
-      ))}
+        ))}
+      {publicRotes.map(
+        ({
+          path,
+          Component,
+          // Skeleton
+        }) => (
+          <Route
+            path={path}
+            key={path}
+            element={
+              // <Suspense fallback={Skeleton ? <Skeleton /> : <Loader />}>
+              <Suspense fallback={<Loader />}>
+                <Component />
+              </Suspense>
+            }
+          />
+        )
+      )}
     </Routes>
   );
 };
