@@ -22,24 +22,24 @@ const Button = styled.button<{
     $outlined
       ? css`
           background: transparent;
-          $color: ${theme.$color[$color]};
-          transition: $color, background 0.2s ease;
-          border: 1px solid ${theme.$color[$color]};
+          color: ${theme.color[$color]};
+          transition: ${$color}, background 0.2s ease;
+          border: 1px solid ${theme.color[$color]};
           &:hover {
             $color: #ffffff;
-            background: ${theme.$color[$color]};
+            background: ${theme.color[$color]};
           }
         `
       : css`
-          transition: $color, background 0.2s linear;
+          transition: ${$color}, background 0.2s linear;
           background: ${({ theme }) =>
-            $disabled ? theme.$color.grey : theme.$color.orange};
-          $color: #ffffff;
-          border: 1px solid ${theme.$color[$color]};
+            theme.color[$disabled ? "grey" : "orange"]};
+          color: #ffffff;
+          border: 1px solid ${theme.color[$color]};
 
           &:hover {
-            background: ${$disabled ? theme.$color.grey : "transparent"};
-            $color: ${theme.$color[$color]};
+            background: ${$disabled ? theme.color.grey : "transparent"};
+            $color: ${theme.color[$color]};
           }
         `}
 `;

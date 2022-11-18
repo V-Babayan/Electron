@@ -35,13 +35,13 @@ export const Container = styled.ul`
   }
 `;
 
-export const Controls = styled.div`
+export const Controls = styled.div<{ $list?: boolean }>`
   display: flex;
   justify-content: center;
   gap: 8px;
 
-  ${({ list }) =>
-    list
+  ${({ $list }) =>
+    $list
       ? css`
           margin-top: 20px;
         `

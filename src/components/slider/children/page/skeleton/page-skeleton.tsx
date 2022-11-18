@@ -1,8 +1,10 @@
-import { useMedia } from "hooks";
+import React, { FC } from "react";
+
+import { useMedia } from "~/hooks";
 
 import * as Styled from "./styled";
 
-const PageSkeleton = () => {
+const PageSkeleton: FC = () => {
   const isTablet = useMedia("tablet");
 
   return (

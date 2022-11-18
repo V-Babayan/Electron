@@ -43,7 +43,7 @@ const Subtotal = styled.div`
   color: #232323;
   margin-bottom: ${({ theme }) => theme.ratio(10, 42, "mobileS")};
 
-  ::after {
+  &::after {
     content: "";
 
     position: absolute;
@@ -141,4 +141,4 @@ const TotalPrice = styled.div`
     font-size: 18px;
   }
 `;
-export { CartTotal, Content, Subtotal, Form, SelectWrapper, TotalPrice };
+export { CartTotal, Content, Form, SelectWrapper, Subtotal, TotalPrice };

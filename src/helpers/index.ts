@@ -1,7 +1,7 @@
 export * from "./constants";
 
-export * from "./indexOfCart";
-export * from "./getCategoriesByProducts";
 export * from "./filterWithProperty";
-export * from "./sliceProductsToPages";
 export * from "./generateId";
+export * from "./getCategoriesByProducts";
+export * from "./indexOfCart";
+export * from "./sliceProductsToPages";
