@@ -26,7 +26,7 @@ const Button = styled.button<{
           transition: ${$color}, background 0.2s ease;
           border: 1px solid ${theme.color[$color]};
           &:hover {
-            $color: #ffffff;
+            color: #ffffff;
             background: ${theme.color[$color]};
           }
         `
@@ -39,7 +39,7 @@ const Button = styled.button<{
 
           &:hover {
             background: ${$disabled ? theme.color.grey : "transparent"};
-            $color: ${theme.color[$color]};
+            color: ${theme.color[$color]};
           }
         `}
 `;

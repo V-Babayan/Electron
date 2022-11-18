@@ -9,7 +9,7 @@ const Container = styled.div`
 const Input = styled.input`
   display: none;
 
-  :checked ~ label {
+  &:checked ~ label {
     border-color: ${({ theme }) => theme.color.blue};
   }
 `;
@@ -29,7 +29,7 @@ const Label = styled.label`
 
   transition: background 0.25s linear;
 
-  :hover {
+  &:hover {
     background: #b5b5b5;
   }
 `;

@@ -35,7 +35,7 @@ export const HomeLink = styled(Link)`
   color: #008cff;
   font-weight: 700;
 
-  :hover {
+  &:hover {
     color: #008cff85;
   }
 `;
