@@ -1,9 +1,11 @@
+import React, { FC } from "react";
+
 import { InfoContainer } from "../children/product-info/styled";
 import { Container } from "../styled";
 
 import * as Styled from "./styled";
 
-const CardSkeleton = () => {
+const CardSkeleton: FC = () => {
   return (
     <Container>
       <Styled.ImageSkeleton />

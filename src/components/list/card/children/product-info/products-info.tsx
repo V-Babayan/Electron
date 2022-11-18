@@ -1,10 +1,15 @@
-import React from "react";
+import React, { FC } from "react";
 
-import Rating from "components/core-ui/rating";
+import { Rating } from "~/components";
+import { Product } from "~/store";
 
 import * as Styled from "./styled";
 
-const ProductInfo = ({ product }) => {
+type ProductInfoProps = {
+  product: Product;
+};
+
+const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
   return (
     <Styled.InfoContainer>
       <Styled.Title>{product.title}</Styled.Title>

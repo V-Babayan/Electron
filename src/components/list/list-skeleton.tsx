@@ -2,7 +2,7 @@ import React, { FC, useMemo } from "react";
 
 import { useMedia } from "~/hooks";
 
-import { CardSkeleton } from "./card/skeleton";
+import { CardSkeleton } from "./card";
 
 import { ProductList } from "./styled";
 

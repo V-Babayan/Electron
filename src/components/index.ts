@@ -6,6 +6,7 @@ export * from "./header/header";
 export * from "./loader/loader";
 
 export * from "./core-ui";
+export * from "./list";
 
 export * from "./cart-layout";
 export * from "./products-layout";
