@@ -1,32 +1,29 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
-import { getProduct } from "api";
-import { selectRelatedProducts } from "store";
-
-import { Slider, Info, Description } from "components/product-layout";
-import { Heading } from "components/core-ui";
-import { List } from "components/list";
+import { getProduct } from "~/api";
+import { Description, Heading, Info, List, ProductSlider } from "~/components";
+import { Product, selectRelatedProducts } from "~/store";
 
 import * as Styled from "./styled";
 
 const Product = () => {
   const { id } = useParams();
-  const [item, setItem] = useState({});
+  const [item, setItem] = useState<Product>({} as Product);
 
   const productsInRating = useSelector(selectRelatedProducts);
 
   const relatedProducts = useMemo(() => productsInRating.slice(0, 4), []);
 
   useEffect(() => {
-    getProduct(id).then((data) => setItem(data));
+    getProduct(Number(id)).then(data => setItem(data as Product));
   }, [id]);
 
   return (
     <>
       <Styled.Container>
-        <Slider images={item.images} />
+        <ProductSlider images={item.images} title="" />
         <Info product={item} />
       </Styled.Container>
 

@@ -40,4 +40,4 @@ const FavButton = styled.button`
   }
 `;
 
-export { CountWrapper, ButtonsContainer, FavButton };
+export { ButtonsContainer, CountWrapper, FavButton };

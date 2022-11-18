@@ -10,4 +10,5 @@ export * from "./list";
 export * from "./slider";
 
 export * from "./cart-layout";
+export * from "./product-layout";
 export * from "./products-layout";

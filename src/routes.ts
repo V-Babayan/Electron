@@ -4,9 +4,12 @@ import {
   CART_PAGE,
   HOME_PAGE,
   LOGIN_PAGE,
+  PRODUCT_PAGE,
   PRODUCTS_PAGE,
   PROFILE_PAGE,
 } from "~/helpers";
+
+import { HomeSkeleton } from "./pages/home/HomeSkeleton";
 // import { HomeSkeleton } from "~/pages/home/HomeSkeleton";
 
 export const authRotes = [
@@ -39,17 +42,20 @@ export const publicRotes = [
       () => import(/* webpack-chunk-name: 'pages/login */ "./pages/Login")
     ),
   },
-  // {
-  //   path: PRODUCT_PAGE,
-  //   Component: lazy(
-  //     () => import(/* webpack-chunk-name: 'pages/product' */ "./pages/product")
-  //   ),
-  // },
+  {
+    path: PRODUCT_PAGE,
+    Component: lazy(
+      () =>
+        import(
+          /* webpack-chunk-name: 'pages/product' */ "./pages/product/product"
+        )
+    ),
+  },
   {
     path: HOME_PAGE,
     Component: lazy(
       () => import(/* webpack-chunk-name: 'pages/ */ "./pages/Home")
     ),
-    // Skeleton: HomeSkeleton,
+    Skeleton: HomeSkeleton,
   },
 ];

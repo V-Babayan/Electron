@@ -1,28 +1,28 @@
-import { ReactComponent as CheckbirdIcon } from "assets/icons/checkbird.svg";
+import React, { FC } from "react";
 
-import { Rating } from "components/core-ui/";
+import { CheckBirdIcon } from "~/assets/icons";
+import { Rating } from "~/components";
+import { Product } from "~/store";
+
+import { AddToCartForm } from "./add-to-cart-form/add-to-cartForm";
 
 import * as Styled from "./styled";
-import { AddToCartForm } from "./add-to-cart-form";
 
-const Info = ({ product }) => {
+const Info: FC<{ product: Product }> = ({ product }) => {
   return (
     <div>
       <Styled.InfoContainer>
         <Styled.ProductName>{product.title}</Styled.ProductName>
         <Styled.ProductPrice>${product.price}</Styled.ProductPrice>
-        <Rating
-          defRating={product.rating}
-          big
-        />
+        <Rating defRating={product.rating} big />
         <Styled.ProductHaveIndicator>
-          Availability: <CheckbirdIcon />
+          Availability: <CheckBirdIcon />
           <span>In stock</span>
         </Styled.ProductHaveIndicator>
         <div>
           {product.count
             ? `Hurry up! only ${product.count} product left in stock!`
-            : "Sory this product isn't in stock"}
+            : "Sorry this product isn't in stock"}
         </div>
       </Styled.InfoContainer>
       <AddToCartForm product={product} />
