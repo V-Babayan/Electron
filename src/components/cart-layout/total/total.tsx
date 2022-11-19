@@ -1,14 +1,13 @@
 import React, { ChangeEvent, FC, useState } from "react";
-import { useSelector } from "react-redux";
 
 import { MoreIcon } from "~/assets/icons";
 import { Button } from "~/components";
-import { selectCartTotalAmount } from "~/store";
+import { selectCartTotalAmount, useAppSelector } from "~/store";
 
 import * as Styled from "./styled";
 
 const Total: FC = () => {
-  const totalAmount = useSelector(selectCartTotalAmount);
+  const totalAmount = useAppSelector(selectCartTotalAmount);
   const [count, setCount] = useState(1);
 
   const changeHandler = (e: ChangeEvent<HTMLSelectElement>) => {

@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-import { useSelector } from "react-redux";
 
 import {
   Heading,
@@ -11,10 +10,10 @@ import {
 } from "~/components";
 import { sliceProductsToPages } from "~/helpers";
 import { useMedia } from "~/hooks";
-import { selectRelatedProducts } from "~/store";
+import { selectRelatedProducts, useAppSelector } from "~/store";
 
 const Home = () => {
-  const products = useSelector(selectRelatedProducts);
+  const products = useAppSelector(selectRelatedProducts);
 
   const isMobile = useMedia("mobile");
   const isTablet = useMedia("tablet");

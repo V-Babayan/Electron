@@ -8,9 +8,7 @@ import {
   PRODUCTS_PAGE,
   PROFILE_PAGE,
 } from "~/helpers";
-
-import { HomeSkeleton } from "./pages/home/HomeSkeleton";
-// import { HomeSkeleton } from "~/pages/home/HomeSkeleton";
+import { HomeSkeleton } from "~/pages/home/HomeSkeleton";
 
 export const authRotes = [
   {

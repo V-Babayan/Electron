@@ -1,5 +1,7 @@
 import { createSelector } from "@reduxjs/toolkit";
+
 import { getCategoriesByProducts } from "~/helpers";
+
 import { RootState } from "./store";
 
 const selectProducts = (state: RootState) => state.products.products;

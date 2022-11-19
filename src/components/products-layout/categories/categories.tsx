@@ -1,7 +1,6 @@
 import React, { ChangeEvent, FC } from "react";
-import { useSelector } from "react-redux";
 
-import { selectCategories } from "~/store";
+import { selectCategories, useAppSelector } from "~/store";
 
 import * as Styled from "./styled";
 
@@ -14,7 +13,7 @@ const Categories: FC<CategoriesProps> = ({
   currentCategories,
   changeHandler,
 }) => {
-  const categories = useSelector(selectCategories);
+  const categories = useAppSelector(selectCategories);
 
   return (
     <Styled.Container>
