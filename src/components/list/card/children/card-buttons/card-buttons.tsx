@@ -15,7 +15,7 @@ type CardButtonsProps = {
 const CardButtons: FC<CardButtonsProps> = ({ item }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const isDesctop = useMedia("desctop");
+  const isDesktop = useMedia("desktop");
 
   const clickHandler = useCallback(
     () => navigate(`${`/products/${item.id}`}`),
@@ -30,7 +30,7 @@ const CardButtons: FC<CardButtonsProps> = ({ item }) => {
     <Styled.ButtonsContainer>
       <Styled.Button onClick={addToCartHandler}>
         <span>Add to Cart</span>
-        {isDesctop && (
+        {isDesktop && (
           <Styled.IconBlock>
             <CartIcon />
           </Styled.IconBlock>

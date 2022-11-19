@@ -7,7 +7,7 @@ import { Theme } from "~/styles/";
 
 function App() {
   const dispatch = useAppDispatch();
-  const isLargeDisplay = useMedia("desctopL");
+  const isLargeDisplay = useMedia("desktopL");
 
   useEffect(() => {
     dispatch(fetchProducts());
