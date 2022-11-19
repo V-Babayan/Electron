@@ -1,15 +1,19 @@
 import { Product } from "~/store/types";
-import { RequestMetonds, makeRequest } from "../makeRequest";
 
-const getProducts = () => {
-  return makeRequest<Product[]>({
+import { makeRequest, RequestMethods } from "../makeRequest";
+
+const getProducts = async () => {
+  return await makeRequest<Product[]>({
     url: "products/",
-    method: RequestMetonds.GET,
+    method: RequestMethods.GET,
   });
 };
 
-const getProduct = (id: number) => {
-  return makeRequest({ url: `products/${id}`, method: RequestMetonds.GET });
+const getProduct = async (id: number) => {
+  return await makeRequest<Product>({
+    url: `products/${id}`,
+    method: RequestMethods.GET,
+  });
 };
 
-export { getProducts, getProduct };
+export { getProduct, getProducts };

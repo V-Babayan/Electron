@@ -1,4 +1,4 @@
-import React, { FC, memo } from "react";
+import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Button } from "~/components";
@@ -40,4 +40,4 @@ const Page: FC<PageProps> = ({ product, index }) => {
   );
 };
 
-export default memo(Page);
+export { Page };

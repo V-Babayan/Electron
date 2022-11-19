@@ -1,7 +1,5 @@
-export { asyncGetProducts } from "./actions";
-
 export { addProduct, deleteElement, emptyCart } from "./cart/cartSlice";
-export { setProducts } from "./productsSlice";
+export * from "./productsSlice";
 
 export {
   selectCart,

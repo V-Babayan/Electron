@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Row = styled.tr`
+export const CartItem = styled.tr`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,7 +33,7 @@ const Row = styled.tr`
   }
 `;
 
-const Figure = styled.figure`
+export const Figure = styled.figure`
   width: 100%;
   display: flex;
   align-items: center;
@@ -62,5 +62,3 @@ const Figure = styled.figure`
     color: ${({ theme }) => theme.color.blue};
   }
 `;
-
-export { Row, Figure };

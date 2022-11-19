@@ -17,7 +17,7 @@ const CartItem: FC<CartItemProps> = ({ cartItem }) => {
   const dispatch = useDispatch();
 
   const deleteCartElement = () => {
-    dispatch(deleteElement(id));
+    dispatch(deleteElement({ id }));
   };
 
   const productCountIncrementHandler = () => {
@@ -28,7 +28,7 @@ const CartItem: FC<CartItemProps> = ({ cartItem }) => {
   };
 
   return (
-    <Styled.Row>
+    <Styled.CartItem>
       <td>
         <Styled.Figure>
           <div>
@@ -54,7 +54,7 @@ const CartItem: FC<CartItemProps> = ({ cartItem }) => {
           <DeleteIcon width="24" height="25" />
         </button>
       </td>
-    </Styled.Row>
+    </Styled.CartItem>
   );
 };
 

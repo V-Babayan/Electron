@@ -1,6 +1,6 @@
 import { BASE_URL } from "~/helpers";
 
-export enum RequestMetonds {
+export enum RequestMethods {
   GET = "GET",
   PUT = "PUT",
   DELETE = "DELETE",
@@ -10,24 +10,24 @@ export enum RequestMetonds {
 
 type MakeRequestConfigs = {
   url?: string;
-  method?: RequestMetonds;
+  method?: RequestMethods;
   headers?: HeadersInit;
   body?: BodyInit;
 };
 
 export const makeRequest = async <T>({
   url = "/",
-  method = RequestMetonds.GET,
+  method = RequestMethods.GET,
   headers = {},
   body,
-}: MakeRequestConfigs): Promise<T> => {
+}: MakeRequestConfigs): Promise<T> | never => {
   return await fetch(BASE_URL + url, {
     method,
     headers,
     body,
   })
-    .then((res) => res.json())
-    .catch((error) => {
+    .then(res => res.json())
+    .catch((error: string) => {
       throw new Error(error);
     });
 };

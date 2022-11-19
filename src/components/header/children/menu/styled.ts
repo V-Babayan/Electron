@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Burger = styled.div<{ active: boolean }>`
+export const Burger = styled.div<{ active: boolean }>`
   position: relative;
   z-index: 20;
   width: 40px;
@@ -33,7 +33,7 @@ const Burger = styled.div<{ active: boolean }>`
   }
 `;
 
-const Nav = styled.nav`
+export const Nav = styled.nav`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -60,4 +60,31 @@ const Nav = styled.nav`
     margin-left: 0;
   }
 `;
-export { Burger, Nav };
+
+export const DropList = styled.ul`
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  text-align: center;
+`;
+
+export const DropItem = styled.li`
+  background: #f4f4f4;
+  a {
+    display: block;
+    padding: 10px 0;
+  }
+  transition: background 0.1s linear;
+  &:hover {
+    background: #cdcdcd;
+  }
+`;
+
+export const DropButton = styled.div`
+  padding: ${({ theme }) => theme.ratio(10, 14, "mobileS")};
+  font-size: 16px;
+  line-height: 1.5;
+  svg {
+    stroke: #292d32;
+  }
+`;

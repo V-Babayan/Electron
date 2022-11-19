@@ -1,8 +1,9 @@
 import React, { FC, useState } from "react";
 import { Link } from "react-router-dom";
 
+import { MoreIcon } from "~/assets/icons";
 import { Dropdown } from "~/components";
-import { PRODUCTS_PAGE } from "~/helpers";
+import { CART_PAGE, HOME_PAGE, PRODUCTS_PAGE } from "~/helpers";
 import { useMedia } from "~/hooks";
 
 import * as Styled from "./styled";
@@ -22,7 +23,26 @@ const Menu: FC = () => {
       {(menuActive || isTablet) && (
         <Styled.Nav>
           <Link to={PRODUCTS_PAGE}>Products</Link>
-          <Dropdown defaultTitle="Pages" options={["Home", "About", "Cart"]} />
+          <Dropdown
+            overlay={
+              <Styled.DropList>
+                <Styled.DropItem>
+                  <Link to={HOME_PAGE}>Home</Link>
+                </Styled.DropItem>
+                {/* <li>
+                  <Link to={}>About</Link>
+                </li> */}
+                <Styled.DropItem>
+                  <Link to={CART_PAGE}>Cart</Link>
+                </Styled.DropItem>
+              </Styled.DropList>
+            }
+          >
+            <Styled.DropButton>
+              Pages <MoreIcon />
+            </Styled.DropButton>
+          </Dropdown>
+
           <Link to="">About us</Link>
         </Styled.Nav>
       )}

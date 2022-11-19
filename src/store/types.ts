@@ -12,6 +12,8 @@ export interface Product {
 }
 export interface ProductsState {
   products: Product[];
+  status: "init" | "loading" | "success" | "error";
+  errorMessage: null | string;
 }
 
 export interface CartProduct {
