@@ -9,6 +9,8 @@ import Rating from "../components/core-ui/rating/Rating";
 import CountBlock from "../components/count-block/CountBlock";
 import ProductSlider from "../components/product-slider/ProductSlider";
 import { addItemToCart, fetchDevice } from "../http/index";
+import { useDispatch } from "react-redux";
+import { addElement } from "../redux/cartClicer";
 
 const Container = styled.div`
   display: grid;
@@ -101,7 +103,8 @@ const FavButton = styled.button`
 `;
 
 const DescriptionWrapper = styled.div`
-  padding: ${({ theme }) => `${theme.ratio.smallPhone(10, 32)} ${theme.ratio.smallPhone(10, 40)}`};
+  padding: ${({ theme }) =>
+    `${theme.ratio.smallPhone(10, 32)} ${theme.ratio.smallPhone(10, 40)}`};
   border: 1px solid #b8b8b8;
   border-radius: 20px;
 
@@ -130,12 +133,23 @@ const Product = () => {
   const [item, setItem] = useState({});
   const [count, setCount] = useState(1);
 
+  const dispatch = useDispatch();
+
+  const [isDisabled, setIsDisabled] = useState(false);
+
   useEffect(() => {
     fetchDevice(id).then((json) => setItem(json));
   }, [id]);
 
   const clickHandler = () => {
-    addItemToCart(item, count);
+    setIsDisabled(true);
+
+    addItemToCart(item, count)
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch(addElement(data));
+      })
+      .finally(() => setIsDisabled(false));
   };
 
   return (
@@ -148,10 +162,7 @@ const Product = () => {
           <InfoContainer>
             <ItemTitle>{item.title}</ItemTitle>
             <Price>${item.price}</Price>
-            <Rating
-              defRating={item.rating}
-              big
-            />
+            <Rating defRating={item.rating} big />
             <Indicator>
               Availability: <CheckBird />
               <span>In stock</span>
@@ -174,9 +185,7 @@ const Product = () => {
             </CountWrapper>
 
             <ButtonsContainer>
-              <Button
-                large
-                onClick={clickHandler}>
+              <Button large onClick={clickHandler} disabled={isDisabled}>
                 Add to cart
               </Button>
               <Button large>Buy it now</Button>
