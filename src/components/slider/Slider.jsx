@@ -10,23 +10,22 @@ const Slider = ({ pages = [{}] }) => {
 
   const scrollHandler = useCallback(
     (e) => {
-      const changingPage = Math.round(e.target.scrollLeft / e.target.clientWidth) - page;
+      const changingPage =
+        Math.round(e.target.scrollLeft / e.target.clientWidth) - page;
       changingPage && setPage((prev) => prev + changingPage);
     },
     [page]
   );
 
+  if (!pages.length) {
+    return <div style={{ width: "100%", height: "533px" }}>Loading...</div>;
+  }
+
   return (
     <Wrapper>
-      <Container
-        onScroll={scrollHandler}
-        ref={containerRef}>
+      <Container onScroll={scrollHandler} ref={containerRef}>
         {pages.map((page, index) => (
-          <Page
-            key={page.id}
-            page={page}
-            index={index}
-          />
+          <Page key={page.id} page={page} index={index} />
         ))}
       </Container>
       <Controls>
