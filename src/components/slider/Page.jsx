@@ -28,7 +28,7 @@ const Page = ({ page, index }) => {
       <PageRight>
         <ImageBlock price={page.price}>
           <img
-            src={page.imageUrl}
+            src={page.imageUrl || ""}
             alt={page.title}
             loading={index ? "lazy" : undefined}
           />
