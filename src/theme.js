@@ -104,23 +104,23 @@ const theme = {
   },
 
   media: {
-    MaxLargeDesctop: "(max-width: 1440px)",
-    MinLargeDesctop: "(min-width: 1440px)",
+    MaxLargeDesctop: "max-width: 1440px",
+    MinLargeDesctop: "min-width: 1440px",
 
-    MaxDesctop: "(max-width: 1200px)",
-    MinDesctop: "(min-width: 1200px)",
+    MaxDesctop: "max-width: 1200px",
+    MinDesctop: "min-width: 1200px",
 
-    MaxNotebook: "(max-width: 991.98px)",
-    MinNotebook: "(min-width: 992px)",
+    MaxNotebook: "max-width: 991.98px",
+    MinNotebook: "min-width: 992px",
 
-    MaxTablet: "(max-width: 767.98px)",
-    MinTablet: "(min-width: 768px)",
+    MaxTablet: "max-width: 767.98px",
+    MinTablet: "min-width: 768px",
 
-    MaxMobile: "(max-width: 575.98px)",
-    MinMobile: "(min-width: 576px)",
+    MaxMobile: "max-width: 575.98px",
+    MinMobile: "min-width: 576px",
 
-    MaxSmallMobile: "(max-width: 479.98px)",
-    MinSmallMobile: "(min-width: 480px)",
+    MaxSmallMobile: "max-width: 479.98px",
+    MinSmallMobile: "min-width: 480px",
   },
 
   color: {
