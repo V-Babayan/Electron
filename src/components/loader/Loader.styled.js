@@ -14,19 +14,19 @@ const loading = keyframes`
   }
 `;
 
-export const StyledLoaderWrapper = styled.div`
+export const StyledLoader = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
+  ::after {
+    content: "";
 
-export const StyledLoader = styled.div`
-  width: 150px;
-  height: 150px;
-  margin-top: 20px;
+    width: 150px;
+    height: 150px;
 
-  border-radius: 50%;
-  border: 10px dotted #39739d;
+    border-radius: 50%;
+    border: 10px dotted #39739d;
 
-  animation: ${loading} 2s linear infinite;
+    animation: ${loading} 2s linear infinite;
+  }
 `;

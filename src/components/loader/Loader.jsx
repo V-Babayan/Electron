@@ -1,13 +1,9 @@
 import React from "react";
 
-import { StyledLoader, StyledLoaderWrapper } from "./Loader.styled.js";
+import { StyledLoader } from "./Loader.styled.js";
 
-const Loader = () => {
-  return (
-    <StyledLoaderWrapper>
-      <StyledLoader />
-    </StyledLoaderWrapper>
-  );
+const Loader = (props) => {
+  return <StyledLoader {...props} />;
 };
 
 export default Loader;
