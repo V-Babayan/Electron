@@ -1,4 +1,4 @@
-import React, { useState, useRef, memo, useCallback } from "react";
+import React, { useState, useRef, useCallback } from "react";
 
 import Page from "./Page";
 import Control from "./Control";
@@ -43,4 +43,4 @@ const Slider = ({ pages = [{}] }) => {
   );
 };
 
-export default memo(Slider);
+export default Slider;
