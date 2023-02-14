@@ -4,28 +4,33 @@ import Page from "./Page";
 import Control from "./Control";
 import { Wrapper, Container, Controls } from "./Slider.styled";
 
-const Slider = ({ pages = [{}] }) => {
+const Slider = ({ pages = [] }) => {
   const [page, setPage] = useState(0);
   const containerRef = useRef();
 
   const scrollHandler = useCallback(
     (e) => {
-      const changingPage =
-        Math.round(e.target.scrollLeft / e.target.clientWidth) - page;
+      const changingPage = Math.round(e.target.scrollLeft / e.target.clientWidth) - page;
       changingPage && setPage((prev) => prev + changingPage);
     },
     [page]
   );
 
-  if (!pages.length) {
-    return <div style={{ width: "100%", height: "533px" }}>Loading...</div>;
-  }
+  // if (!pages.length) {
+  //   return <Loader />;
+  // }
 
   return (
     <Wrapper>
-      <Container onScroll={scrollHandler} ref={containerRef}>
+      <Container
+        onScroll={scrollHandler}
+        ref={containerRef}>
         {pages.map((page, index) => (
-          <Page key={page.id} page={page} index={index} />
+          <Page
+            key={page.id}
+            page={page}
+            index={index}
+          />
         ))}
       </Container>
       <Controls>
