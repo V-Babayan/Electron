@@ -8,13 +8,16 @@ const Home = () => {
   const products = useSelector((state) => state.products.products);
 
   const sliderProducts = useMemo(
-    () => [...products].sort((a, b) => b.rating - a.rating).slice(0, 4),
+    () =>
+      products.length
+        ? [...products].sort((a, b) => b.rating - a.rating).slice(0, 4)
+        : [{ id: Date.now() }],
     [products]
   );
 
   return (
     <>
-      <Slider pages={sliderProducts} />
+      <Slider pages={sliderProducts.length ? sliderProducts : [{ id: 1 }]} />
       <List
         products={products.slice(0, 12)}
         title={"Popular products"}

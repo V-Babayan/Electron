@@ -16,10 +16,6 @@ const Slider = ({ pages = [] }) => {
     [page]
   );
 
-  // if (!pages.length) {
-  //   return <Loader />;
-  // }
-
   return (
     <Wrapper>
       <Container
