@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/Electron/static/js/main.d9c2c802.js",
+    "main.js": "/Electron/static/js/main.649f35f1.js",
     "static/js/315.f76af06a.chunk.js": "/Electron/static/js/315.f76af06a.chunk.js",
     "static/js/909.a4bd8fa0.chunk.js": "/Electron/static/js/909.a4bd8fa0.chunk.js",
     "static/js/852.5ad6ca9a.chunk.js": "/Electron/static/js/852.5ad6ca9a.chunk.js",
@@ -21,7 +21,7 @@
     "static/media/more.svg": "/Electron/static/media/more.078cd269f042fcb87f307574dab017ae.svg",
     "static/media/checkbird.svg": "/Electron/static/media/checkbird.4f40785d114758c22d0d3bb8821d22e7.svg",
     "static/media/smallCheckbird.svg": "/Electron/static/media/smallCheckbird.bcd388777fb11a5e3e23b5e10ec16d18.svg",
-    "main.d9c2c802.js.map": "/Electron/static/js/main.d9c2c802.js.map",
+    "main.649f35f1.js.map": "/Electron/static/js/main.649f35f1.js.map",
     "315.f76af06a.chunk.js.map": "/Electron/static/js/315.f76af06a.chunk.js.map",
     "909.a4bd8fa0.chunk.js.map": "/Electron/static/js/909.a4bd8fa0.chunk.js.map",
     "852.5ad6ca9a.chunk.js.map": "/Electron/static/js/852.5ad6ca9a.chunk.js.map",
@@ -30,6 +30,6 @@
     "570.e66c6f4b.chunk.js.map": "/Electron/static/js/570.e66c6f4b.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.d9c2c802.js"
+    "static/js/main.649f35f1.js"
   ]
 }
