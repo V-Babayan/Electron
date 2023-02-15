@@ -70,14 +70,20 @@ export const HeaderLink = styled.div`
   transition: color 0.1s linear;
 
   div {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 3px;
+
     ${({ cartSize }) =>
       cartSize &&
       css`
         &::after {
           content: "${cartSize}";
+          position: absolute;
+          right: -25%;
+          top: -25%;
+
           display: flex;
           align-items: center;
           justify-content: center;
@@ -96,6 +102,7 @@ export const HeaderLink = styled.div`
         }
       `}
   }
+
   svg {
     transition: stroke 0.1s linear;
   }
