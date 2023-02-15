@@ -41,10 +41,12 @@ export const SNav = styled.nav`
   align-items: center;
 
   @media screen and (${({ theme }) => theme.media.MaxTablet}) {
+    background: inherit;
     flex-direction: column;
     position: absolute;
     right: 0;
     top: 100%;
+    z-index: 999;
   }
 
   @media screen and (${({ theme }) => theme.media.MaxNotebook}) {
