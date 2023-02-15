@@ -6,11 +6,12 @@ import { deleteElement } from "../../redux/cartClicer";
 import { deleteCartItem } from "../../http";
 
 import CountBlock from "../count-block/CountBlock";
-import { Row, SButton, SFigure } from "./CartItem.styled";
+import { Row, SFigure } from "./CartItem.styled";
 import deleteIcon from "../../assets/icons/delete.svg";
 
 const CartItem = ({ item = {}, count, id }) => {
   const disaptch = useDispatch();
+
   const clickHandler = () => {
     deleteCartItem(id);
     disaptch(deleteElement(id));
@@ -31,20 +32,23 @@ const CartItem = ({ item = {}, count, id }) => {
           </figcaption>
         </SFigure>
       </td>
-      <td>${item.price}</td>
-      <td>
-        <CountBlock count={count} />
+      <td data-title='Price'>${item.price}</td>
+      <td data-title='Count'>
+        <CountBlock
+          count={count}
+          responsive
+        />
       </td>
-      <td>${item.price * count}</td>
+      <td data-title='Subtotal'>${item.price * count}</td>
       <td>
-        <SButton onClick={clickHandler}>
+        <button onClick={clickHandler}>
           <img
             src={deleteIcon}
             width='24'
             height='25'
             alt='Delete icon'
           />
-        </SButton>
+        </button>
       </td>
     </Row>
   );

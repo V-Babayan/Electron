@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { ReactComponent as MoreIcon } from "../../assets/icons/more.svg";
 import Button from "../core-ui/button/Button";
-import { Content, Form, SCartTotal, SelectWrapper, Subtotal, TotalPrice } from "./CartTotal.styled";
+import { SCartTotal, Content, Form, SelectWrapper, Subtotal, TotalPrice } from "./CartTotal.styled";
 
 const CartTotal = () => {
   const cart = useSelector((state) => state.cart.cart);

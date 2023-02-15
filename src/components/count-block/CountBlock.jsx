@@ -1,9 +1,9 @@
 import React, { memo } from "react";
 import { SCountBlock } from "./CountBlock.styled";
 
-const CountBlock = ({ count, setCount, maxCount }) => {
+const CountBlock = ({ count, setCount, maxCount, responsive }) => {
   return (
-    <SCountBlock>
+    <SCountBlock responsive>
       <button
         onClick={() => setCount((prev) => prev - 1)}
         disabled={count === 1}>

@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const SCartTotal = styled.section`
-  align-self: flex-start;
-  width: 100%;
+  @media screen and (${({ theme }) => theme.media.MinNotebook}) {
+    align-self: flex-start;
+  }
   text-align: center;
   border: 1px solid #c3c3c3;
 
@@ -16,8 +17,14 @@ export const SCartTotal = styled.section`
     padding: 12px;
   }
 `;
+
 export const Content = styled.div`
-  padding: 20px 44px 24px;
+  padding: ${({ theme }) => `
+      ${theme.ratio.smallPhone(10, 10)}
+      ${theme.ratio.smallPhone(10, 34)}
+      ${theme.ratio.smallPhone(10, 14)}
+    `};
+
   & > button {
     width: 100%;
     border-radius: 32px;
@@ -28,24 +35,37 @@ export const Subtotal = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+
   font-weight: 500;
   font-size: 20px;
   line-height: 1.5;
-
   color: #232323;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #afafaf;
+  margin-bottom: ${({ theme }) => theme.ratio.smallPhone(10, 42)};
 
-  margin-bottom: 32px;
+  ::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    border-bottom: 1px solid #afafaf;
+
+    /* top: calc(100% + 30px); */
+    bottom: ${({ theme }) => theme.ratio.smallPhone(-5, -25)};
+    left: 0;
+  }
+
   span {
     font-size: 22px;
   }
 `;
+
 export const Form = styled.form`
   padding: 14px 23px;
   border: 1px solid #dfdfdf;
   border-radius: 20px;
-  margin-bottom: 60px;
+  margin-bottom: ${({ theme }) => theme.ratio.smallPhone(10, 50)};
   position: relative;
 
   display: flex;
@@ -77,14 +97,14 @@ export const Form = styled.form`
     width: 100%;
     border-bottom: 1px solid #afafaf;
 
-    top: calc(100% + 30px);
+    bottom: ${({ theme }) => theme.ratio.smallPhone(-5, -25)};
     left: 0;
   }
 `;
 
 export const SelectWrapper = styled.div`
   position: relative;
-  margin-bottom: 28px;
+  margin-bottom: ${({ theme }) => theme.ratio.smallPhone(8, 20)};
 
   select {
     width: 100%;
@@ -105,14 +125,12 @@ export const SelectWrapper = styled.div`
   }
 `;
 
-export const Select = styled.select``;
-
 export const TotalPrice = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  margin-bottom: 30px;
+  margin-bottom: ${({ theme }) => theme.ratio.smallPhone(15, 15)};
 
   line-height: 1.5;
   color: #232323;
