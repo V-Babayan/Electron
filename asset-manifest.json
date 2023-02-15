@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/Electron/static/js/main.287538ca.js",
+    "main.js": "/Electron/static/js/main.95737eb9.js",
     "static/js/315.f76af06a.chunk.js": "/Electron/static/js/315.f76af06a.chunk.js",
-    "static/js/909.a4bd8fa0.chunk.js": "/Electron/static/js/909.a4bd8fa0.chunk.js",
+    "static/js/909.2e56abe6.chunk.js": "/Electron/static/js/909.2e56abe6.chunk.js",
     "static/js/852.5ad6ca9a.chunk.js": "/Electron/static/js/852.5ad6ca9a.chunk.js",
     "static/js/38.cd72c2ef.chunk.js": "/Electron/static/js/38.cd72c2ef.chunk.js",
-    "static/js/646.1f22c5fb.chunk.js": "/Electron/static/js/646.1f22c5fb.chunk.js",
+    "static/js/646.ac7c97f6.chunk.js": "/Electron/static/js/646.ac7c97f6.chunk.js",
     "static/js/570.e66c6f4b.chunk.js": "/Electron/static/js/570.e66c6f4b.chunk.js",
     "static/media/whatsapp.svg": "/Electron/static/media/whatsapp.3b844184a3c25e5bc9c3295506f01244.svg",
     "static/media/google.svg": "/Electron/static/media/google.7cd1853af3427ba5e9e3c5430994655e.svg",
@@ -16,20 +16,20 @@
     "static/media/heart.svg": "/Electron/static/media/heart.5a68a1af106c3f59169015e3000e80c1.svg",
     "static/media/send.svg": "/Electron/static/media/send.0f7db62f7fa6fb62caa36cb3d9e559d3.svg",
     "static/media/profile.svg": "/Electron/static/media/profile.3c0197bfff5dfca7fc5d251aaf72aaa5.svg",
-    "static/media/delete.svg": "/Electron/static/media/delete.645abf9bbfe5dc64ec94ada5a1b60a77.svg",
     "index.html": "/Electron/index.html",
+    "static/media/delete.svg": "/Electron/static/media/delete.645abf9bbfe5dc64ec94ada5a1b60a77.svg",
     "static/media/more.svg": "/Electron/static/media/more.078cd269f042fcb87f307574dab017ae.svg",
     "static/media/checkbird.svg": "/Electron/static/media/checkbird.4f40785d114758c22d0d3bb8821d22e7.svg",
     "static/media/smallCheckbird.svg": "/Electron/static/media/smallCheckbird.bcd388777fb11a5e3e23b5e10ec16d18.svg",
-    "main.287538ca.js.map": "/Electron/static/js/main.287538ca.js.map",
+    "main.95737eb9.js.map": "/Electron/static/js/main.95737eb9.js.map",
     "315.f76af06a.chunk.js.map": "/Electron/static/js/315.f76af06a.chunk.js.map",
-    "909.a4bd8fa0.chunk.js.map": "/Electron/static/js/909.a4bd8fa0.chunk.js.map",
+    "909.2e56abe6.chunk.js.map": "/Electron/static/js/909.2e56abe6.chunk.js.map",
     "852.5ad6ca9a.chunk.js.map": "/Electron/static/js/852.5ad6ca9a.chunk.js.map",
     "38.cd72c2ef.chunk.js.map": "/Electron/static/js/38.cd72c2ef.chunk.js.map",
-    "646.1f22c5fb.chunk.js.map": "/Electron/static/js/646.1f22c5fb.chunk.js.map",
+    "646.ac7c97f6.chunk.js.map": "/Electron/static/js/646.ac7c97f6.chunk.js.map",
     "570.e66c6f4b.chunk.js.map": "/Electron/static/js/570.e66c6f4b.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.287538ca.js"
+    "static/js/main.95737eb9.js"
   ]
 }
