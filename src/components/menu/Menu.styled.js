@@ -44,6 +44,7 @@ export const SNav = styled.nav`
     background: inherit;
     flex-direction: column;
     position: absolute;
+    padding: ${({ theme }) => theme.ratio.smallPhone(10, 58)} 0;
     right: 0;
     top: 100%;
     z-index: 999;
