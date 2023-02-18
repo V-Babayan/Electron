@@ -91,10 +91,13 @@ export const GlobalStyles = createGlobalStyle`
   #root {
     max-width: 1440px;
     margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
   }
 
   main {
-    padding: 0 ${({ theme }) => theme.ratio.smallPhone(5, 59)}
+    padding: 0 ${({ theme }) => theme.ratio.smallPhone(5, 59)};
+    flex: 1 1 auto;
   }
 `;
 
