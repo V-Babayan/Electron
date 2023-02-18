@@ -8,6 +8,10 @@ export const Container = styled.div`
 
   font-size: 16px;
   line-height: 1.6;
+
+  @media screen and (${({ theme }) => theme.media.MaxSmallMobile}) {
+    height: ${({ theme }) => theme.ratio.smallPhone(275, 500)};
+  }
 `;
 
 export const ImageBlock = styled.div`
@@ -77,7 +81,7 @@ export const StyledButton = styled.button`
   }
 
   padding: ${({ theme }) => `${theme.ratio.smallPhone(7, 8)} ${theme.ratio.smallPhone(5, 17)}`};
-  border-radius: 20px;
+  border-radius: ${({ theme }) => theme.ratio.smallPhone(15, 5)};
 
   font-weight: 600;
   font-size: 16px;
