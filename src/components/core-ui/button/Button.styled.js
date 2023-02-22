@@ -27,12 +27,12 @@ export const SButton = styled.button`
         `
       : css`
           transition: color, background 0.2s linear;
-          background: #eda415;
+          background: ${({ disabled, theme }) => (disabled ? theme.color.grey : "#eda415")};
           color: #ffffff;
           border: 1px solid #eda415;
 
           &:hover {
-            background: transparent;
+            background: ${({ disabled, theme }) => (disabled ? theme.color.grey : "transparent")};
             color: #eda415;
           }
         `}
