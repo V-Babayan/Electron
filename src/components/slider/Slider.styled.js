@@ -48,7 +48,6 @@ const snap = keyframes`
 export const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  margin-top: ${({ theme }) => theme.ratio.smallPhone(10, 30)};
 `;
 export const Container = styled.ul`
   display: flex;
