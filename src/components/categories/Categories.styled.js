@@ -22,7 +22,14 @@ export const SLabel = styled.label`
 
   display: inline-block;
   padding: 10px 30px;
-
   border: 1px solid #b5b5b5;
   border-radius: 20px;
+
+  cursor: pointer;
+
+  transition: background 0.25s linear;
+
+  :hover {
+    background: #b5b5b5;
+  }
 `;
