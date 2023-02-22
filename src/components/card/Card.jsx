@@ -15,24 +15,27 @@ import {
 } from "./Card.styled";
 
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addElement } from "../../redux/cartClicer";
+import { addItemToCart } from "../../http";
 
 const Card = ({ item }) => {
+  const cart = useSelector((state) => state.cart.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [hover, setHover] = useState(false);
 
   const clickHandler = useCallback(() => navigate(`${`/products/${item.id}`}`), [item, navigate]);
+
   const addToCart = () => {
-    fetch("https://63d254dc1780fd6ab9c1f850.mockapi.io/cart", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify({ product: item, count: 1 }),
-    });
-    dispatch(addElement({ product: item, count: 1 }));
+    addItemToCart({ product: item, count: 1 });
+    dispatch(
+      addElement({
+        product: item,
+        count: 1,
+        id: `${cart.length > 0 ? Number(cart[cart.length - 1].id) + 1 : 1}`,
+      })
+    );
   };
 
   return (
