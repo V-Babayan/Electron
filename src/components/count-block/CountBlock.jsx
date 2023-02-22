@@ -1,17 +1,17 @@
 import React, { memo } from "react";
 import { SCountBlock } from "./CountBlock.styled";
 
-const CountBlock = ({ count, setCount, maxCount, responsive }) => {
+const CountBlock = ({ count, maxCount, responsive, increment, decrement }) => {
   return (
-    <SCountBlock responsive>
+    <SCountBlock responsive={responsive}>
       <button
-        onClick={() => setCount((prev) => prev - 1)}
+        onClick={decrement}
         disabled={count === 1}>
         -
       </button>
       <span>{count}</span>
       <button
-        onClick={() => setCount((prev) => prev + 1)}
+        onClick={increment}
         disabled={count === maxCount}>
         +
       </button>

@@ -41,12 +41,13 @@ const CartTable = () => {
           </tr>
         </SThead>
         <tbody>
-          {cart.map(({ product, count, id }) => (
+          {cart.map(({ product, count, id }, index) => (
             <CartItem
               key={id}
               item={product}
               count={count}
               id={id}
+              index={index}
             />
           ))}
         </tbody>
