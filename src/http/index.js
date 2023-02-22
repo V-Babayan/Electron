@@ -31,3 +31,12 @@ export const addItemToCart = (item) =>
     },
     body: JSON.stringify(item),
   });
+
+export const changeCountInCart = (id, product, count) =>
+  fetch(`${BASE_URL}cart/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+    body: JSON.stringify({ product, count }),
+  });
