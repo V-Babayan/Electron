@@ -15,28 +15,15 @@ import {
 } from "./Card.styled";
 
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { addElement } from "../../redux/cartClicer";
-import { addItemToCart } from "../../http";
+import { useChangeElementCount } from "../../hooks/useChangeElementCount";
 
 const Card = ({ item }) => {
-  const cart = useSelector((state) => state.cart.cart);
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [hover, setHover] = useState(false);
 
-  const clickHandler = useCallback(() => navigate(`${`/products/${item.id}`}`), [item, navigate]);
+  const clickHandler = useCallback(() => navigate(`${`/products/${item.id}`}`), []);
 
-  const addToCart = () => {
-    addItemToCart({ product: item, count: 1 });
-    dispatch(
-      addElement({
-        product: item,
-        count: 1,
-        id: `${cart.length > 0 ? Number(cart[cart.length - 1].id) + 1 : 1}`,
-      })
-    );
-  };
+  const [addToCart] = useChangeElementCount(item);
 
   return (
     <Container
