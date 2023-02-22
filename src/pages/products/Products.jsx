@@ -15,9 +15,9 @@ const Products = () => {
   const products = useSelector((state) => state.products.products);
   const location = useLocation();
   const [filter, setFilter] = useState({
-    query: location.state || "",
+    query: location.state.query || "",
     brands: [],
-    categories: [],
+    categories: location.state.categories || [],
   });
   const [filteredProducts, brands] = useFilter(products, filter);
 
