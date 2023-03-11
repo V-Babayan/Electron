@@ -5,16 +5,16 @@ import AppRouter from "./components/AppRouter";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 
-import { fetchCart, fetchDevices } from "./http/index";
 import { setProducts } from "./redux/productsClicer";
 import { setCart } from "./redux/cartClicer";
+import { asyncGetProducts, asyncGetCart } from "./helpers";
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchDevices(setProducts()));
-    dispatch(fetchCart(setCart()));
+    dispatch(asyncGetProducts(setProducts()));
+    dispatch(asyncGetCart(setCart()));
   }, [dispatch]);
 
   return (

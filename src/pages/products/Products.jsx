@@ -6,7 +6,7 @@ import List from "../../components/list/List";
 import Brands from "../../components/brands/Brands";
 import Categories from "../../components/categories/Categories";
 
-import { getCategories } from "../../helpers/filters";
+import { getCategories } from "../../helpers";
 import { useFilter } from "../../hooks/useFilter";
 
 import { Container, Filter } from "./Products.styled";

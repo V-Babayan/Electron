@@ -8,7 +8,7 @@ import Rating from "../../components/core-ui/rating/Rating";
 import CountBlock from "../../components/count-block/CountBlock";
 import ProductSlider from "../../components/product-slider/ProductSlider";
 
-import { fetchDevice } from "../../http/index";
+import { getProduct } from "../../http";
 import { useChangeElementCount } from "../../hooks/useChangeElementCount";
 
 import {
@@ -26,14 +26,14 @@ const Product = () => {
   const [item, setItem] = useState({});
   const [count, setCount] = useState(1);
 
-  useEffect(() => {
-    fetchDevice(id).then((json) => setItem(json));
-  }, [id]);
-
   const [clickHandler, isDisabled] = useChangeElementCount(item, count);
 
   const incrementHandler = useCallback(() => setCount((prev) => prev + 1), []);
-  const decrementHandler = useCallback(() => setCount((prev) => prev + 1), []);
+  const decrementHandler = useCallback(() => setCount((prev) => prev - 1), []);
+
+  useEffect(() => {
+    getProduct(id).then((data) => setItem(data));
+  }, []);
 
   return (
     <>

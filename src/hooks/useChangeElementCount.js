@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addElement, changeElementCount } from "../redux/cartClicer";
 
 import { indexOfCart } from "../helpers/indexOfCart";
-import { addItemToCart, changeCountInCart } from "../http";
+import { addProductToCart, changeCountInCart } from "../http";
 
 export const useChangeElementCount = (item, count = 1) => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export const useChangeElementCount = (item, count = 1) => {
         );
         dispatch(changeElementCount({ index, count: cart[index].count + count }));
       } else {
-        addItemToCart({ product: item, count: count }).then(() => setIsProcessed(false));
+        addProductToCart({ product: item, count: count }).then(() => setIsProcessed(false));
         dispatch(
           addElement({
             product: item,

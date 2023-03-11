@@ -4,7 +4,7 @@ import CartTable from "../../components/cart-table/CartTable";
 import CartTotal from "../../components/cart-total/CartTotal";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { HOME_PAGE } from "../../helpers/consts";
+import { HOME_PAGE } from "../../helpers";
 import { Container, EmptyBlock } from "./Cart.styled";
 
 const Cart = () => {
