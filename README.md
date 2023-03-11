@@ -9,19 +9,25 @@
 - Clone a repository
 
 ```bash
+    git clone https://github.com/V-Babayan/Electron.git
+```
+
+- Change to development branch
+
+```bash
     git checkout dev
 ```
 
 - Run code
 
 ```bash
-    npm start
+    npm install && npm start
 ```
 
 or
 
 ```bash
-    yarn start
+    yarn install && yarn start
 ```
 
 - Starting to development
