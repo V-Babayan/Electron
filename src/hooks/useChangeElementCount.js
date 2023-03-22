@@ -1,40 +1,44 @@
 import { useCallback, useState } from "react";
 
-import { useDispatch, useSelector } from "react-redux";
-import { addElement, changeElementCount } from "../redux/cartClicer";
+import { useDispatch } from "react-redux";
+import { addElement, changeElementCount } from "../redux/cartSlice";
 
 import { indexOfCart } from "../helpers/indexOfCart";
-import { addProductToCart, changeCountInCart } from "../http";
+import { addProductToCart, changeCountInCart, getCart } from "../http";
 
-export const useChangeElementCount = (item, count = 1) => {
+export const useChangeElementCount = (product, changingBy = 1) => {
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart.cart);
   const [isProcessed, setIsProcessed] = useState(false);
 
-  const handler = useCallback(async () => {
-    try {
-      setIsProcessed(true);
-      const index = indexOfCart(cart, item.id);
+  const handler = useCallback(() => {
+    setIsProcessed(true);
+    getCart()
+      .then(async (cart) => {
+        const index = indexOfCart(cart, product.id);
 
-      if (index !== false) {
-        changeCountInCart(cart[index].id, item, cart[index].count + count).then(() =>
-          setIsProcessed(false)
-        );
-        dispatch(changeElementCount({ index, count: cart[index].count + count }));
-      } else {
-        addProductToCart({ product: item, count: count }).then(() => setIsProcessed(false));
-        dispatch(
-          addElement({
-            product: item,
-            count,
-            id: `${cart.length > 0 ? Number(cart[cart.length - 1].id) + 1 : 1}`,
-          })
-        );
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }, [cart, item, count]);
+        try {
+          if (index !== false) {
+            const data = await changeCountInCart(
+              cart[index].id,
+              product,
+              cart[index].count + changingBy
+            );
+            dispatch(changeElementCount({ index, count: data.count }));
+          } else {
+            const data = await addProductToCart({ product, count: 1 });
+            dispatch(addElement(data));
+          }
+        } catch (e) {
+          console.log(e);
+        } finally {
+          console.log("item add to cart");
+        }
+      })
+      .catch((e) => console.error(e))
+      .finally(() => {
+        setIsProcessed(false);
+      });
+  }, [product, changingBy, dispatch]);
 
   return [handler, isProcessed];
 };
