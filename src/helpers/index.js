@@ -1,7 +1,6 @@
 export * from "./constants";
 
-export * from "./asyncGetCart";
-export * from "./asyncGetProducts";
-
-export * from "./filters";
+export * from "./getBrandsAndCounts";
 export * from "./indexOfCart";
+export * from "./getCategoriesByProducts";
+export * from "./filterWithProperty";
