@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { devices } from "./helpers";
 
 export const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -93,64 +94,34 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
     display: flex;
     flex-flow: column nowrap;
-    gap: ${({ theme }) => theme.ratio.smallPhone(10, 30)};
+    gap: ${({ theme }) => theme.ratio(10, 30, "mobileS")};
   }
 
   main {
-    padding: 0 ${({ theme }) => theme.ratio.smallPhone(5, 59)};
+    padding: 0 ${({ theme }) => theme.ratio(5, 59, "mobileS")};
     flex: 1 1 auto;
   }
 `;
 
 const theme = {
-  primary: {
-    orange: "#eda415",
-  },
-
-  media: {
-    MaxLargeDesctop: "max-width: 1440px",
-    MinLargeDesctop: "min-width: 1440px",
-
-    MaxDesctop: "max-width: 1200px",
-    MinDesctop: "min-width: 1200px",
-
-    MaxNotebook: "max-width: 991.98px",
-    MinNotebook: "min-width: 992px",
-
-    MaxTablet: "max-width: 767.98px",
-    MinTablet: "min-width: 768px",
-
-    MaxMobile: "max-width: 575.98px",
-    MinMobile: "min-width: 576px",
-
-    MaxSmallMobile: "max-width: 479.98px",
-    MinSmallMobile: "min-width: 480px",
-  },
-
   color: {
     blue: "#003f62",
     lightblue: "#87bcd9",
-    orange: "#eda415",
+    orange: "#a76906",
     red: "#c33131",
     grey: "#a9a9a9",
   },
 
-  ratio: {
-    smallPhone(start, devide) {
-      return `calc(${start}px + ${devide} * (100vw - 320px) / 1120)`;
-    },
-    phone(start, devide) {
-      return `calc(${start}px + ${devide} * (100vw - 480px) / 980)`;
-    },
-    largePhone(start, devide) {
-      return `calc(${start}px + ${devide} * (100vw - 580px) / 880)`;
-    },
-    tablet(start, devide) {
-      return `calc(${start}px + ${devide} * (100vw - 780px) / 680)`;
-    },
-    smallNotebook(start, devide) {
-      return `calc(${start}px + ${devide} * (100vw - 990px) / 470)`;
-    },
+  media(deviceType) {
+    return `min-width: ${devices[deviceType].size}px`;
+  },
+
+  ratio(start, devide, deviceType) {
+    if (matchMedia("(max-width: 1440px)").matches)
+      return `calc(${start}px + ${devide} * (100vw - ${devices[deviceType].size}px) / ${
+        1440 - devices[deviceType].size
+      })`;
+    return start + devide + "px";
   },
 };
 
