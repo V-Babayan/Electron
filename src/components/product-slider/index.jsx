@@ -1,21 +1,22 @@
 import React, { memo, useState } from "react";
-import { ImageBlock, ChangingBlock, SButton } from "./ProductSlider.styled";
+
+import * as Styled from "./styled";
 
 const ProductSlider = ({ images = [], title }) => {
   const [imageUrl, setImageUrl] = useState(images[0]);
 
   return (
     <div>
-      <ImageBlock>
+      <Styled.ImageBlock>
         <img
           src={imageUrl || images[0]}
           alt={title}
           loading='lazy'
         />
-      </ImageBlock>
-      <ChangingBlock>
+      </Styled.ImageBlock>
+      <Styled.ChangingBlock>
         {images.map((url) => (
-          <SButton
+          <Styled.Button
             key={url}
             url={url}
             onClick={() => setImageUrl(url)}>
@@ -24,9 +25,9 @@ const ProductSlider = ({ images = [], title }) => {
               alt={title}
               loading='lazy'
             />
-          </SButton>
+          </Styled.Button>
         ))}
-      </ChangingBlock>
+      </Styled.ChangingBlock>
     </div>
   );
 };
