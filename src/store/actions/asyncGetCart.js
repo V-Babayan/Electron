@@ -1,4 +1,4 @@
-import { getCart } from "../../http";
+import { getCart } from "http";
 import { setCart } from "../cartSlice";
 
 export const asyncGetCart = () => (dispatch) => {

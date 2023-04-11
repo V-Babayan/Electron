@@ -17,13 +17,11 @@ export const authRotes = [
 export const publicRotes = [
   {
     path: CART_PAGE,
-    Component: lazy(() => import(/* webpack-chunk-name: 'pages/cart' */ "./pages/cart/Cart")),
+    Component: lazy(() => import(/* webpack-chunk-name: 'pages/cart' */ "./pages/cart")),
   },
   {
     path: PRODUCTS_PAGE,
-    Component: lazy(() =>
-      import(/* webpack-chunk-name: 'pages/products' */ "./pages/products/Products")
-    ),
+    Component: lazy(() => import(/* webpack-chunk-name: 'pages/products' */ "./pages/products")),
   },
   {
     path: LOGIN_PAGE,
@@ -31,9 +29,7 @@ export const publicRotes = [
   },
   {
     path: PRODUCT_PAGE,
-    Component: lazy(() =>
-      import(/* webpack-chunk-name: 'pages/product' */ "./pages/product/Product")
-    ),
+    Component: lazy(() => import(/* webpack-chunk-name: 'pages/product' */ "./pages/product")),
   },
   {
     path: HOME_PAGE,
