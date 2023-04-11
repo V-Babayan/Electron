@@ -1,8 +1,8 @@
 import { useMemo } from "react";
-import { getFilter } from "../helpers";
+import { getBrandsAndCounts } from "helpers";
 
 export const useFilter = (products, { query, brands, categories }) => {
-  const filteredProducts = useMemo(() => {
+  const filteredProductsAndBrands = useMemo(() => {
     const filterByQuery =
       query.length > 0
         ? products.filter(({ title }) => title.toLowerCase().includes(query.toLowerCase()))
@@ -13,7 +13,7 @@ export const useFilter = (products, { query, brands, categories }) => {
         ? filterByQuery.filter(({ category }) => categories.includes(category))
         : filterByQuery;
 
-    const brandsFilters = getFilter(filterByCategories, "brand");
+    const brandsFilters = getBrandsAndCounts(filterByCategories, "brand");
 
     const filterByBrands =
       brands.length > 0
@@ -23,5 +23,5 @@ export const useFilter = (products, { query, brands, categories }) => {
     return [filterByBrands, brandsFilters];
   }, [query, brands, categories, products]);
 
-  return filteredProducts;
+  return filteredProductsAndBrands;
 };
