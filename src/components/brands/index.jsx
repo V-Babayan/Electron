@@ -1,16 +1,17 @@
 import React from "react";
-import { Brand, HeadingBlock, StyledUl } from "./Brands.styled";
+
+import * as Styled from "./styled";
 
 const Brands = ({ filter = [], filterTitle, changeHandler, resetHandler, brands }) => {
   return (
     <aside>
-      <HeadingBlock>
+      <Styled.HeadingBlock>
         <h5>{filterTitle}</h5>
         <button onClick={resetHandler}>reset</button>
-      </HeadingBlock>
-      <StyledUl>
+      </Styled.HeadingBlock>
+      <Styled.Ul>
         {filter.map(({ name, count }) => (
-          <Brand key={name}>
+          <Styled.Brand key={name}>
             <input
               type='checkbox'
               value={name}
@@ -22,11 +23,11 @@ const Brands = ({ filter = [], filterTitle, changeHandler, resetHandler, brands 
               <label htmlFor={name}>{name}</label>
               <span>{count}</span>
             </div>
-          </Brand>
+          </Styled.Brand>
         ))}
-      </StyledUl>
+      </Styled.Ul>
     </aside>
   );
 };
 
-export default Brands;
+export { Brands };
