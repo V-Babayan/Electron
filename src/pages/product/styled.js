@@ -2,12 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: ${({ theme }) => theme.ratio.smallPhone(10, 40)};
+  gap: ${({ theme }) => theme.ratio(10, 40, "mobileS")};
   margin-bottom: 20px;
 
-  @media screen and (${({ theme }) => theme.media.MaxTablet}) {
-    grid-template-columns: 1fr;
+  @media screen and (${({ theme }) => theme.media("tablet")}) {
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
@@ -15,24 +14,24 @@ export const InfoContainer = styled.div`
   margin-bottom: 40px;
   padding-bottom: 20px;
   border-bottom: 1px solid #bdbdbd;
-
-  & > h5 {
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 1.5;
-    color: #003f62;
-  }
-
-  & > p {
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 1.5;
-
-    color: #4a4a4a;
-  }
 `;
 
-export const Indicator = styled.div`
+export const ProductName = styled.h5`
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.5;
+  color: ${({ theme }) => theme.color.blue};
+`;
+
+export const ProductPrice = styled.p`
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.5;
+
+  color: #4a4a4a;
+`;
+
+export const ProductHaveIndicator = styled.div`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.5;
@@ -49,7 +48,7 @@ export const Indicator = styled.div`
 `;
 
 export const CountWrapper = styled.div`
-  margin-bottom: ${({ theme }) => theme.ratio.smallPhone(10, 30)};
+  margin-bottom: ${({ theme }) => theme.ratio(10, 30, "mobileS")};
 
   label {
     margin-right: 20px;
@@ -59,13 +58,11 @@ export const CountWrapper = styled.div`
 export const ButtonsContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.ratio.smallPhone(10, 20)};
+  gap: ${({ theme }) => theme.ratio(10, 20, "mobileS")};
+  flex-wrap: wrap-reverse;
 
-  font-size: ${({ theme }) => theme.ratio.smallPhone(16, 6)};
+  font-size: ${({ theme }) => theme.ratio(16, 6, "mobileS")};
 
-  @media screen and (${({ theme }) => theme.media.MaxNotebook}) {
-    flex-wrap: wrap-reverse;
-  }
   button {
     flex: 0 0 auto;
   }
@@ -91,7 +88,7 @@ export const FavButton = styled.button`
 `;
 
 export const DescriptionWrapper = styled.article`
-  padding: ${({ theme }) => `${theme.ratio.smallPhone(10, 32)} ${theme.ratio.smallPhone(10, 40)}`};
+  padding: ${({ theme }) => `${theme.ratio(10, 32, "mobileS")} ${theme.ratio(10, 40, "mobileS")}`};
   border: 1px solid #b8b8b8;
   border-radius: 20px;
 
@@ -100,16 +97,17 @@ export const DescriptionWrapper = styled.article`
   display: flex;
   flex-direction: column;
   gap: 16px;
+`;
 
-  h5 {
-    font-weight: 600;
-    font-size: 22px;
+export const DescriptionTitle = styled.h5`
+  font-weight: 600;
+  font-size: 22px;
 
-    color: #003f62;
-  }
-  div {
-    font-size: ${({ theme }) => theme.ratio.smallPhone(16, 4)};
+  color: ${({ theme }) => theme.color.blue};
+`;
 
-    color: #4f4f4f;
-  }
+export const DescriptionText = styled.p`
+  font-size: ${({ theme }) => theme.ratio(16, 4, "mobileS")};
+
+  color: #4f4f4f;
 `;
