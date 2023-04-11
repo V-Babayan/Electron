@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { changeElementCount, deleteElement } from "store";
 import { changeCountInCart, deleteCartItem } from "http";
 
-import CountBlock from "components/count-block/CountBlock";
+import CountBlock from "components/count-block";
 import deleteIcon from "assets/icons/delete.svg";
 
 import * as Styled from "./styled";

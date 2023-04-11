@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SCountBlock = styled.div`
+const CountBlock = styled.div`
   font-size: 18px;
   line-height: 1.5;
 
@@ -9,7 +9,7 @@ export const SCountBlock = styled.div`
 
   display: inline-grid;
   grid-template-columns: 35px ${({ theme, responsive }) =>
-      responsive ? theme.ratio.smallPhone(23, 40) : "63px"} 35px;
+      responsive ? theme.ratio(23, 40, "mobileS") : "63px"} 35px;
 
   span {
     justify-self: center;
@@ -23,3 +23,5 @@ export const SCountBlock = styled.div`
     }
   }
 `;
+
+export { CountBlock };
