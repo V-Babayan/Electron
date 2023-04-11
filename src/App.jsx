@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import AppRouter from "./components/AppRouter";
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
+import AppRouter from "components/AppRouter";
+import Header from "components/header/";
+import Footer from "components/footer";
 
-import { setProducts } from "./redux/productsClicer";
-import { setCart } from "./redux/cartClicer";
-import { asyncGetProducts, asyncGetCart } from "./helpers";
+import { setProducts, setCart, asyncGetProducts, asyncGetCart } from "store/";
 
 function App() {
   const dispatch = useDispatch();

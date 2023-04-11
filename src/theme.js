@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { devices } from "./helpers";
+import { devices } from "helpers";
 
 export const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -74,7 +74,7 @@ export const GlobalStyles = createGlobalStyle`
   button {
     background: none;
     appearance: none;
-    cursor: pointer
+    cursor: pointer;
   }
 
   body,
@@ -82,7 +82,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
     background: #f5f5f5;
     width: 100%;
-    height: 100vh
+    height: 100vh;
   }
 
   body{
