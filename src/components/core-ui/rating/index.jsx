@@ -1,16 +1,17 @@
 import React, { memo, useState } from "react";
-import { StarrButton, StarrRating } from "./Rating.styled";
+
+import * as Styled from "./styled";
 
 const Rating = ({ defRating, setDefRating, big }) => {
   const [rating, setRating] = useState(defRating);
   const [hover, setHover] = useState(defRating);
 
   return (
-    <StarrRating defRating={defRating}>
+    <Styled.StarrRating defRating={defRating}>
       {[...Array(5)].map((_, index) => {
         index++;
         return (
-          <StarrButton
+          <Styled.StarrButton
             key={index}
             active={index <= (hover || rating || defRating)}
             onClick={() => {
@@ -21,10 +22,10 @@ const Rating = ({ defRating, setDefRating, big }) => {
             onMouseLeave={() => setHover(rating)}
             big={big}>
             &#9733;
-          </StarrButton>
+          </Styled.StarrButton>
         );
       })}
-    </StarrRating>
+    </Styled.StarrRating>
   );
 };
 

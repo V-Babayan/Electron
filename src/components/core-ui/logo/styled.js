@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SLogo = styled.div`
+const Logo = styled.div`
   display: flex;
   align-self: center;
   gap: 5px;
@@ -14,3 +14,5 @@ export const SLogo = styled.div`
     color: ${({ blue }) => (blue ? "#024367" : "#c9c9c9")};
   }
 `;
+
+export { Logo };

@@ -1,11 +1,11 @@
 import React from "react";
 
-import logoIcon from "../../../assets/icons/logo.png";
-import { SLogo } from "./Logo.styled";
+import logoIcon from "assets/icons/logo.png";
+import * as Styled from "./styled";
 
 const Logo = (props) => {
   return (
-    <SLogo {...props}>
+    <Styled.Logo {...props}>
       <img
         src={logoIcon}
         alt='Logo'
@@ -14,8 +14,8 @@ const Logo = (props) => {
         width='44'
       />
       Electron
-    </SLogo>
+    </Styled.Logo>
   );
 };
 
-export default Logo;
+export { Logo };

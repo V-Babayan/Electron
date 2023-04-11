@@ -1,11 +1,11 @@
 import styled, { css } from "styled-components";
 
-export const SButton = styled.button`
+const Button = styled.button`
   display: inline-block;
   padding: ${({ theme, large }) =>
-    theme.ratio.smallPhone(10, 8) +
+    theme.ratio(10, 8, "mobileS") +
     " " +
-    (large ? theme.ratio.smallPhone(10, 52) : theme.ratio.smallPhone(10, 26))};
+    (large ? theme.ratio(10, 52, "mobileS") : theme.ratio(10, 26, "mobileS"))};
   border-radius: ${({ large }) => (large ? "32px" : "20px")};
 
   font-weight: 600;
@@ -27,13 +27,16 @@ export const SButton = styled.button`
         `
       : css`
           transition: color, background 0.2s linear;
-          background: ${({ disabled, theme }) => (disabled ? theme.color.grey : "#eda415")};
+          background: ${({ disabled, theme }) =>
+            disabled ? theme.color.grey : theme.color.orange};
           color: #ffffff;
-          border: 1px solid #eda415;
+          border: 1px solid ${({ theme, color }) => theme.color[color]};
 
           &:hover {
             background: ${({ disabled, theme }) => (disabled ? theme.color.grey : "transparent")};
-            color: #eda415;
+            color: ${({ theme, color }) => theme.color[color]};
           }
         `}
 `;
+
+export { Button };
