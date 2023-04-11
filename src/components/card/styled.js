@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+const Container = styled.div`
+  height: ${({ theme }) => theme.ratio(275, 500, "mobileS")};
   padding: 23px 13px;
 
   border: 1px solid #b6b6b6;
@@ -9,12 +10,12 @@ export const Container = styled.div`
   font-size: 16px;
   line-height: 1.6;
 
-  @media screen and (${({ theme }) => theme.media.MaxSmallMobile}) {
-    height: ${({ theme }) => theme.ratio.smallPhone(275, 500)};
+  @media screen and (${({ theme }) => theme.media("mobile")}) {
+    height: auto;
   }
 `;
 
-export const ImageBlock = styled.div`
+const ImageBlock = styled.div`
   position: relative;
   margin-bottom: ${({ hover }) => (hover ? "25px" : "10px")};
   text-align: center;
@@ -45,7 +46,7 @@ export const ImageBlock = styled.div`
     transition: background 0.1s linear;
     background: #b3d4e5;
     &:hover {
-      background: #87bcd9;
+      background: ${({ theme }) => theme.color.lightblue};
     }
 
     svg {
@@ -54,40 +55,41 @@ export const ImageBlock = styled.div`
   }
 `;
 
-export const InfoContainer = styled.div`
+const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
   h5 {
     font-weight: 500;
-    color: #003f62;
+    color: ${({ theme }) => theme.color.blue};
   }
 `;
 
-export const Price = styled.div`
+const Price = styled.div`
   font-weight: 600;
   color: #4a4a4a;
 `;
 
-export const ButtonsContainer = styled.div`
+const ButtonsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 5px;
   font-size: 16px;
 `;
-export const StyledButton = styled.button`
+
+const Button = styled.button`
   &:first-child {
     white-space: nowrap;
   }
 
-  padding: ${({ theme }) => `${theme.ratio.smallPhone(7, 8)} ${theme.ratio.smallPhone(5, 17)}`};
-  border-radius: ${({ theme }) => theme.ratio.smallPhone(15, 5)};
+  padding: ${({ theme }) => `${theme.ratio(7, 8, "mobileS")} ${theme.ratio(5, 17, "mobileS")}`};
+  border-radius: ${({ theme }) => theme.ratio(15, 5, "mobileS")};
 
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
 
-  background: #87bcd9;
+  background: ${({ theme }) => theme.color.lightblue};
   color: #272727;
 
   display: flex;
@@ -107,10 +109,12 @@ export const StyledButton = styled.button`
     align-items: center;
     justify-content: center;
 
-    background: #eda415;
+    background: ${({ theme }) => theme.color.orange};
     border-radius: 50%;
     svg {
       height: 17px;
     }
   }
 `;
+
+export { Container, ImageBlock, InfoContainer, Price, ButtonsContainer, Button };
