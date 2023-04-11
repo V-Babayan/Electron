@@ -1,20 +1,21 @@
 import React, { memo } from "react";
 
-import { ProductList, SHeading } from "./List.styled";
-import Card from "../card/Card";
+import Card from "components/card";
+
+import * as Styled from "./styled";
 
 const List = ({ products, title }) => {
   return (
     <>
-      {title && <SHeading>{title}</SHeading>}
-      <ProductList>
+      {title && <Styled.Heading>{title}</Styled.Heading>}
+      <Styled.ProductList>
         {products.map((elem) => (
           <Card
             item={elem}
             key={elem.id}
           />
         ))}
-      </ProductList>
+      </Styled.ProductList>
     </>
   );
 };
