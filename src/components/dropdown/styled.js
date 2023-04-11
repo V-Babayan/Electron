@@ -5,7 +5,7 @@ export const DropContainer = styled.div`
 `;
 
 export const DropButton = styled.div`
-  padding: ${({ theme }) => theme.ratio.smallPhone(10, 14)};
+  padding: ${({ theme }) => theme.ratio(10, 14, "mobileS")};
   font-size: 16px;
   line-height: 1.5;
 
@@ -14,7 +14,7 @@ export const DropButton = styled.div`
     css`
       font-weight: 500;
       color: #ffffff;
-      background: #eda415;
+      background: ${({ theme }) => theme.color.orange};
 
       display: inline-block;
       padding-left: 14px;
@@ -34,18 +34,21 @@ export const DropList = styled.ul`
   z-index: 999;
   width: 100%;
 
-  color: ${({ primary }) => (primary ? "#ffffff" : "inherit")};
+  ${({ primary }) => primary && "color: #ffffff"};
   text-align: center;
-`;
 
-export const DropItem = styled.li`
-  padding: 10px 0;
-  background: ${({ primary }) => (primary ? "#eda415" : "#f4f4f4")};
+  li {
+    a {
+      display: block;
+      padding: 10px 0;
+    }
 
-  transition: background 0.1s linear;
+    transition: background 0.1s linear;
+    background: ${({ primary, theme }) => (primary ? theme.color.orange : "#f4f4f4")};
+    ${({ primary }) => primary && "border-top: 1px solid #ffffff"};
 
-  &:hover {
-    background: ${({ primary }) => (primary ? "#d8971a" : "#cdcdcd")};
+    &:hover {
+      background: ${({ primary }) => (primary ? "#d8971a" : "#cdcdcd")};
+    }
   }
-  ${({ primary }) => primary && "border-top: 1px solid #ffffff"};
 `;
