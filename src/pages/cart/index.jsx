@@ -3,8 +3,7 @@ import { useSelector } from "react-redux";
 
 import * as Styled from "./styled";
 
-import CartTable from "components/cart-table/CartTable";
-import CartTotal from "components/cart-total/CartTotal";
+import { Table, Total } from "components/cart-layout/";
 import { HOME_PAGE } from "helpers";
 import { selectCart } from "store";
 
@@ -13,9 +12,9 @@ const Cart = () => {
 
   return cart.length ? (
     <Styled.Container>
-      <CartTable />
+      <Table />
 
-      <CartTotal />
+      <Total />
     </Styled.Container>
   ) : (
     <Styled.CartEmptyBlock>

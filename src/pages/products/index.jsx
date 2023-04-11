@@ -2,9 +2,9 @@ import React, { useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 
-import List from "components/list/List";
+import List from "components/list";
 import { Brands } from "components/brands";
-import Categories from "components/categories/Categories";
+import { Categories } from "components/categories";
 
 import { useFilter } from "hooks";
 

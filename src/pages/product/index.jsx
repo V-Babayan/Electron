@@ -9,10 +9,9 @@ import * as Styled from "./styled";
 import { ReactComponent as CheckbirdIcon } from "assets/icons/checkbird.svg";
 import { ReactComponent as HeartIcon } from "assets/icons/heart.svg";
 
-import Button from "components/core-ui/button/Button";
-import Rating from "components/core-ui/rating/Rating";
-import CountBlock from "components/count-block/CountBlock";
-import ProductSlider from "components/product-slider/ProductSlider";
+import { Button, Rating } from "components/core-ui/";
+import CountBlock from "components/count-block";
+import ProductSlider from "components/product-slider";
 
 const formReset = (e) => e.preventDefault();
 
