@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { devices } from "helpers";
 
 export const useMedia = (deviceType) => {
-  const mediaQuery = window.matchMedia(`(min-width: ${devices[deviceType].size}px)`);
+  const mediaQuery = window.matchMedia(`(min-width: ${devices[deviceType]}px)`);
   const [media, setMedia] = useState(mediaQuery.matches);
 
   useEffect(() => {
