@@ -13,6 +13,7 @@ const HeaderSearchForm = () => {
   const submitReset = (e) => {
     e.preventDefault();
     navigate(PRODUCTS_PAGE, { state: { query } });
+    setQuery("");
   };
 
   const changeHandler = (e) => setQuery(e.target.value);

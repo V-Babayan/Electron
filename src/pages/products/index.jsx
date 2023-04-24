@@ -3,12 +3,11 @@ import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 
 import List from "components/list";
-import { Brands } from "components/brands";
-import { Categories } from "components/categories";
+import { Brands, Categories } from "components/products-layout";
 
 import { useFilter } from "hooks";
 
-import { Container, Filter } from "./styled";
+import * as Styled from "./styled";
 import { filterWithProperty } from "helpers";
 import { selectProducts } from "store";
 
@@ -42,7 +41,7 @@ const Products = () => {
   }, []);
 
   return (
-    <Container>
+    <Styled.Container>
       <Brands
         filter={brands}
         filterTitle={"Brands"}
@@ -52,7 +51,7 @@ const Products = () => {
       />
 
       <div>
-        <Filter onSubmit={submitReset}>
+        <Styled.Filter onSubmit={submitReset}>
           <input
             type='text'
             placeholder='Search...'
@@ -63,10 +62,10 @@ const Products = () => {
             currentCategories={filter.categories}
             changeHandler={changeFilterCategories}
           />
-        </Filter>
+        </Styled.Filter>
         <List products={filteredProducts} />
       </div>
-    </Container>
+    </Styled.Container>
   );
 };
 
