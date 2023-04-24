@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.js": "/Electron/static/js/main.57c4373c.js",
+    "main.js": "/Electron/static/js/main.edffdcd8.js",
     "static/js/315.f76af06a.chunk.js": "/Electron/static/js/315.f76af06a.chunk.js",
     "static/js/93.133a146a.chunk.js": "/Electron/static/js/93.133a146a.chunk.js",
-    "static/js/801.6f3fd195.chunk.js": "/Electron/static/js/801.6f3fd195.chunk.js",
+    "static/js/115.04d6f90e.chunk.js": "/Electron/static/js/115.04d6f90e.chunk.js",
     "static/js/38.cd72c2ef.chunk.js": "/Electron/static/js/38.cd72c2ef.chunk.js",
     "static/js/721.8ec59105.chunk.js": "/Electron/static/js/721.8ec59105.chunk.js",
     "static/js/821.ca747e49.chunk.js": "/Electron/static/js/821.ca747e49.chunk.js",
@@ -21,15 +21,15 @@
     "static/media/more.svg": "/Electron/static/media/more.078cd269f042fcb87f307574dab017ae.svg",
     "static/media/checkbird.svg": "/Electron/static/media/checkbird.4f40785d114758c22d0d3bb8821d22e7.svg",
     "static/media/smallCheckbird.svg": "/Electron/static/media/smallCheckbird.bcd388777fb11a5e3e23b5e10ec16d18.svg",
-    "main.57c4373c.js.map": "/Electron/static/js/main.57c4373c.js.map",
+    "main.edffdcd8.js.map": "/Electron/static/js/main.edffdcd8.js.map",
     "315.f76af06a.chunk.js.map": "/Electron/static/js/315.f76af06a.chunk.js.map",
     "93.133a146a.chunk.js.map": "/Electron/static/js/93.133a146a.chunk.js.map",
-    "801.6f3fd195.chunk.js.map": "/Electron/static/js/801.6f3fd195.chunk.js.map",
+    "115.04d6f90e.chunk.js.map": "/Electron/static/js/115.04d6f90e.chunk.js.map",
     "38.cd72c2ef.chunk.js.map": "/Electron/static/js/38.cd72c2ef.chunk.js.map",
     "721.8ec59105.chunk.js.map": "/Electron/static/js/721.8ec59105.chunk.js.map",
     "821.ca747e49.chunk.js.map": "/Electron/static/js/821.ca747e49.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.57c4373c.js"
+    "static/js/main.edffdcd8.js"
   ]
 }
