@@ -4,7 +4,7 @@ import * as Styled from "./styled";
 
 const Brands = ({ filter = [], filterTitle, changeHandler, resetHandler, brands }) => {
   return (
-    <aside>
+    <>
       <Styled.HeadingBlock>
         <Styled.Title>{filterTitle}</Styled.Title>
         <Styled.ResetButton onClick={resetHandler}>reset</Styled.ResetButton>
@@ -26,7 +26,7 @@ const Brands = ({ filter = [], filterTitle, changeHandler, resetHandler, brands 
           </Styled.Brand>
         ))}
       </Styled.BrandList>
-    </aside>
+    </>
   );
 };
 
