@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+const Container = styled.li`
   height: ${({ theme }) => theme.ratio(275, 500, "mobileS")};
   padding: 23px 13px;
 
