@@ -17,4 +17,4 @@ function List({ products }) {
   );
 }
 
-export default List;
+export { List };
