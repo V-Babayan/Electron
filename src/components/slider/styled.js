@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
   position: relative;
@@ -6,21 +6,25 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.ul`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 15px;
-
   overflow-x: scroll;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
 
-  &::-webkit-scrollbar {
-    display: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+
+  & > ul {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
   }
 
   @media screen and (${({ theme }) => theme.media("tablet")}) {
     margin-bottom: 0;
+  }
+  &::-webkit-scrollbar {
+    display: none;
   }
 
   &:hover > li::before,
@@ -34,10 +38,17 @@ export const Controls = styled.div`
   justify-content: center;
   gap: 8px;
 
-  @media screen and (${({ theme }) => theme.media("tablet")}) {
-    position: absolute;
-    left: 15%;
-    bottom: ${({ theme }) => theme.ratio(0, 55, "mobileS")};
-    z-index: 1;
-  }
+  ${({ list }) =>
+    list
+      ? css`
+          margin-top: 20px;
+        `
+      : css`
+          @media screen and (${({ theme }) => theme.media("tablet")}) {
+            position: absolute;
+            left: 15%;
+            bottom: ${({ theme }) => theme.ratio(0, 55, "mobileS")};
+            z-index: 1;
+          }
+        `}
 `;

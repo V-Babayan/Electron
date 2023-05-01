@@ -1,9 +1,10 @@
 import React, { useRef, useState } from "react";
 
-import { Page, Control } from "./children/";
+import { Control } from "./children";
+
 import * as Styled from "./styled";
 
-const Slider = ({ products = [] }) => {
+const Slider = ({ children, list }) => {
   const [page, setPage] = useState(0);
   const containerRef = useRef();
 
@@ -17,16 +18,10 @@ const Slider = ({ products = [] }) => {
       <Styled.Container
         onScroll={scrollHandler}
         ref={containerRef}>
-        {products.map((product, index) => (
-          <Page
-            key={product.id}
-            product={product}
-            index={index}
-          />
-        ))}
+        {children}
       </Styled.Container>
-      <Styled.Controls>
-        {[...Array(products.length)].map((_, index) => (
+      <Styled.Controls list={list ? "true" : undefined}>
+        {[...Array(children.length)].map((_, index) => (
           <Control
             key={index}
             containerRef={containerRef}
