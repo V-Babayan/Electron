@@ -4,3 +4,4 @@ export * from "./getBrandsAndCounts";
 export * from "./indexOfCart";
 export * from "./getCategoriesByProducts";
 export * from "./filterWithProperty";
+export * from "./sliceProductsToPages";
