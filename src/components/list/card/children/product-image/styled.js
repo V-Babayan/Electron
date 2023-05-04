@@ -14,6 +14,11 @@ const Image = styled.img`
   height: 100%;
 
   object-fit: contain;
+  transition: transform 0.25s linear;
+
+  :hover {
+    transform: scale(1.25);
+  }
 `;
 
 const FavButton = styled.button`

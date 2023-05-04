@@ -8,6 +8,8 @@ const Container = styled.li`
 
   font-size: 16px;
   line-height: 1.6;
+
+  overflow: hidden;
 `;
 
 export { Container };
