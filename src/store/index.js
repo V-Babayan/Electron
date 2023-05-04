@@ -1,6 +1,6 @@
 export { asyncGetCart, asyncGetProducts } from "./actions";
 
-export { setCart, emptyCart, deleteElement, addElement, changeElementCount } from "./cartSlice";
+export { setCart, emptyCart, deleteElement, addProduct, changeElementCount } from "./cartSlice";
 export { setProducts } from "./productsSlice";
 
 export { selectRelatedProducts, selectCategories, selectCart, selectProducts } from "./selectors";
