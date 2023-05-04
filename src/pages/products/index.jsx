@@ -1,7 +1,6 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { useFilter } from "hooks";
 
 import { List } from "components/list";
 import { Brands, SearchForm } from "components/products-layout";
@@ -21,7 +20,34 @@ const Products = () => {
     categories: location.state?.categories || [],
   });
 
-  const [filteredProducts, brands] = useFilter(products, filter);
+  const [filteredProducts, brands] = useMemo(() => {
+    const brands = {};
+    const arrayBrands = [];
+
+    const filteredProducts = !filter
+      ? products
+      : products.filter((product) => {
+          if (filter.query && !product.title.toLowerCase().includes(filter.query.toLowerCase())) {
+            return false;
+          }
+
+          if (filter.categories.length > 0 && !filter.categories.includes(product.category)) {
+            return false;
+          }
+
+          brands[product.brand] ? brands[product.brand]++ : (brands[product.brand] = 1);
+
+          if (filter.brands.length > 0 && !filter.brands.includes(product.brand)) {
+            return false;
+          }
+
+          return true;
+        });
+
+    for (let [key, value] of Object.entries(brands)) arrayBrands.push({ name: key, count: value });
+
+    return [filteredProducts, arrayBrands];
+  }, [filter, products]);
 
   const resetHandler = useCallback(() => setFilter((prev) => ({ ...prev, brands: [] })), []);
 
