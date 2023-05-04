@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 import { addElement, changeElementCount } from "store";
 import { indexOfCart } from "helpers";
-import { addProductToCart, changeCountInCart, getCart } from "http";
+import { addProductToCart, changeCountInCart, getCart } from "api";
 
 export const useChangeElementCount = (product, changingBy = 1) => {
   const dispatch = useDispatch();

@@ -1,4 +1,4 @@
-import { getProducts } from "http";
+import { getProducts } from "api";
 import { setProducts } from "../productsSlice";
 
 export const asyncGetProducts = () => (dispatch) => {
