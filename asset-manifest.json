@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/Electron/static/js/main.b595b0bb.js",
+    "main.js": "/Electron/static/js/main.bfe74cb4.js",
     "static/js/315.f76af06a.chunk.js": "/Electron/static/js/315.f76af06a.chunk.js",
-    "static/js/93.020cf768.chunk.js": "/Electron/static/js/93.020cf768.chunk.js",
-    "static/js/262.53ddf0f4.chunk.js": "/Electron/static/js/262.53ddf0f4.chunk.js",
+    "static/js/93.b5194c37.chunk.js": "/Electron/static/js/93.b5194c37.chunk.js",
+    "static/js/262.ed88ae28.chunk.js": "/Electron/static/js/262.ed88ae28.chunk.js",
     "static/js/38.cd72c2ef.chunk.js": "/Electron/static/js/38.cd72c2ef.chunk.js",
-    "static/js/485.2783b6f5.chunk.js": "/Electron/static/js/485.2783b6f5.chunk.js",
-    "static/js/821.e1e528bd.chunk.js": "/Electron/static/js/821.e1e528bd.chunk.js",
+    "static/js/485.180ae026.chunk.js": "/Electron/static/js/485.180ae026.chunk.js",
+    "static/js/821.ec6e5ba1.chunk.js": "/Electron/static/js/821.ec6e5ba1.chunk.js",
     "static/media/whatsapp.svg": "/Electron/static/media/whatsapp.3b844184a3c25e5bc9c3295506f01244.svg",
     "static/media/google.svg": "/Electron/static/media/google.7cd1853af3427ba5e9e3c5430994655e.svg",
     "static/media/eye.svg": "/Electron/static/media/eye.4175995598a21cad1fc04c9c4dd38b5c.svg",
@@ -21,15 +21,15 @@
     "static/media/more.svg": "/Electron/static/media/more.078cd269f042fcb87f307574dab017ae.svg",
     "static/media/checkbird.svg": "/Electron/static/media/checkbird.4f40785d114758c22d0d3bb8821d22e7.svg",
     "static/media/smallCheckbird.svg": "/Electron/static/media/smallCheckbird.bcd388777fb11a5e3e23b5e10ec16d18.svg",
-    "main.b595b0bb.js.map": "/Electron/static/js/main.b595b0bb.js.map",
+    "main.bfe74cb4.js.map": "/Electron/static/js/main.bfe74cb4.js.map",
     "315.f76af06a.chunk.js.map": "/Electron/static/js/315.f76af06a.chunk.js.map",
-    "93.020cf768.chunk.js.map": "/Electron/static/js/93.020cf768.chunk.js.map",
-    "262.53ddf0f4.chunk.js.map": "/Electron/static/js/262.53ddf0f4.chunk.js.map",
+    "93.b5194c37.chunk.js.map": "/Electron/static/js/93.b5194c37.chunk.js.map",
+    "262.ed88ae28.chunk.js.map": "/Electron/static/js/262.ed88ae28.chunk.js.map",
     "38.cd72c2ef.chunk.js.map": "/Electron/static/js/38.cd72c2ef.chunk.js.map",
-    "485.2783b6f5.chunk.js.map": "/Electron/static/js/485.2783b6f5.chunk.js.map",
-    "821.e1e528bd.chunk.js.map": "/Electron/static/js/821.e1e528bd.chunk.js.map"
+    "485.180ae026.chunk.js.map": "/Electron/static/js/485.180ae026.chunk.js.map",
+    "821.ec6e5ba1.chunk.js.map": "/Electron/static/js/821.ec6e5ba1.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.b595b0bb.js"
+    "static/js/main.bfe74cb4.js"
   ]
 }
