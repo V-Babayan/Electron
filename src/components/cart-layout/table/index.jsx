@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 import { emptyCart, selectCart } from "store";
 import { HOME_PAGE } from "helpers";
-import { deleteAllCartItems } from "api";
 
 import { CartItem, TableHead } from "./children";
 import { Button } from "../../core-ui";
@@ -16,16 +15,13 @@ const Table = () => {
   const dispatch = useDispatch();
   const cart = useSelector(selectCart);
 
-  const navigateHandler = useCallback(() => {
+  const goHomePageHandler = useCallback(() => {
     navigate(HOME_PAGE);
   }, [navigate]);
 
-  const emptyCartHandler = useCallback(async () => {
-    deleteAllCartItems(cart).then((json) => {
-      console.log(json);
-      dispatch(emptyCart());
-    });
-  }, [dispatch, cart]);
+  const emptyCartHandler = useCallback(() => {
+    dispatch(emptyCart());
+  }, [dispatch]);
 
   return (
     <div>
@@ -35,16 +31,16 @@ const Table = () => {
           {cart.map(({ product, count, id }) => (
             <CartItem
               key={id}
+              id={id}
               item={product}
               count={count}
-              id={id}
             />
           ))}
         </tbody>
       </Styled.Table>
       <Styled.ButtonsContainer>
         <Button
-          onClick={navigateHandler}
+          onClick={goHomePageHandler}
           color='orange'>
           Continue shopping
         </Button>

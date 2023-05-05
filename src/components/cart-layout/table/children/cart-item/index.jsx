@@ -11,7 +11,7 @@ import * as Styled from "./styled";
 const CartItem = ({ item = {}, count, id }) => {
   const dispatch = useDispatch();
 
-  const clickHandler = () => {
+  const deleteCartElement = () => {
     dispatch(deleteElement(id));
   };
 
@@ -48,7 +48,7 @@ const CartItem = ({ item = {}, count, id }) => {
       </td>
       <td data-title='Subtotal'>${item.price * count}</td>
       <td>
-        <button onClick={clickHandler}>
+        <button onClick={deleteCartElement}>
           <img
             src={deleteIcon}
             width='24'

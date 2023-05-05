@@ -1,7 +1,7 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
-import { selectCart } from "store";
+import { selectCartTotalAmount } from "store";
 
 import { ReactComponent as MoreIcon } from "assets/icons/more.svg";
 import { Button } from "../../core-ui";
@@ -9,19 +9,8 @@ import { Button } from "../../core-ui";
 import * as Styled from "./styled";
 
 const Total = () => {
-  const cart = useSelector(selectCart);
+  const totalAmount = useSelector(selectCartTotalAmount);
   const [count, setCount] = useState(1);
-
-  const subtotal = useMemo(
-    () =>
-      cart
-        ? cart.reduce(
-            (prevValue, curValue) => curValue.count * curValue.product.price + prevValue,
-            0
-          )
-        : 0,
-    [cart]
-  );
 
   return (
     <Styled.CartTotal>
@@ -29,7 +18,7 @@ const Total = () => {
       <Styled.Content>
         <Styled.Subtotal>
           <p>Subtotal</p>
-          <span>${subtotal}</span>
+          <span>${totalAmount}</span>
         </Styled.Subtotal>
         <Styled.Form>
           <input
@@ -53,7 +42,7 @@ const Total = () => {
 
         <Styled.TotalPrice>
           <p>Total amount</p>
-          <span>${count * subtotal}</span>
+          <span>${count * totalAmount}</span>
         </Styled.TotalPrice>
 
         <Button>Proceed to ckeckout</Button>
