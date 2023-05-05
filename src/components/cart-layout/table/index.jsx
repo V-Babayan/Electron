@@ -1,10 +1,9 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { emptyCart, selectCart } from "store";
 import { HOME_PAGE } from "helpers";
-import { deleteAllCartItems } from "api";
 
 import { CartItem, TableHead } from "./children";
 import { Button } from "../../core-ui";
@@ -16,36 +15,30 @@ const Table = () => {
   const dispatch = useDispatch();
   const cart = useSelector(selectCart);
 
-  const navigateHandler = useCallback(() => {
+  const goHomePageHandler = () => {
     navigate(HOME_PAGE);
-  }, [navigate]);
+  };
 
-  const emptyCartHandler = useCallback(async () => {
-    deleteAllCartItems(cart).then((json) => {
-      console.log(json);
-      dispatch(emptyCart());
-    });
-  }, [dispatch, cart]);
+  const emptyCartHandler = () => {
+    dispatch(emptyCart());
+  };
 
   return (
     <div>
       <Styled.Table>
         <TableHead />
         <tbody>
-          {cart.map(({ product, count, id }, index) => (
+          {cart.map((cartItem) => (
             <CartItem
-              key={id}
-              item={product}
-              count={count}
-              id={id}
-              index={index}
+              key={cartItem.id}
+              cartItem={cartItem}
             />
           ))}
         </tbody>
       </Styled.Table>
       <Styled.ButtonsContainer>
         <Button
-          onClick={navigateHandler}
+          onClick={goHomePageHandler}
           color='orange'>
           Continue shopping
         </Button>

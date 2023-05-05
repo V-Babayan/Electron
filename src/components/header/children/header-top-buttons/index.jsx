@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { CART_PAGE, LOGIN_PAGE } from "helpers";
-import { selectCart } from "store";
+import { selectCartQuanity } from "store";
 
 import { ReactComponent as CartIcon } from "assets/icons/cart.svg";
 import { ReactComponent as ProfileIcon } from "assets/icons/profile.svg";
@@ -11,7 +11,7 @@ import { ReactComponent as ProfileIcon } from "assets/icons/profile.svg";
 import * as Styled from "./styled";
 
 const HeaderTopButtons = () => {
-  const cart = useSelector(selectCart);
+  const quantity = useSelector(selectCartQuanity);
 
   return (
     <Styled.ButtonsContainer>
@@ -23,7 +23,7 @@ const HeaderTopButtons = () => {
       </Link>
 
       <Link to={CART_PAGE}>
-        <Styled.HeaderLink cartSize={cart.length}>
+        <Styled.HeaderLink cartSize={quantity}>
           <div>
             <CartIcon />
           </div>
