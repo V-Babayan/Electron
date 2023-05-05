@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -15,25 +15,23 @@ const Table = () => {
   const dispatch = useDispatch();
   const cart = useSelector(selectCart);
 
-  const goHomePageHandler = useCallback(() => {
+  const goHomePageHandler = () => {
     navigate(HOME_PAGE);
-  }, [navigate]);
+  };
 
-  const emptyCartHandler = useCallback(() => {
+  const emptyCartHandler = () => {
     dispatch(emptyCart());
-  }, [dispatch]);
+  };
 
   return (
     <div>
       <Styled.Table>
         <TableHead />
         <tbody>
-          {cart.map(({ product, count, id }) => (
+          {cart.map((cartItem) => (
             <CartItem
-              key={id}
-              id={id}
-              item={product}
-              count={count}
+              key={cartItem.id}
+              cartItem={cartItem}
             />
           ))}
         </tbody>

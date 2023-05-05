@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import { useMedia } from "hooks";
 
 import * as Styled from "./styled";
@@ -21,4 +21,4 @@ const TableHead = () => {
   );
 };
 
-export default TableHead;
+export default memo(TableHead);

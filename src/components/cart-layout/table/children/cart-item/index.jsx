@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
@@ -8,7 +9,8 @@ import deleteIcon from "assets/icons/delete.svg";
 
 import * as Styled from "./styled";
 
-const CartItem = ({ item = {}, count, id }) => {
+const CartItem = ({ cartItem }) => {
+  const { id, product, count } = cartItem;
   const dispatch = useDispatch();
 
   const deleteCartElement = () => {
@@ -16,10 +18,10 @@ const CartItem = ({ item = {}, count, id }) => {
   };
 
   const productCountIncrementHandler = () => {
-    dispatch(addProduct({ product: item, quanity: 1 }));
+    dispatch(addProduct({ product, quanity: 1 }));
   };
   const productCountDecrementHandler = () => {
-    dispatch(addProduct({ product: item, quanity: -1 }));
+    dispatch(addProduct({ product, quanity: -1 }));
   };
 
   return (
@@ -28,16 +30,16 @@ const CartItem = ({ item = {}, count, id }) => {
         <Styled.Figure>
           <div>
             <img
-              src={`${item.imageUrl}`}
-              alt={item.title}
+              src={`${product.imageUrl}`}
+              alt={product.title}
             />
           </div>
           <figcaption>
-            <Link to={`/products/${item.id}`}>{item.title}</Link>
+            <Link to={`/products/${product.id}`}>{product.title}</Link>
           </figcaption>
         </Styled.Figure>
       </td>
-      <td data-title='Price'>${item.price}</td>
+      <td data-title='Price'>${product.price}</td>
       <td data-title='Count'>
         <CountBlock
           count={count}
@@ -46,7 +48,7 @@ const CartItem = ({ item = {}, count, id }) => {
           responsive
         />
       </td>
-      <td data-title='Subtotal'>${item.price * count}</td>
+      <td data-title='Subtotal'>${product.price * count}</td>
       <td>
         <button onClick={deleteCartElement}>
           <img
@@ -61,4 +63,4 @@ const CartItem = ({ item = {}, count, id }) => {
   );
 };
 
-export default CartItem;
+export default memo(CartItem);
