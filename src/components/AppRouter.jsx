@@ -20,12 +20,12 @@ const AppRouter = () => {
             }
           />
         ))}
-      {publicRotes.map(({ path, Component }) => (
+      {publicRotes.map(({ path, Component, Skeleton }) => (
         <Route
           path={path}
           key={path}
           element={
-            <Suspense fallback={<Loader />}>
+            <Suspense fallback={Skeleton ? <Skeleton /> : <Loader />}>
               <Component />
             </Suspense>
           }
