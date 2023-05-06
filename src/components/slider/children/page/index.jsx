@@ -26,7 +26,7 @@ const Page = ({ product, index }) => {
       </Styled.PageLeft>
       <Styled.PageRight>
         <Styled.ImageBlock price={product.price}>
-          <img
+          <Styled.Image
             src={product.imageUrl || ""}
             alt={product.title}
             loading={index ? "lazy" : undefined}
