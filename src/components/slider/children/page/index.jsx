@@ -1,4 +1,3 @@
-import { memo } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Button } from "components/core-ui/";
@@ -37,4 +36,4 @@ const Page = ({ product, index }) => {
   );
 };
 
-export default memo(Page);
+export { Page };

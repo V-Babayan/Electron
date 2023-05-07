@@ -3,7 +3,6 @@ import React, { useRef, useState } from "react";
 import { Control } from "./children";
 
 import * as Styled from "./styled";
-import { PageSkeleton } from "./children/page/skeleton";
 
 const Slider = ({ children, list, Skeleton }) => {
   const [page, setPage] = useState(0);
