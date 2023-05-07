@@ -8,6 +8,8 @@ import {
   HOME_PAGE,
 } from "helpers";
 
+import { HomeSkeleton } from "pages/home/HomeSkeleton";
+
 export const authRotes = [
   {
     path: PROFILE_PAGE,
@@ -34,5 +36,6 @@ export const publicRotes = [
   {
     path: HOME_PAGE,
     Component: lazy(() => import(/* webpack-chunk-name: 'pages/ */ "./pages/Home")),
+    Skeleton: HomeSkeleton,
   },
 ];

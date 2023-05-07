@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Skeleton } from "styles/";
 
 const Heading = styled.h5`
   font-weight: 600;
@@ -9,4 +10,11 @@ const Heading = styled.h5`
   margin-bottom: ${({ theme }) => theme.ratio(15, 40, "mobileS")};
 `;
 
-export { Heading };
+const HeadingSkeleton = styled(Skeleton)`
+  height: ${({ theme }) => theme.ratio(20, 8, "mobileS")};
+  width: 250px;
+
+  margin-bottom: ${({ theme }) => theme.ratio(15, 40, "mobileS")};
+`;
+
+export { Heading, HeadingSkeleton };
