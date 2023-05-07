@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/Electron/static/js/main.99dce59b.js",
+    "main.js": "/Electron/static/js/main.30dd0eec.js",
     "static/js/315.f76af06a.chunk.js": "/Electron/static/js/315.f76af06a.chunk.js",
     "static/js/93.bf009b25.chunk.js": "/Electron/static/js/93.bf009b25.chunk.js",
     "static/js/262.1edfeb7d.chunk.js": "/Electron/static/js/262.1edfeb7d.chunk.js",
     "static/js/38.cd72c2ef.chunk.js": "/Electron/static/js/38.cd72c2ef.chunk.js",
     "static/js/485.7821f71f.chunk.js": "/Electron/static/js/485.7821f71f.chunk.js",
-    "static/js/821.55f3140e.chunk.js": "/Electron/static/js/821.55f3140e.chunk.js",
+    "static/js/821.5460bb77.chunk.js": "/Electron/static/js/821.5460bb77.chunk.js",
     "static/media/whatsapp.svg": "/Electron/static/media/whatsapp.3b844184a3c25e5bc9c3295506f01244.svg",
     "static/media/google.svg": "/Electron/static/media/google.7cd1853af3427ba5e9e3c5430994655e.svg",
     "static/media/eye.svg": "/Electron/static/media/eye.4175995598a21cad1fc04c9c4dd38b5c.svg",
@@ -21,15 +21,15 @@
     "static/media/more.svg": "/Electron/static/media/more.078cd269f042fcb87f307574dab017ae.svg",
     "static/media/checkbird.svg": "/Electron/static/media/checkbird.4f40785d114758c22d0d3bb8821d22e7.svg",
     "static/media/smallCheckbird.svg": "/Electron/static/media/smallCheckbird.bcd388777fb11a5e3e23b5e10ec16d18.svg",
-    "main.99dce59b.js.map": "/Electron/static/js/main.99dce59b.js.map",
+    "main.30dd0eec.js.map": "/Electron/static/js/main.30dd0eec.js.map",
     "315.f76af06a.chunk.js.map": "/Electron/static/js/315.f76af06a.chunk.js.map",
     "93.bf009b25.chunk.js.map": "/Electron/static/js/93.bf009b25.chunk.js.map",
     "262.1edfeb7d.chunk.js.map": "/Electron/static/js/262.1edfeb7d.chunk.js.map",
     "38.cd72c2ef.chunk.js.map": "/Electron/static/js/38.cd72c2ef.chunk.js.map",
     "485.7821f71f.chunk.js.map": "/Electron/static/js/485.7821f71f.chunk.js.map",
-    "821.55f3140e.chunk.js.map": "/Electron/static/js/821.55f3140e.chunk.js.map"
+    "821.5460bb77.chunk.js.map": "/Electron/static/js/821.5460bb77.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.99dce59b.js"
+    "static/js/main.30dd0eec.js"
   ]
 }
