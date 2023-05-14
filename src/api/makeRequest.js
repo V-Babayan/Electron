@@ -8,6 +8,6 @@ export const makeRequest = async ({ url = "/", method = "GET", headers = {}, bod
   })
     .then((res) => res.json())
     .catch((error) => {
-      throw new Error(error);
+      throw error;
     });
 };
