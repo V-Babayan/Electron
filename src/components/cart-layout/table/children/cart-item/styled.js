@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Row = styled.tr`
+const CartItem = styled.tr`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -63,4 +63,4 @@ const Figure = styled.figure`
   }
 `;
 
-export { Row, Figure };
+export { CartItem, Figure };

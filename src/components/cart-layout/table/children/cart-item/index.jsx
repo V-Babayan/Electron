@@ -14,7 +14,7 @@ const CartItem = ({ cartItem }) => {
   const dispatch = useDispatch();
 
   const deleteCartElement = () => {
-    dispatch(deleteElement(id));
+    dispatch(deleteElement({ id }));
   };
 
   const productCountIncrementHandler = () => {
@@ -25,7 +25,7 @@ const CartItem = ({ cartItem }) => {
   };
 
   return (
-    <Styled.Row>
+    <Styled.CartItem>
       <td>
         <Styled.Figure>
           <div>
@@ -59,7 +59,7 @@ const CartItem = ({ cartItem }) => {
           />
         </button>
       </td>
-    </Styled.Row>
+    </Styled.CartItem>
   );
 };
 

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { generateId, indexOfCart } from "helpers";
+import { generateId } from "helpers";
 
 const initialState = { cart: [], quanity: 0, totalAmount: 0 };
 
@@ -15,7 +15,7 @@ const cartSlice = createSlice({
 
     deleteElement(state, { payload }) {
       state.cart = state.cart.filter(({ id, count, product }) => {
-        if (id !== payload) {
+        if (id !== payload.id) {
           return true;
         }
 
@@ -26,15 +26,15 @@ const cartSlice = createSlice({
     },
 
     addProduct(state, { payload }) {
-      const index = indexOfCart(state.cart, payload.product.id);
+      const cartItem = state.cart.find((cartItem) => cartItem.product.id === payload.product.id);
 
-      if (typeof index === "number") state.cart[index].count += payload.quanity;
-      else
+      if (!cartItem) {
         state.cart.push({
           product: payload.product,
           count: payload.quanity,
           id: generateId(),
         });
+      } else cartItem.count += payload.quanity;
 
       state.quanity += payload.quanity;
       state.totalAmount += payload.product.price * payload.quanity;
