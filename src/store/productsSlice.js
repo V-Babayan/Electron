@@ -39,7 +39,4 @@ const productsSlice = createSlice({
   },
 });
 
-export const {
-  reducer: productsReducer,
-  actions: {},
-} = productsSlice;
+export const { reducer: productsReducer } = productsSlice;
