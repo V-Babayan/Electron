@@ -1,1 +1,0 @@
-export { asyncGetProducts } from "./asyncGetProducts";

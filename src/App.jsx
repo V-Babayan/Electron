@@ -7,14 +7,14 @@ import AppRouter from "components/AppRouter";
 import { Header } from "components/header/";
 import { Footer } from "components/footer";
 
-import { setProducts, asyncGetProducts } from "store/";
+import { fetchProducts } from "store";
 
 function App() {
   const dispatch = useDispatch();
   const isLargeDisplay = useMedia("desctopL");
 
   useEffect(() => {
-    dispatch(asyncGetProducts(setProducts()));
+    dispatch(fetchProducts());
   }, [dispatch]);
 
   return (
