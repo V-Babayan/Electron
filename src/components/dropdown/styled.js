@@ -2,6 +2,12 @@ import styled, { css } from "styled-components";
 
 export const DropContainer = styled.div`
   position: relative;
+
+  :hover {
+    svg {
+      transform: rotateZ(180deg);
+    }
+  }
 `;
 
 export const DropButton = styled.div`
@@ -22,7 +28,6 @@ export const DropButton = styled.div`
 
   & > svg {
     transition: transform 0.1s linear;
-    ${({ show }) => show && "transform: rotateZ(180deg)"};
     stroke: ${({ primary }) => (primary ? "#ffffff" : "#292d32")};
 
     margin-left: 16px;
@@ -44,11 +49,5 @@ export const DropList = styled.ul`
     }
 
     transition: background 0.1s linear;
-    background: ${({ primary, theme }) => (primary ? theme.color.orange : "#f4f4f4")};
-    ${({ primary }) => primary && "border-top: 1px solid #ffffff"};
-
-    &:hover {
-      background: ${({ primary }) => (primary ? "#d8971a" : "#cdcdcd")};
-    }
   }
 `;

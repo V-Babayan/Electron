@@ -58,4 +58,13 @@ const Nav = styled.nav`
     margin-left: 0;
   }
 `;
-export { Burger, Nav };
+
+const DropItem = styled.li`
+  background: #f4f4f4;
+
+  &:hover {
+    background: #cdcdcd;
+  }
+`;
+
+export { Burger, Nav, DropItem };

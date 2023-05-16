@@ -1,16 +1,15 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 
 import { ReactComponent as MoreIcon } from "assets/icons/more.svg";
-import DropdownItem from "./DropdownItem";
 
 import * as Styled from "./styled";
 
-const Dropdown = ({ defaultTitle, options = [], primary }) => {
+const Dropdown = ({ defaultTitle, children, primary }) => {
   const [show, setShow] = useState(false);
 
-  const toggleShow = useCallback(() => {
+  const toggleShow = () => {
     setShow((prev) => !prev);
-  }, []);
+  };
 
   return (
     <Styled.DropContainer
@@ -24,17 +23,7 @@ const Dropdown = ({ defaultTitle, options = [], primary }) => {
         <MoreIcon />
       </Styled.DropButton>
 
-      {show && (
-        <Styled.DropList primary={primary}>
-          {options.map((option) => (
-            <DropdownItem
-              key={option}
-              primary={primary}
-              option={option}
-            />
-          ))}
-        </Styled.DropList>
-      )}
+      {show && <Styled.DropList primary={primary}>{children}</Styled.DropList>}
     </Styled.DropContainer>
   );
 };
