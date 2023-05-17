@@ -5,22 +5,24 @@ export const useHover = () => {
 
   const targetElementRef = useRef(null);
 
+  const onMouseEnterHandle = () => {
+    setIsHover(true);
+  };
+  const onMouseLeaveHandle = () => {
+    setIsHover(false);
+  };
+
   useEffect(() => {
     // add this variable for cleanup function
-    const currentTarget = targetElementRef.current;
+    const targetElement = targetElementRef.current;
 
-    const onMouseEnterHandle = () => {
-      setIsHover(true);
-    };
-    const onMouseLeaveHandle = () => {
-      setIsHover(false);
-    };
+    if (!(targetElement && targetElement.addEventListener)) return;
 
     targetElementRef.current.addEventListener("mouseenter", onMouseEnterHandle);
     targetElementRef.current.addEventListener("mouseleave", onMouseLeaveHandle);
     return () => {
-      currentTarget.removeEventListener("mouseenter", onMouseEnterHandle);
-      currentTarget.removeEventListener("mouseleave", onMouseLeaveHandle);
+      targetElement.removeEventListener("mouseenter", onMouseEnterHandle);
+      targetElement.removeEventListener("mouseleave", onMouseLeaveHandle);
     };
   }, []);
 
