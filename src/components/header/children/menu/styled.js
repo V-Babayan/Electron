@@ -59,12 +59,36 @@ const Nav = styled.nav`
   }
 `;
 
+const DropList = styled.ul`
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+
+  text-align: center;
+`;
+
 const DropItem = styled.li`
   background: #f4f4f4;
 
+  a {
+    display: block;
+    padding: 10px 0;
+  }
+
+  transition: background 0.1s linear;
   &:hover {
     background: #cdcdcd;
   }
 `;
 
-export { Burger, Nav, DropItem };
+const DropButton = styled.div`
+  padding: ${({ theme }) => theme.ratio(10, 14, "mobileS")};
+  font-size: 16px;
+  line-height: 1.5;
+
+  svg {
+    stroke: #292d32;
+  }
+`;
+
+export { Burger, Nav, DropList, DropItem, DropButton };
