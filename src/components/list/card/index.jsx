@@ -3,17 +3,13 @@ import React, { memo, useState } from "react";
 import { ProductImage, ProductInfo, CardButtons } from "./children";
 
 import * as Styled from "./styled";
+import { useHover } from "hooks";
 
 const Card = ({ item }) => {
-  const [hover, setHover] = useState(false);
-
-  const toggleEnter = () => setHover(true);
-  const toggleLeave = () => setHover(false);
+  const { hover, ref } = useHover();
 
   return (
-    <Styled.Container
-      onMouseEnter={toggleEnter}
-      onMouseLeave={toggleLeave}>
+    <Styled.Container ref={ref}>
       <ProductImage product={item} />
 
       {hover ? <CardButtons item={item} /> : <ProductInfo product={item} />}
