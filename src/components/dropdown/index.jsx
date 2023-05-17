@@ -1,29 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
+import { useHover } from "hooks";
 
 import { ReactComponent as MoreIcon } from "assets/icons/more.svg";
 
 import * as Styled from "./styled";
 
 const Dropdown = ({ defaultTitle, children, primary }) => {
-  const [show, setShow] = useState(false);
-
-  const toggleShow = () => {
-    setShow((prev) => !prev);
-  };
+  const { hover, ref } = useHover();
 
   return (
     <Styled.DropContainer
-      primary={primary}
-      onMouseEnter={toggleShow}
-      onMouseLeave={toggleShow}>
-      <Styled.DropButton
-        show={show}
-        primary={primary}>
+      ref={ref}
+      primary={primary}>
+      <Styled.DropButton primary={primary}>
         {defaultTitle}
         <MoreIcon />
       </Styled.DropButton>
 
-      {show && <Styled.DropList primary={primary}>{children}</Styled.DropList>}
+      {hover && <Styled.DropList primary={primary}>{children}</Styled.DropList>}
     </Styled.DropContainer>
   );
 };

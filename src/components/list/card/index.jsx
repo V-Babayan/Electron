@@ -1,9 +1,9 @@
-import React, { memo, useState } from "react";
+import React, { memo } from "react";
+import { useHover } from "hooks";
 
 import { ProductImage, ProductInfo, CardButtons } from "./children";
 
 import * as Styled from "./styled";
-import { useHover } from "hooks";
 
 const Card = ({ item }) => {
   const { hover, ref } = useHover();
