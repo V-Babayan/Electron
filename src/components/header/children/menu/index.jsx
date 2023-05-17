@@ -27,6 +27,7 @@ const Menu = () => {
       {(menuActive || isTablet) && (
         <Styled.Nav>
           <Link to={PRODUCTS_PAGE}>Products</Link>
+
           <Dropdown
             overlay={
               <Styled.DropList>
@@ -45,6 +46,7 @@ const Menu = () => {
               Pages <MoreIcon />
             </Styled.DropButton>
           </Dropdown>
+
           <Link>About us</Link>
         </Styled.Nav>
       )}

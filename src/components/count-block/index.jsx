@@ -1,21 +1,16 @@
-import React, { memo, useCallback } from "react";
-
 import * as Styled from "./styled";
 
-const CountBlock = ({ count, maxCount, responsive, increment, decrement, setCount }) => {
-  const incrementHandler = useCallback(() => setCount((prev) => prev + 1), []);
-  const decrementHandler = useCallback(() => setCount((prev) => prev - 1), []);
-
+const CountBlock = ({ count, maxCount, responsive, increment, decrement }) => {
   return (
     <Styled.CountBlock responsive={responsive}>
       <button
-        onClick={decrement ? decrement : decrementHandler}
+        onClick={decrement}
         disabled={count === 1}>
         -
       </button>
       <span>{count}</span>
       <button
-        onClick={increment ? increment : incrementHandler}
+        onClick={increment}
         disabled={count === maxCount}>
         +
       </button>
@@ -23,4 +18,4 @@ const CountBlock = ({ count, maxCount, responsive, increment, decrement, setCoun
   );
 };
 
-export default memo(CountBlock);
+export { CountBlock };

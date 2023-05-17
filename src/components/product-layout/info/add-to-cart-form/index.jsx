@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { ReactComponent as HeartIcon } from "assets/icons/heart.svg";
 
 import { addProduct } from "store";
 
-import CountBlock from "components/count-block";
+import { CountBlock } from "components/count-block";
 import { Button } from "components/core-ui";
 
 import * as Styled from "./styled";
@@ -19,6 +19,8 @@ const AddToCartForm = ({ product }) => {
   const addToCartHandler = () => {
     dispatch(addProduct({ product, quanity: count }));
   };
+  const incrementHandler = useCallback(() => setCount((prev) => prev + 1), []);
+  const decrementHandler = useCallback(() => setCount((prev) => prev - 1), []);
 
   return (
     <form onSubmit={formReset}>
@@ -26,8 +28,9 @@ const AddToCartForm = ({ product }) => {
         <label>Quantity :</label>
         <CountBlock
           count={count}
-          setCount={setCount}
           maxCount={product.count}
+          increment={incrementHandler}
+          decrement={decrementHandler}
         />
       </Styled.CountWrapper>
 
