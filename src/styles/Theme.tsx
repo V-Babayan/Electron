@@ -8,9 +8,10 @@ import { GlobalStyles } from "./global-styles";
 
 const theme = {
   color: {
-    blue: "#003f62",
-    lightblue: "#87bcd9",
-    orange: "#a76906",
+    blue: "#091A56",
+    secondary_blue: "#2346C1",
+    lightblue: "#DFE6FF",
+    orange: "#FF6E41",
     red: "#c33131",
     grey: "#a9a9a9",
   },

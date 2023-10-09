@@ -8,7 +8,7 @@ const Footer = styled.footer`
     " " +
     theme.ratio(5, 59, EDeviceNames.mobileS)};
 
-  background: #e2f4ff;
+  background: ${({ theme }) => theme.color.lightblue};
 `;
 
 const FooterTop = styled.section`
@@ -33,7 +33,7 @@ const FooterTop = styled.section`
     font-size: ${({ theme }) => theme.ratio(20, 8, EDeviceNames.mobileS)};
     line-height: 1.5;
 
-    color: #1b5a7d;
+    color: ${({ theme }) => theme.color.blue};
   }
 
   & > div {
@@ -85,7 +85,7 @@ const Content = styled.div`
 const LinksContainer = styled.section`
   font-size: 19px;
   line-height: 1.5;
-  color: #1b5a7d;
+  color: ${({ theme }) => theme.color.blue};
 
   h5 {
     font-weight: 600;

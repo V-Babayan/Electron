@@ -15,7 +15,7 @@ const CartTotal = styled.section`
     line-height: 1.5;
 
     color: #232323;
-    background: #e2f4ff;
+    background: ${({ theme }) => theme.color.lightblue};
     padding: 12px;
   }
 `;

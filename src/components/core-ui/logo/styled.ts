@@ -5,7 +5,8 @@ const Logo = styled.div<{ $blue?: boolean }>`
   align-self: center;
   gap: 5px;
 
-  color: ${({ $blue }) => ($blue ? "#1b5a7d" : "#ffffff")};
+  color: ${({ $blue }) =>
+    $blue ? "${({ theme }) => theme.color.blue}" : "#ffffff"};
   font-size: 1.5em;
   line-height: 2;
   font-weight: 700;

@@ -26,7 +26,7 @@ const Thead = styled.thead`
     z-index: -1;
     width: 100%;
     height: 100%;
-    background: #e2f4ff;
+    background: ${({ theme }) => theme.color.lightblue};
   }
 `;
 

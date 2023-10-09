@@ -115,7 +115,7 @@ const ProductName = styled.h5`
   font-size: ${({ theme }) => theme.ratio(20, 24, EDeviceNames.mobileS)};
   line-height: 1.5;
 
-  color: #1b5a7d;
+  color: ${({ theme }) => theme.color.blue};
   margin: auto 0 ${({ theme }) => theme.ratio(10, 10, EDeviceNames.mobileS)};
 `;
 

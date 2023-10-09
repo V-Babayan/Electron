@@ -18,7 +18,7 @@ const Label = styled.label`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  color: #1b5a7d;
+  color: ${({ theme }) => theme.color.blue};
 
   display: inline-block;
   padding: 10px 30px;

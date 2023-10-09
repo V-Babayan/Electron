@@ -8,8 +8,8 @@ const Heading = styled.h5`
   font-size: ${({ theme }) => theme.ratio(20, 8, EDeviceNames.mobileS)};
   line-height: 1.5;
 
-  color: #1b5a7d;
   margin-bottom: ${({ theme }) => theme.ratio(15, 40, EDeviceNames.mobileS)};
+  color: ${({ theme }) => theme.color.blue};
 `;
 
 const HeadingSkeleton = styled(Skeleton)`

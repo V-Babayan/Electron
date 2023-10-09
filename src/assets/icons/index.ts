@@ -7,7 +7,7 @@ export { default as FacebookIcon } from "./facebook.svg";
 export { default as GoogleIcon } from "./google.svg";
 export { default as HeadphonesIcon } from "./headphones.svg";
 export { default as HeartIcon } from "./heart.svg";
-export { default as LogoIcon } from "./logo.png";
+export { default as LogoIcon } from "./logo.svg";
 export { default as MoreIcon } from "./more.svg";
 export { default as ProfileIcon } from "./profile.svg";
 export { default as SendIcon } from "./send.svg";
