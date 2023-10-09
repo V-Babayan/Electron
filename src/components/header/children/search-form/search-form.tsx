@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FC, FormEvent, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { PRODUCTS_PAGE } from "~/helpers";
+import { ERoutePaths } from "~/helpers";
 
 import * as Styled from "./styled";
 
@@ -12,14 +12,14 @@ const HeaderSearchForm: FC = () => {
 
   const submitReset = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    navigate(PRODUCTS_PAGE, { state: { query } });
+    navigate(ERoutePaths.PRODUCTS_PAGE, { state: { query } });
     setQuery("");
   };
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) =>
     setQuery(e.target.value);
 
-  return location.pathname !== PRODUCTS_PAGE ? (
+  return location.pathname !== ERoutePaths.PRODUCTS_PAGE ? (
     <Styled.Form onSubmit={submitReset}>
       <Styled.SearchInput
         type="text"

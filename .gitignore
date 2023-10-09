@@ -27,3 +27,6 @@ yarn.lock
 # development
 src/components/slider-test
 todo.txt
+
+# env
+.env

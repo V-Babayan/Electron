@@ -1,5 +1,3 @@
-import { BASE_URL } from "~/helpers";
-
 export enum RequestMethods {
   GET = "GET",
   PUT = "PUT",
@@ -20,8 +18,8 @@ export const makeRequest = async <T>({
   method = RequestMethods.GET,
   headers = {},
   body,
-}: MakeRequestConfigs): Promise<T> | never => {
-  return await fetch(BASE_URL + url, {
+}: MakeRequestConfigs): Promise<T> | never =>
+  await fetch(process.env.BASE_URL + url, {
     method,
     headers,
     body,
@@ -30,4 +28,3 @@ export const makeRequest = async <T>({
     .catch((error: string) => {
       throw new Error(error);
     });
-};

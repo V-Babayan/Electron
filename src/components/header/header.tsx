@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { Link } from "react-router-dom";
 
 import { Logo } from "~/components/core-ui";
-import { HOME_PAGE } from "~/helpers";
+import { ERoutePaths } from "~/helpers";
 import { useMedia } from "~/hooks";
 
 import {
@@ -20,7 +20,7 @@ export const Header: FC = () => {
   return (
     <header>
       <Styled.HeaderTop>
-        <Link to={HOME_PAGE}>
+        <Link to={ERoutePaths.HOME_PAGE}>
           <Logo />
         </Link>
 

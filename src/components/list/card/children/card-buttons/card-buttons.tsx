@@ -18,7 +18,7 @@ const CardButtons: FC<CardButtonsProps> = ({ item }) => {
   const isDesktop = useMedia("desktop");
 
   const clickHandler = useCallback(
-    () => navigate(`${`/products/${item.id}`}`),
+    () => navigate(`/products/${item.id}`),
     [item.id]
   );
 

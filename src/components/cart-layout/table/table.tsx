@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { HOME_PAGE } from "~/helpers";
+import { ERoutePaths } from "~/helpers";
 import { emptyCart, selectCart, useAppDispatch, useAppSelector } from "~/store";
 
 import { Button } from "../../core-ui";
@@ -15,7 +15,7 @@ const Table: FC = () => {
   const cart = useAppSelector(selectCart);
 
   const goHomePageHandler = () => {
-    navigate(HOME_PAGE);
+    navigate(ERoutePaths.HOME_PAGE);
   };
 
   const emptyCartHandler = () => {

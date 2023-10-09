@@ -1,18 +1,12 @@
 import { lazy } from "react";
 
-import {
-  CART_PAGE,
-  HOME_PAGE,
-  LOGIN_PAGE,
-  PRODUCT_PAGE,
-  PRODUCTS_PAGE,
-  PROFILE_PAGE,
-} from "~/helpers";
 import { HomeSkeleton } from "~/pages/home/HomeSkeleton";
+
+import { ERoutePaths } from "./helpers";
 
 export const authRotes = [
   {
-    path: PROFILE_PAGE,
+    path: ERoutePaths.PROFILE_PAGE,
     Component: lazy(
       () => import(/* webpack-chunk-name: 'pages/profile */ "./pages/Profile")
     ),
@@ -20,13 +14,13 @@ export const authRotes = [
 ];
 export const publicRotes = [
   {
-    path: CART_PAGE,
+    path: ERoutePaths.CART_PAGE,
     Component: lazy(
       () => import(/* webpack-chunk-name: 'pages/cart' */ "./pages/cart/cart")
     ),
   },
   {
-    path: PRODUCTS_PAGE,
+    path: ERoutePaths.PRODUCTS_PAGE,
     Component: lazy(
       () =>
         import(
@@ -35,13 +29,13 @@ export const publicRotes = [
     ),
   },
   {
-    path: LOGIN_PAGE,
+    path: ERoutePaths.LOGIN_PAGE,
     Component: lazy(
       () => import(/* webpack-chunk-name: 'pages/login */ "./pages/Login")
     ),
   },
   {
-    path: PRODUCT_PAGE,
+    path: ERoutePaths.PRODUCT_PAGE,
     Component: lazy(
       () =>
         import(
@@ -50,7 +44,7 @@ export const publicRotes = [
     ),
   },
   {
-    path: HOME_PAGE,
+    path: ERoutePaths.HOME_PAGE,
     Component: lazy(
       () => import(/* webpack-chunk-name: 'pages/ */ "./pages/Home")
     ),

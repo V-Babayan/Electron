@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { MoreIcon } from "~/assets/icons";
 import { Dropdown } from "~/components";
-import { CART_PAGE, HOME_PAGE, PRODUCTS_PAGE } from "~/helpers";
+import { ERoutePaths } from "~/helpers";
 import { useMedia } from "~/hooks";
 
 import * as Styled from "./styled";
@@ -22,18 +22,18 @@ const Menu: FC = () => {
 
       {(menuActive || isTablet) && (
         <Styled.Nav>
-          <Link to={PRODUCTS_PAGE}>Products</Link>
+          <Link to={ERoutePaths.PRODUCTS_PAGE}>Products</Link>
           <Dropdown
             overlay={
               <Styled.DropList>
                 <Styled.DropItem>
-                  <Link to={HOME_PAGE}>Home</Link>
+                  <Link to={ERoutePaths.HOME_PAGE}>Home</Link>
                 </Styled.DropItem>
                 {/* <li>
                   <Link to={}>About</Link>
                 </li> */}
                 <Styled.DropItem>
-                  <Link to={CART_PAGE}>Cart</Link>
+                  <Link to={ERoutePaths.CART_PAGE}>Cart</Link>
                 </Styled.DropItem>
               </Styled.DropList>
             }
