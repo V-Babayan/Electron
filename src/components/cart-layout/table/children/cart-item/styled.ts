@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { EDeviceNames } from "~/helpers";
+
 export const CartItem = styled.tr`
   display: flex;
   align-items: center;
@@ -23,7 +25,7 @@ export const CartItem = styled.tr`
   button:hover {
     filter: contrast(50%);
   }
-  @media screen and (${({ theme }) => theme.media("mobileL")}) {
+  @media screen and (${({ theme }) => theme.media(EDeviceNames.mobileL)}) {
     display: table-row;
     border-bottom: none;
 
@@ -37,7 +39,7 @@ export const Figure = styled.figure`
   width: 100%;
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.ratio(5, 15, "mobileS")};
+  gap: ${({ theme }) => theme.ratio(5, 15, EDeviceNames.mobileS)};
 
   div {
     flex: 0 0 50%;
@@ -56,7 +58,7 @@ export const Figure = styled.figure`
   }
   figcaption {
     font-weight: 600;
-    font-size: ${({ theme }) => theme.ratio(16, 4, "mobileS")};
+    font-size: ${({ theme }) => theme.ratio(16, 4, EDeviceNames.mobileS)};
     line-height: 1.5;
 
     color: ${({ theme }) => theme.color.blue};

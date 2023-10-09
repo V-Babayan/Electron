@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { EDeviceNames } from "~/helpers";
+
 const ButtonsContainer = styled.div`
   height: calc(37% - 25px);
 
@@ -16,8 +18,13 @@ const Button = styled.button`
     white-space: nowrap;
   }
 
-  padding: ${({ theme }) => `${theme.ratio(7, 8, "mobileS")} ${theme.ratio(5, 17, "mobileS")}`};
-  border-radius: ${({ theme }) => theme.ratio(15, 5, "mobileS")};
+  padding: ${({ theme }) =>
+    `${theme.ratio(7, 8, EDeviceNames.mobileS)} ${theme.ratio(
+      5,
+      17,
+      EDeviceNames.mobileS
+    )}`};
+  border-radius: ${({ theme }) => theme.ratio(15, 5, EDeviceNames.mobileS)};
 
   font-weight: 600;
   font-size: 16px;
@@ -50,4 +57,4 @@ const IconBlock = styled.div`
   }
 `;
 
-export { ButtonsContainer, Button, IconBlock };
+export { Button, ButtonsContainer, IconBlock };

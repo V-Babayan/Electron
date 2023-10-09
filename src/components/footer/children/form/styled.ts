@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { EDeviceNames } from "~/helpers";
+
 const Form = styled.form`
   flex: 1 1 auto;
 
@@ -13,7 +15,7 @@ const Form = styled.form`
   border-radius: 20px;
 
   background: ${({ theme }) => theme.color.orange};
-  @media screen and (${({ theme }) => theme.media("mobileL")}) {
+  @media screen and (${({ theme }) => theme.media(EDeviceNames.mobileL)}) {
     margin-bottom: none;
   }
   input {

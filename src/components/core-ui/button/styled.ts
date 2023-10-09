@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 
+import { EDeviceNames } from "~/helpers";
+
 const Button = styled.button<{
   $large?: boolean;
   $outlined?: boolean;
@@ -8,9 +10,11 @@ const Button = styled.button<{
 }>`
   display: inline-block;
   padding: ${({ theme, $large }) =>
-    theme.ratio(10, 8, "mobileS") +
+    theme.ratio(10, 8, EDeviceNames.mobileS) +
     " " +
-    ($large ? theme.ratio(10, 52, "mobileS") : theme.ratio(10, 26, "mobileS"))};
+    ($large
+      ? theme.ratio(10, 52, EDeviceNames.mobileS)
+      : theme.ratio(10, 26, EDeviceNames.mobileS))};
   border-radius: ${({ $large }) => ($large ? "32px" : "20px")};
 
   font-weight: 600;

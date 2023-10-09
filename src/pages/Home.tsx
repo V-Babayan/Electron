@@ -8,16 +8,16 @@ import {
   PageSkeleton,
   Slider,
 } from "~/components";
-import { sliceProductsToPages } from "~/helpers";
+import { EDeviceNames, sliceProductsToPages } from "~/helpers";
 import { useMedia } from "~/hooks";
 import { selectRelatedProducts, useAppSelector } from "~/store";
 
 const Home = () => {
   const products = useAppSelector(selectRelatedProducts);
 
-  const isMobile = useMedia("mobile");
-  const isTablet = useMedia("tablet");
-  const isNotebook = useMedia("notebook");
+  const isMobile = useMedia(EDeviceNames.mobile);
+  const isTablet = useMedia(EDeviceNames.tablet);
+  const isNotebook = useMedia(EDeviceNames.notebook);
 
   const sliderProducts = useMemo(() => [...products].slice(0, 4), [products]);
 

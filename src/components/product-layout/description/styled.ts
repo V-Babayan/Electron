@@ -1,10 +1,17 @@
 import styled from "styled-components";
 
+import { EDeviceNames } from "~/helpers";
+
 const Wrapper = styled.article`
-  padding: ${({ theme }) => `${theme.ratio(10, 32, "mobileS")} ${theme.ratio(10, 40, "mobileS")}`};
+  padding: ${({ theme }) =>
+    `${theme.ratio(10, 32, EDeviceNames.mobileS)} ${theme.ratio(
+      10,
+      40,
+      EDeviceNames.mobileS
+    )}`};
   border: 1px solid #b8b8b8;
   border-radius: 20px;
-  margin-bottom: ${({ theme }) => theme.ratio(20, 44, "mobileS")};
+  margin-bottom: ${({ theme }) => theme.ratio(20, 44, EDeviceNames.mobileS)};
 
   line-height: 1.5;
 
@@ -21,9 +28,9 @@ const Title = styled.h5`
 `;
 
 const Text = styled.p`
-  font-size: ${({ theme }) => theme.ratio(16, 4, "mobileS")};
+  font-size: ${({ theme }) => theme.ratio(16, 4, EDeviceNames.mobileS)};
 
   color: #4f4f4f;
 `;
 
-export { Wrapper, Title, Text };
+export { Text, Title, Wrapper };

@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
+import { EDeviceNames } from "~/helpers";
+
 const CategoriesButton = styled.div`
-  padding: ${({ theme }) => theme.ratio(10, 14, "mobileS")};
+  padding: ${({ theme }) => theme.ratio(10, 14, EDeviceNames.mobileS)};
   padding-left: 14px;
   font-size: 16px;
   line-height: 1.5;

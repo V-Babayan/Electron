@@ -2,6 +2,7 @@ import React, { FC, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { CartIcon, EyeIcon } from "~/assets/icons";
+import { EDeviceNames } from "~/helpers";
 import { useMedia } from "~/hooks";
 import type { Product } from "~/store";
 import { addProduct, useAppDispatch } from "~/store";
@@ -15,7 +16,7 @@ type CardButtonsProps = {
 const CardButtons: FC<CardButtonsProps> = ({ item }) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const isDesktop = useMedia("desktop");
+  const isDesktop = useMedia(EDeviceNames.desktop);
 
   const clickHandler = useCallback(
     () => navigate(`/products/${item.id}`),

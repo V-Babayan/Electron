@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 import { MoreIcon } from "~/assets/icons";
 import { Dropdown } from "~/components";
-import { ERoutePaths } from "~/helpers";
+import { EDeviceNames, ERoutePaths } from "~/helpers";
 import { useMedia } from "~/hooks";
 
 import * as Styled from "./styled";
 
 const Menu: FC = () => {
   const [menuActive, setMenuActive] = useState(false);
-  const isTablet = useMedia("tablet");
+  const isTablet = useMedia(EDeviceNames.tablet);
 
   const burgerHandler = () => setMenuActive(prev => !prev);
 

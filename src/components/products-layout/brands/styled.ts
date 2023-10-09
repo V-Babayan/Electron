@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { CheckMarkIcon } from "~/assets/icons";
+import { EDeviceNames } from "~/helpers";
 
 const HeadingBlock = styled.div`
   display: flex;
@@ -27,7 +28,7 @@ const BrandList = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 10px;
-  @media screen and (${({ theme }) => theme.media("mobileL")}) {
+  @media screen and (${({ theme }) => theme.media(EDeviceNames.mobileL)}) {
     display: block;
   }
 `;

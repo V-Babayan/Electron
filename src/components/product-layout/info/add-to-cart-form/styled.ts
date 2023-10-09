@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
+import { EDeviceNames } from "~/helpers";
+
 const CountWrapper = styled.div`
-  margin-bottom: ${({ theme }) => theme.ratio(10, 30, "mobileS")};
+  margin-bottom: ${({ theme }) => theme.ratio(10, 30, EDeviceNames.mobileS)};
 
   label {
     margin-right: 20px;
@@ -11,10 +13,10 @@ const CountWrapper = styled.div`
 const ButtonsContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.ratio(10, 20, "mobileS")};
+  gap: ${({ theme }) => theme.ratio(10, 20, EDeviceNames.mobileS)};
   flex-wrap: wrap-reverse;
 
-  font-size: ${({ theme }) => theme.ratio(16, 6, "mobileS")};
+  font-size: ${({ theme }) => theme.ratio(16, 6, EDeviceNames.mobileS)};
 
   button {
     flex: 0 0 auto;

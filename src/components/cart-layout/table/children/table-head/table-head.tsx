@@ -1,11 +1,12 @@
 import React, { FC, memo } from "react";
 
+import { EDeviceNames } from "~/helpers";
 import { useMedia } from "~/hooks";
 
 import * as Styled from "./styled";
 
 const TableHead: FC = () => {
-  const isMobile = useMedia("mobileL");
+  const isMobile = useMedia(EDeviceNames.mobileL);
 
   return (
     isMobile && (

@@ -5,9 +5,11 @@ import { useMedia } from "~/hooks";
 import { fetchProducts, useAppDispatch } from "~/store";
 import { Theme } from "~/styles/";
 
+import { EDeviceNames } from "./helpers";
+
 function App() {
   const dispatch = useAppDispatch();
-  const isLargeDisplay = useMedia("desktopL");
+  const isLargeDisplay = useMedia(EDeviceNames.desktopL);
 
   useEffect(() => {
     dispatch(fetchProducts());

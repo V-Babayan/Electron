@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
+import { EDeviceNames } from "~/helpers";
+
 const CartTotal = styled.section`
-  @media screen and (${({ theme }) => theme.media("notebook")}) {
+  @media screen and (${({ theme }) => theme.media(EDeviceNames.notebook)}) {
     align-self: flex-start;
   }
   text-align: center;
@@ -20,9 +22,9 @@ const CartTotal = styled.section`
 
 const Content = styled.div`
   padding: ${({ theme }) => `
-      ${theme.ratio(10, 10, "mobileS")}
-      ${theme.ratio(10, 34, "mobileS")}
-      ${theme.ratio(10, 14, "mobileS")}
+      ${theme.ratio(10, 10, EDeviceNames.mobileS)}
+      ${theme.ratio(10, 34, EDeviceNames.mobileS)}
+      ${theme.ratio(10, 14, EDeviceNames.mobileS)}
     `};
 
   & > button {
@@ -41,7 +43,7 @@ const Subtotal = styled.div`
   font-size: 20px;
   line-height: 1.5;
   color: #232323;
-  margin-bottom: ${({ theme }) => theme.ratio(10, 42, "mobileS")};
+  margin-bottom: ${({ theme }) => theme.ratio(10, 42, EDeviceNames.mobileS)};
 
   &::after {
     content: "";
@@ -52,7 +54,7 @@ const Subtotal = styled.div`
     border-bottom: 1px solid #afafaf;
 
     /* top: calc(100% + 30px); */
-    bottom: ${({ theme }) => theme.ratio(-5, -25, "mobileS")};
+    bottom: ${({ theme }) => theme.ratio(-5, -25, EDeviceNames.mobileS)};
     left: 0;
   }
 
@@ -65,7 +67,7 @@ const Form = styled.form`
   padding: 14px 23px;
   border: 1px solid #dfdfdf;
   border-radius: 20px;
-  margin-bottom: ${({ theme }) => theme.ratio(10, 50, "mobileS")};
+  margin-bottom: ${({ theme }) => theme.ratio(10, 50, EDeviceNames.mobileS)};
   position: relative;
 
   display: flex;
@@ -97,14 +99,14 @@ const Form = styled.form`
     width: 100%;
     border-bottom: 1px solid #afafaf;
 
-    bottom: ${({ theme }) => theme.ratio(-5, -25, "mobileS")};
+    bottom: ${({ theme }) => theme.ratio(-5, -25, EDeviceNames.mobileS)};
     left: 0;
   }
 `;
 
 const SelectWrapper = styled.div`
   position: relative;
-  margin-bottom: ${({ theme }) => theme.ratio(8, 20, "mobileS")};
+  margin-bottom: ${({ theme }) => theme.ratio(8, 20, EDeviceNames.mobileS)};
 
   select {
     width: 100%;
@@ -130,7 +132,7 @@ const TotalPrice = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  margin-bottom: ${({ theme }) => theme.ratio(15, 15, "mobileS")};
+  margin-bottom: ${({ theme }) => theme.ratio(15, 15, EDeviceNames.mobileS)};
 
   line-height: 1.5;
   color: #232323;

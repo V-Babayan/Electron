@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { Link } from "react-router-dom";
 
 import { Logo } from "~/components/core-ui";
-import { ERoutePaths } from "~/helpers";
+import { EDeviceNames, ERoutePaths } from "~/helpers";
 import { useMedia } from "~/hooks";
 
 import {
@@ -15,7 +15,7 @@ import {
 import * as Styled from "./styled";
 
 export const Header: FC = () => {
-  const isNotebook = useMedia("notebook");
+  const isNotebook = useMedia(EDeviceNames.notebook);
 
   return (
     <header>

@@ -1,9 +1,11 @@
 import styled, { css } from "styled-components";
 
+import { EDeviceNames } from "~/helpers";
+
 const ButtonsContainer = styled.div`
   flex: 0 0 auto;
   display: flex;
-  gap: ${({ theme }) => theme.ratio(8, 20, "mobileS")};
+  gap: ${({ theme }) => theme.ratio(8, 20, EDeviceNames.mobileS)};
 
   font-size: 14px;
   line-height: 1.5;
@@ -14,7 +16,7 @@ const ButtonsContainer = styled.div`
 const HeaderLink = styled.div<{ $cartSize?: number }>`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.ratio(5, 7, "mobileS")};
+  gap: ${({ theme }) => theme.ratio(5, 7, EDeviceNames.mobileS)};
   color: #ffffff;
 
   transition: color 0.1s linear;

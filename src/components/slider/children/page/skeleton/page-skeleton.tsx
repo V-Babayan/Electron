@@ -1,11 +1,12 @@
 import React, { FC } from "react";
 
+import { EDeviceNames } from "~/helpers";
 import { useMedia } from "~/hooks";
 
 import * as Styled from "./styled";
 
 const PageSkeleton: FC = () => {
-  const isTablet = useMedia("tablet");
+  const isTablet = useMedia(EDeviceNames.tablet);
 
   return (
     <Styled.Container>

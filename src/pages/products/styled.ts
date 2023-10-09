@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
+import { EDeviceNames } from "~/helpers";
+
 const Container = styled.div`
-  @media screen and (${({ theme }) => theme.media("mobileL")}) {
+  @media screen and (${({ theme }) => theme.media(EDeviceNames.mobileL)}) {
     display: flex;
     align-items: flex-start;
 
@@ -10,7 +12,7 @@ const Container = styled.div`
 `;
 
 const MainContent = styled.div`
-  @media screen and (${({ theme }) => theme.media("mobileL")}) {
+  @media screen and (${({ theme }) => theme.media(EDeviceNames.mobileL)}) {
     width: 100%;
 
     & > ul {
@@ -20,13 +22,13 @@ const MainContent = styled.div`
     }
   }
   & > ul {
-    @media screen and (${({ theme }) => theme.media("notebook")}) {
+    @media screen and (${({ theme }) => theme.media(EDeviceNames.notebook)}) {
       grid-template-columns: repeat(3, 1fr);
     }
   }
 `;
 const Sidebar = styled.aside`
-  @media screen and (${({ theme }) => theme.media("mobileL")}) {
+  @media screen and (${({ theme }) => theme.media(EDeviceNames.mobileL)}) {
     flex: 0 2 315px;
   }
 `;

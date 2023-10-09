@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { EDeviceNames } from "~/helpers";
+
 export const Form = styled.form`
   flex: 1 1 380px;
 
@@ -8,21 +10,21 @@ export const Form = styled.form`
   justify-content: space-between;
   gap: 10px;
 
-  padding-left: ${({ theme }) => theme.ratio(10, 15, "mobileS")};
-  height: ${({ theme }) => theme.ratio(38, 18, "mobileS")};
+  padding-left: ${({ theme }) => theme.ratio(10, 15, EDeviceNames.mobileS)};
+  height: ${({ theme }) => theme.ratio(38, 18, EDeviceNames.mobileS)};
   border-radius: 25px;
 
   background: #ffffff;
   overflow: hidden;
 
-  @media screen and (${({ theme }) => theme.media("tablet")}) {
+  @media screen and (${({ theme }) => theme.media(EDeviceNames.tablet)}) {
     order: 0;
   }
 `;
 
 export const SearchInput = styled.input`
   flex: 1 1 auto;
-  font-size: ${({ theme }) => theme.ratio(16, 4, "mobileS")};
+  font-size: ${({ theme }) => theme.ratio(16, 4, EDeviceNames.mobileS)};
   color: #3a3a3a;
 `;
 

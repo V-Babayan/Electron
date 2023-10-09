@@ -1,5 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
+import { EDeviceNames } from "~/helpers";
+
 const toNext = keyframes`
   75% {
     left: 0;
@@ -80,14 +82,14 @@ const Page = styled.li`
     }
   }
 
-  @media screen and (${({ theme }) => theme.media("tablet")}) {
+  @media screen and (${({ theme }) => theme.media(EDeviceNames.tablet)}) {
     flex-direction: row;
     justify-content: space-between;
     padding: ${({ theme }) =>
-      `0 ${theme.ratio(20, 120, "tablet")} 0 ${theme.ratio(
+      `0 ${theme.ratio(20, 120, EDeviceNames.tablet)} 0 ${theme.ratio(
         10,
         100,
-        "tablet"
+        EDeviceNames.tablet
       )}`};
   }
 `;
@@ -95,12 +97,12 @@ const Page = styled.li`
 const PageLeft = styled.section`
   text-align: center;
 
-  @media screen and (${({ theme }) => theme.media("tablet")}) {
+  @media screen and (${({ theme }) => theme.media(EDeviceNames.tablet)}) {
     text-align: left;
 
-    flex: 0 0 ${({ theme }) => theme.ratio(270, 80, "tablet")};
+    flex: 0 0 ${({ theme }) => theme.ratio(270, 80, EDeviceNames.tablet)};
 
-    margin-top: ${({ theme }) => theme.ratio(28, 38, "tablet")};
+    margin-top: ${({ theme }) => theme.ratio(28, 38, EDeviceNames.tablet)};
     height: 208px;
 
     display: flex;
@@ -110,11 +112,11 @@ const PageLeft = styled.section`
 
 const ProductName = styled.h5`
   font-weight: 700;
-  font-size: ${({ theme }) => theme.ratio(20, 24, "mobileS")};
+  font-size: ${({ theme }) => theme.ratio(20, 24, EDeviceNames.mobileS)};
   line-height: 1.5;
 
   color: #1b5a7d;
-  margin: auto 0 ${({ theme }) => theme.ratio(10, 10, "mobileS")};
+  margin: auto 0 ${({ theme }) => theme.ratio(10, 10, EDeviceNames.mobileS)};
 `;
 
 const ButtonsContainer = styled.div`
@@ -127,36 +129,36 @@ const PageRight = styled.div`
   display: flex;
   justify-content: center;
 
-  @media screen and (${({ theme }) => theme.media("tablet")}) {
+  @media screen and (${({ theme }) => theme.media(EDeviceNames.tablet)}) {
     flex: 0 0 40%;
   }
 `;
 
 const ImageBlock = styled.div<{ $price: number }>`
   position: relative;
-  width: ${({ theme }) => theme.ratio(300, 450, "mobileS")};
+  width: ${({ theme }) => theme.ratio(300, 450, EDeviceNames.mobileS)};
 
   /* For image correct size and don't have scroll.  */
   display: flex;
 
-  @media screen and (${({ theme }) => theme.media("tablet")}) {
+  @media screen and (${({ theme }) => theme.media(EDeviceNames.tablet)}) {
     width: auto;
-    height: ${({ theme }) => theme.ratio(285, 75, "tablet")};
+    height: ${({ theme }) => theme.ratio(285, 75, EDeviceNames.tablet)};
   }
 
   &::after {
     content: "Only ${({ $price }) => $price}$";
 
     position: absolute;
-    right: ${({ theme }) => theme.ratio(-10, -22, "mobileS")};
+    right: ${({ theme }) => theme.ratio(-10, -22, EDeviceNames.mobileS)};
     bottom: 10%;
 
-    width: ${({ theme }) => theme.ratio(80, 40, "mobileS")};
-    height: ${({ theme }) => theme.ratio(80, 40, "mobileS")};
-    padding: ${({ theme }) => theme.ratio(15, 10, "mobileS")};
+    width: ${({ theme }) => theme.ratio(80, 40, EDeviceNames.mobileS)};
+    height: ${({ theme }) => theme.ratio(80, 40, EDeviceNames.mobileS)};
+    padding: ${({ theme }) => theme.ratio(15, 10, EDeviceNames.mobileS)};
 
     font-weight: 600;
-    font-size: ${({ theme }) => theme.ratio(16, 4, "mobileS")};
+    font-size: ${({ theme }) => theme.ratio(16, 4, EDeviceNames.mobileS)};
     line-height: 1.6;
     color: #ffffff;
     background: ${({ theme }) => theme.color.orange};
@@ -170,7 +172,7 @@ const Image = styled.img`
   width: 100%;
   object-fit: contain;
 
-  @media screen and (${({ theme }) => theme.media("tablet")}) {
+  @media screen and (${({ theme }) => theme.media(EDeviceNames.tablet)}) {
     width: auto;
     height: 100%;
   }

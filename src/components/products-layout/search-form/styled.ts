@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
+import { EDeviceNames } from "~/helpers";
+
 const SearchForm = styled.form`
-  margin-bottom: ${({ theme }) => theme.ratio(12, 40, "mobileS")};
+  margin-bottom: ${({ theme }) => theme.ratio(12, 40, EDeviceNames.mobileS)};
 
   display: flex;
   flex-wrap: wrap;

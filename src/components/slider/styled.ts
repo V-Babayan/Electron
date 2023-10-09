@@ -1,10 +1,12 @@
 import styled, { css } from "styled-components";
 
+import { EDeviceNames } from "~/helpers";
+
 export const Wrapper = styled.div`
   position: relative;
   width: 100%;
 
-  margin-bottom: ${({ theme }) => theme.ratio(16, 36, "mobileS")};
+  margin-bottom: ${({ theme }) => theme.ratio(16, 36, EDeviceNames.mobileS)};
 `;
 
 export const Container = styled.ul`
@@ -22,7 +24,7 @@ export const Container = styled.ul`
     scroll-snap-align: center;
   }
 
-  @media screen and (${({ theme }) => theme.media("tablet")}) {
+  @media screen and (${({ theme }) => theme.media(EDeviceNames.tablet)}) {
     margin-bottom: 0;
   }
   &::-webkit-scrollbar {
@@ -46,10 +48,11 @@ export const Controls = styled.div<{ $list?: boolean }>`
           margin-top: 20px;
         `
       : css`
-          @media screen and (${({ theme }) => theme.media("tablet")}) {
+          @media screen and (${({ theme }) =>
+              theme.media(EDeviceNames.tablet)}) {
             position: absolute;
             left: 15%;
-            bottom: ${({ theme }) => theme.ratio(0, 55, "mobileS")};
+            bottom: ${({ theme }) => theme.ratio(0, 55, EDeviceNames.mobileS)};
             z-index: 1;
           }
         `}

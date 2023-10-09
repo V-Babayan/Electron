@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
+import { EDeviceNames } from "~/helpers";
+
 export const GlobalStyles = createGlobalStyle<{ isLargeDisplay: boolean }>`
   @font-face {
     font-family: 'Poppins', sans-serif;
@@ -93,11 +95,11 @@ export const GlobalStyles = createGlobalStyle<{ isLargeDisplay: boolean }>`
     margin: 0 auto;
     display: flex;
     flex-flow: column nowrap;
-    gap: ${({ theme }) => theme.ratio(10, 30, "mobileS")};
+    gap: ${({ theme }) => theme.ratio(10, 30, EDeviceNames.mobileS)};
   }
 
   main {
-    padding: 0 ${({ theme }) => theme.ratio(5, 59, "mobileS")};
+    padding: 0 ${({ theme }) => theme.ratio(5, 59, EDeviceNames.mobileS)};
     flex: 1 1 auto;
   }
 `;

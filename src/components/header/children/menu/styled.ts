@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { EDeviceNames } from "~/helpers";
+
 export const Burger = styled.div<{ active: boolean }>`
   position: relative;
   z-index: 20;
@@ -37,18 +39,18 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: ${({ theme }) => theme.ratio(10, 58, "mobileS")};
+  gap: ${({ theme }) => theme.ratio(10, 58, EDeviceNames.mobileS)};
 
   position: absolute;
   right: 0;
   top: 100%;
   z-index: 999;
-  padding: ${({ theme }) => theme.ratio(10, 58, "mobileS")} 0;
+  padding: ${({ theme }) => theme.ratio(10, 58, EDeviceNames.mobileS)} 0;
   margin-left: auto;
 
   background: inherit;
 
-  @media screen and (${({ theme }) => theme.media("tablet")}) {
+  @media screen and (${({ theme }) => theme.media(EDeviceNames.tablet)}) {
     flex-direction: row;
     align-self: stretch;
 
@@ -56,7 +58,7 @@ export const Nav = styled.nav`
     padding: 0;
   }
 
-  @media screen and (${({ theme }) => theme.media("notebook")}) {
+  @media screen and (${({ theme }) => theme.media(EDeviceNames.notebook)}) {
     margin-left: 0;
   }
 `;
@@ -81,7 +83,7 @@ export const DropItem = styled.li`
 `;
 
 export const DropButton = styled.div`
-  padding: ${({ theme }) => theme.ratio(10, 14, "mobileS")};
+  padding: ${({ theme }) => theme.ratio(10, 14, EDeviceNames.mobileS)};
   font-size: 16px;
   line-height: 1.5;
   svg {
