@@ -1,20 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useMedia } from "hooks";
+// import { Link } from "react-router-dom";
+// import { useMedia } from "hooks";
 
-import { HOME_PAGE } from "helpers";
+// import { HOME_PAGE } from "helpers";
 
-import { Logo } from "components/core-ui/";
-import { HeaderTopButtons, Menu, CategoriesMenu, HeaderSearchForm } from "./children";
+// import { Logo } from "components/core-ui/";
+// import {
+//   HeaderTopButtons,
+//   Menu,
+//   CategoriesMenu,
+//   HeaderSearchForm,
+// } from "./children";
 
-import * as Styled from "./styled";
+// import * as Styled from "./styled";
 
 const Header = () => {
-  const isNotebook = useMedia("notebook");
+  // const isNotebook = useMedia("notebook");
 
   return (
     <header>
-      <Styled.HeaderTop>
+      {/* <Styled.HeaderTop>
         <Link to={HOME_PAGE}>
           <Logo />
         </Link>
@@ -29,7 +34,7 @@ const Header = () => {
         <Menu />
 
         {isNotebook && <Styled.HeaderBottomHeading>30 Days Free Return</Styled.HeaderBottomHeading>}
-      </Styled.HeaderBottom>
+      </Styled.HeaderBottom> */}
     </header>
   );
 };
