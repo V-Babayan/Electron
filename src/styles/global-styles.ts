@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle<{ isLargeDisplay: boolean }>`
   @font-face {
     font-family: 'Poppins', sans-serif;
     font-style: normal;
