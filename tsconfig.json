@@ -5,6 +5,7 @@
     "moduleResolution": "Node",
     "target": "ESNext",
     "downlevelIteration": true,
+    "resolveJsonModule": true,
     "jsx": "react",
     "esModuleInterop": true,
     "paths": {
