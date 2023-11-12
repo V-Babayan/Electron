@@ -8,6 +8,16 @@ export const PRODUCT_PAGE = "/products/:id";
 
 export const BASE_URL = "https://63d254dc1780fd6ab9c1f850.mockapi.io/";
 
+export enum DeviceNames {
+  mobileS = "mobileS",
+  mobile = "mobile",
+  mobileL = "mobileL",
+  tablet = "tablet",
+  notebook = "notebook",
+  desctop = "desctop",
+  desctopL = "desctopL",
+}
+
 export const devices = {
   mobileS: 320, // mobileSmall
   mobile: 480,

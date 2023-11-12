@@ -1,7 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { generateId, indexOfCart } from "helpers";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { generateId, indexOfCart } from "~/helpers";
+import { CartState, Product } from "../types";
 
-const initialState = { cart: [], quanity: 0, totalAmount: 0 };
+const initialState: CartState = { cart: [], quanity: 0, totalAmount: 0 };
 
 const cartSlice = createSlice({
   name: "cartSlice",
@@ -13,7 +14,7 @@ const cartSlice = createSlice({
       state.totalAmount = initialState.totalAmount;
     },
 
-    deleteElement(state, { payload }) {
+    deleteElement(state, { payload }: PayloadAction<number>) {
       state.cart = state.cart.filter(({ id, count, product }) => {
         if (id !== payload) {
           return true;
@@ -25,7 +26,10 @@ const cartSlice = createSlice({
       });
     },
 
-    addProduct(state, { payload }) {
+    addProduct(
+      state,
+      { payload }: PayloadAction<{ product: Product; quanity: number }>
+    ) {
       const index = indexOfCart(state.cart, payload.product.id);
 
       if (typeof index === "number") state.cart[index].count += payload.quanity;
