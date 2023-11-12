@@ -4,13 +4,13 @@ export const DropContainer = styled.div`
   position: relative;
 `;
 
-export const DropButton = styled.div<{ show: boolean; primary?: boolean }>`
+export const DropButton = styled.div<{ $show: boolean; $primary?: boolean }>`
   padding: ${({ theme }) => theme.ratio(10, 14, "mobileS")};
   font-size: 16px;
   line-height: 1.5;
 
-  ${({ primary }) =>
-    primary &&
+  ${({ $primary }) =>
+    $primary &&
     css`
       font-weight: 500;
       color: #ffffff;
@@ -22,19 +22,19 @@ export const DropButton = styled.div<{ show: boolean; primary?: boolean }>`
 
   & > svg {
     transition: transform 0.1s linear;
-    ${({ show }) => show && "transform: rotateZ(180deg)"};
-    stroke: ${({ primary }) => (primary ? "#ffffff" : "#292d32")};
+    ${({ $show }) => $show && "transform: rotateZ(180deg)"};
+    stroke: ${({ $primary }) => ($primary ? "#ffffff" : "#292d32")};
 
     margin-left: 16px;
   }
 `;
 
-export const DropList = styled.ul<{ primary?: boolean }>`
+export const DropList = styled.ul<{ $primary?: boolean }>`
   position: absolute;
   z-index: 999;
   width: 100%;
 
-  ${({ primary }) => primary && "color: #ffffff"};
+  ${({ $primary }) => $primary && "color: #ffffff"};
   text-align: center;
 
   li {
@@ -44,12 +44,12 @@ export const DropList = styled.ul<{ primary?: boolean }>`
     }
 
     transition: background 0.1s linear;
-    background: ${({ primary, theme }) =>
-      primary ? theme.color.orange : "#f4f4f4"};
-    ${({ primary }) => primary && "border-top: 1px solid #ffffff"};
+    background: ${({ $primary, theme }) =>
+      $primary ? theme.color.orange : "#f4f4f4"};
+    ${({ $primary }) => $primary && "border-top: 1px solid #ffffff"};
 
     &:hover {
-      background: ${({ primary }) => (primary ? "#d8971a" : "#cdcdcd")};
+      background: ${({ $primary }) => ($primary ? "#d8971a" : "#cdcdcd")};
     }
   }
 `;

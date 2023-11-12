@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CountBlock = styled.div`
+const CountBlock = styled.div<{ $responsive: boolean }>`
   font-size: 18px;
   line-height: 1.5;
 
@@ -8,8 +8,8 @@ const CountBlock = styled.div`
   border: 1px solid #bdbdbd;
 
   display: inline-grid;
-  grid-template-columns: 35px ${({ theme, responsive }) =>
-      responsive ? theme.ratio(23, 40, "mobileS") : "63px"} 35px;
+  grid-template-columns: 35px ${({ theme, $responsive }) =>
+      $responsive ? theme.ratio(23, 40, "mobileS") : "63px"} 35px;
 
   span {
     justify-self: center;

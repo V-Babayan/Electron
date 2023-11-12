@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const Footer = styled.footer`
-  padding: ${({ theme }) => theme.ratio(12, 30, "mobileS") + " " + theme.ratio(5, 59, "mobileS")};
+  padding: ${({ theme }) =>
+    theme.ratio(12, 30, "mobileS") + " " + theme.ratio(5, 59, "mobileS")};
 
   background: #e2f4ff;
 `;
@@ -12,7 +13,8 @@ const FooterTop = styled.section`
   align-items: center;
 
   padding: 38px 96px;
-  padding: ${({ theme }) => theme.ratio(13, 25, "mobileS") + " " + theme.ratio(15, 80, "mobileS")};
+  padding: ${({ theme }) =>
+    theme.ratio(13, 25, "mobileS") + " " + theme.ratio(15, 80, "mobileS")};
   margin-bottom: 40px;
 
   column-gap: ${({ theme }) => theme.ratio(10, 125, "tablet")};
@@ -97,4 +99,12 @@ const LinksContainer = styled.section`
     }
   }
 `;
-export { Footer, FooterTop, ContactBlock, FooterBottom, InfoContainer, Content, LinksContainer };
+export {
+  ContactBlock,
+  Content,
+  Footer,
+  FooterBottom,
+  FooterTop,
+  InfoContainer,
+  LinksContainer,
+};

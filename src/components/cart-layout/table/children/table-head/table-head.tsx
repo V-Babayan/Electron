@@ -1,9 +1,10 @@
-import { memo } from "react";
-import { useMedia } from "hooks";
+import React, { FC, memo } from "react";
+
+import { useMedia } from "~/hooks";
 
 import * as Styled from "./styled";
 
-const TableHead = () => {
+const TableHead: FC = () => {
   const isMobile = useMedia("mobileL");
 
   return (

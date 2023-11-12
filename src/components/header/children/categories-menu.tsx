@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
-import { selectCategories, useAppSelector } from "~/store";
 import { Dropdown } from "~/components";
+import { selectCategories, useAppSelector } from "~/store";
 
 const CategoriesMenu: FC = () => {
   const categories = useAppSelector(selectCategories);

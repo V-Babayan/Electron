@@ -5,8 +5,8 @@ import { ReactComponent as HeartIcon } from "assets/icons/heart.svg";
 
 import { addProduct } from "store";
 
-import CountBlock from "components/count-block";
 import { Button } from "components/core-ui";
+import CountBlock from "components/count-block";
 
 import * as Styled from "./styled";
 
@@ -17,7 +17,7 @@ const AddToCartForm = ({ product }) => {
   const [count, setCount] = useState(1);
 
   const addToCartHandler = () => {
-    dispatch(addProduct({ product, quanity: count }));
+    dispatch(addProduct({ product, quantity: count }));
   };
 
   return (
