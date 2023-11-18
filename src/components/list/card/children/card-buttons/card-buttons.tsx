@@ -1,21 +1,26 @@
-import { useMedia } from "hooks";
-import React, { useCallback } from "react";
+import React, { FC, useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { addProduct } from "store";
-
-import { ReactComponent as CartIcon } from "assets/icons/cart.svg";
-import { ReactComponent as EyeIcon } from "assets/icons/eye.svg";
+import { CartIcon, EyeIcon } from "~/assets/icons";
+import { useMedia } from "~/hooks";
+import { Product, addProduct } from "~/store";
 
 import * as Styled from "./styled";
 
-const CardButtons = ({ item }) => {
+type CardButtonsProps = {
+  item: Product;
+};
+
+const CardButtons: FC<CardButtonsProps> = ({ item }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isDesctop = useMedia("desctop");
 
-  const clickHandler = useCallback(() => navigate(`${`/products/${item.id}`}`), [item.id]);
+  const clickHandler = useCallback(
+    () => navigate(`${`/products/${item.id}`}`),
+    [item.id]
+  );
 
   const addToCartHandler = () => {
     dispatch(addProduct({ product: item, quantity: 1 }));

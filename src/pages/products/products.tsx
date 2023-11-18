@@ -1,8 +1,7 @@
 import React, { ChangeEvent, useCallback, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import { Brands, BrandType, SearchForm } from "~/components";
-import { List } from "~/components/list/list";
+import { Brands, BrandType, List, SearchForm } from "~/components";
 import { filterWithProperty } from "~/helpers";
 import { selectProducts, useAppSelector } from "~/store";
 

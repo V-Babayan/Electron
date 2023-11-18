@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Skeleton } from "styles";
+
+import { Skeleton } from "~/styles";
 
 const ImageSkeleton = styled(Skeleton)`
   height: 63%;
@@ -17,4 +18,4 @@ const PriceSkeleton = styled(Skeleton)`
   margin-bottom: 20px;
 `;
 
-export { ImageSkeleton, TitleSkeleton, PriceSkeleton };
+export { ImageSkeleton, PriceSkeleton, TitleSkeleton };
