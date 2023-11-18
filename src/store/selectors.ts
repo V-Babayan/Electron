@@ -4,14 +4,14 @@ import { RootState } from "./store";
 
 const selectProducts = (state: RootState) => state.products.products;
 const selectCart = (state: RootState) => state.cart.cart;
-const selectCartQuanity = (state: RootState) => state.cart.quanity;
+const selectCartQuantity = (state: RootState) => state.cart.quantity;
 const selectCartTotalAmount = (state: RootState) => state.cart.totalAmount;
 
-const selectCategories = createSelector(selectProducts, (products) =>
+const selectCategories = createSelector(selectProducts, products =>
   getCategoriesByProducts(products)
 );
 
-const selectRelatedProducts = createSelector(selectProducts, (products) => {
+const selectRelatedProducts = createSelector(selectProducts, products => {
   if (products.length) {
     return [...products].sort((a, b) => b.rating - a.rating);
   }
@@ -20,10 +20,10 @@ const selectRelatedProducts = createSelector(selectProducts, (products) => {
 });
 
 export {
-  selectRelatedProducts,
-  selectCategories,
   selectCart,
-  selectProducts,
-  selectCartQuanity,
+  selectCartQuantity,
   selectCartTotalAmount,
+  selectCategories,
+  selectProducts,
+  selectRelatedProducts,
 };

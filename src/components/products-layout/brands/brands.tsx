@@ -1,8 +1,27 @@
-import React from "react";
+import React, { ChangeEvent, FC } from "react";
 
 import * as Styled from "./styled";
 
-const Brands = ({ filter = [], filterTitle, changeHandler, resetHandler, brands }) => {
+export type BrandType = {
+  name: string;
+  count: number;
+};
+
+type BrandsProps = {
+  filter: BrandType[];
+  filterTitle: string;
+  changeHandler: (e: ChangeEvent<HTMLInputElement>) => void;
+  resetHandler: () => void;
+  brands: string[];
+};
+
+export const Brands: FC<BrandsProps> = ({
+  filter = [],
+  filterTitle,
+  changeHandler,
+  resetHandler,
+  brands,
+}) => {
   return (
     <>
       <Styled.HeadingBlock>
@@ -13,7 +32,7 @@ const Brands = ({ filter = [], filterTitle, changeHandler, resetHandler, brands 
         {filter.map(({ name, count }) => (
           <Styled.Brand key={name}>
             <Styled.BrandCheckbox
-              type='checkbox'
+              type="checkbox"
               value={name}
               onChange={changeHandler}
               checked={brands.includes(name)}
@@ -29,5 +48,3 @@ const Brands = ({ filter = [], filterTitle, changeHandler, resetHandler, brands 
     </>
   );
 };
-
-export { Brands };

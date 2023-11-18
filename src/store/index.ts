@@ -1,16 +1,17 @@
 export { asyncGetProducts } from "./actions";
 
-export { emptyCart, deleteElement, addProduct } from "./cart/cartSlice";
+export { addProduct, deleteElement, emptyCart } from "./cart/cartSlice";
 export { setProducts } from "./productsSlice";
 
 export {
-  selectRelatedProducts,
-  selectCategories,
   selectCart,
-  selectProducts,
-  selectCartQuanity,
+  selectCartQuantity,
   selectCartTotalAmount,
+  selectCategories,
+  selectProducts,
+  selectRelatedProducts,
 } from "./selectors";
 
-export { store } from "./store";
 export * from "./hooks";
+export { store } from "./store";
+export * from "./types";

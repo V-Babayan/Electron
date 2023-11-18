@@ -1,8 +1,10 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
 import { generateId, indexOfCart } from "~/helpers";
+
 import { CartState, Product } from "../types";
 
-const initialState: CartState = { cart: [], quanity: 0, totalAmount: 0 };
+const initialState: CartState = { cart: [], quantity: 0, totalAmount: 0 };
 
 const cartSlice = createSlice({
   name: "cartSlice",
@@ -10,7 +12,7 @@ const cartSlice = createSlice({
   reducers: {
     emptyCart(state) {
       state.cart = initialState.cart;
-      state.quanity = initialState.quanity;
+      state.quantity = initialState.quantity;
       state.totalAmount = initialState.totalAmount;
     },
 
@@ -20,7 +22,7 @@ const cartSlice = createSlice({
           return true;
         }
 
-        state.quanity -= count;
+        state.quantity -= count;
         state.totalAmount -= product.price * count;
         return false;
       });
@@ -28,20 +30,21 @@ const cartSlice = createSlice({
 
     addProduct(
       state,
-      { payload }: PayloadAction<{ product: Product; quanity: number }>
+      { payload }: PayloadAction<{ product: Product; quantity: number }>
     ) {
       const index = indexOfCart(state.cart, payload.product.id);
 
-      if (typeof index === "number") state.cart[index].count += payload.quanity;
+      if (typeof index === "number")
+        state.cart[index].count += payload.quantity;
       else
         state.cart.push({
           product: payload.product,
-          count: payload.quanity,
+          count: payload.quantity,
           id: generateId(),
         });
 
-      state.quanity += payload.quanity;
-      state.totalAmount += payload.product.price * payload.quanity;
+      state.quantity += payload.quantity;
+      state.totalAmount += payload.product.price * payload.quantity;
     },
   },
 });

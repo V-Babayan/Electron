@@ -1,5 +1,6 @@
 export { default as CartIcon } from "./cart.svg";
 export { default as CheckBirdIcon } from "./checkbird.svg";
+export { default as CheckMarkIcon } from "./checkmark.png";
 export { default as DeleteIcon } from "./delete.svg";
 export { default as EyeIcon } from "./eye.svg";
 export { default as FacebookIcon } from "./facebook.svg";

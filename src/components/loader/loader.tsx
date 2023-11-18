@@ -1,8 +1,8 @@
 import React from "react";
 
-import * as Styled from "./styled.js";
+import * as Styled from "./styled";
 
-const Loader = (props) => {
+const Loader = props => {
   return <Styled.Loader {...props} />;
 };
 
