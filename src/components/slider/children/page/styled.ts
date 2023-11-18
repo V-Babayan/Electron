@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-const tonext = keyframes`
+const toNext = keyframes`
   75% {
     left: 0;
   }
@@ -15,7 +15,7 @@ const tonext = keyframes`
   }
 `;
 
-const tostart = keyframes`
+const toStart = keyframes`
   75% {
     left: 0;
   }
@@ -54,7 +54,7 @@ const Page = styled.li`
   flex-direction: column-reverse;
   gap: 10px;
 
-  ::before {
+  &::before {
     content: "";
 
     position: absolute;
@@ -67,7 +67,7 @@ const Page = styled.li`
     scroll-snap-align: center;
 
     @media (hover: hover) {
-      /* animation-name: ${tonext}, ${snap}; */
+      animation-name: ${toNext}, ${snap};
 
       animation-timing-function: ease;
       animation-duration: 10s;
@@ -76,7 +76,7 @@ const Page = styled.li`
   }
   :last-child::before {
     @media (hover: hover) {
-      /* animation-name: ${tostart}, ${snap}; */
+      animation-name: ${toStart}, ${snap};
     }
   }
 
@@ -84,7 +84,11 @@ const Page = styled.li`
     flex-direction: row;
     justify-content: space-between;
     padding: ${({ theme }) =>
-      `0 ${theme.ratio(20, 120, "tablet")} 0 ${theme.ratio(10, 100, "tablet")}`};
+      `0 ${theme.ratio(20, 120, "tablet")} 0 ${theme.ratio(
+        10,
+        100,
+        "tablet"
+      )}`};
   }
 `;
 
@@ -128,7 +132,7 @@ const PageRight = styled.div`
   }
 `;
 
-const ImageBlock = styled.div`
+const ImageBlock = styled.div<{ $price: number }>`
   position: relative;
   width: ${({ theme }) => theme.ratio(300, 450, "mobileS")};
 
@@ -140,8 +144,8 @@ const ImageBlock = styled.div`
     height: ${({ theme }) => theme.ratio(285, 75, "tablet")};
   }
 
-  ::after {
-    content: "Only ${({ price }) => price}$";
+  &::after {
+    content: "Only ${({ $price }) => $price}$";
 
     position: absolute;
     right: ${({ theme }) => theme.ratio(-10, -22, "mobileS")};
@@ -172,4 +176,12 @@ const Image = styled.img`
   }
 `;
 
-export { Page, PageLeft, ProductName, ButtonsContainer, PageRight, ImageBlock, Image };
+export {
+  ButtonsContainer,
+  Image,
+  ImageBlock,
+  Page,
+  PageLeft,
+  PageRight,
+  ProductName,
+};

@@ -1,11 +1,17 @@
-import { memo } from "react";
+import React, { FC, memo } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Button } from "components/core-ui/";
+import { Button } from "~/components";
+import { Product } from "~/store";
 
 import * as Styled from "./styled";
 
-const Page = ({ product, index }) => {
+type PageProps = {
+  product: Product;
+  index: number;
+};
+
+const Page: FC<PageProps> = ({ product, index }) => {
   const navigate = useNavigate();
 
   const clickHandler = () => navigate(`/products/${product.id}`);
@@ -15,17 +21,14 @@ const Page = ({ product, index }) => {
       <Styled.PageLeft>
         <Styled.ProductName>{product.title}</Styled.ProductName>
         <Styled.ButtonsContainer>
-          <Button color='orange'>Shop now</Button>
-          <Button
-            outlined
-            onClick={clickHandler}
-            color='blue'>
+          <Button color="orange">Shop now</Button>
+          <Button outlined onClick={clickHandler} color="blue">
             View more
           </Button>
         </Styled.ButtonsContainer>
       </Styled.PageLeft>
       <Styled.PageRight>
-        <Styled.ImageBlock price={product.price}>
+        <Styled.ImageBlock $price={product.price}>
           <Styled.Image
             src={product.imageUrl || ""}
             alt={product.title}

@@ -57,7 +57,7 @@ const BrandCheckbox = styled.input`
     border: 1px solid #a5a5a5;
     border-radius: 8px;
 
-    ::after {
+    &::after {
       content: url(${CheckMarkIcon});
     }
   }

@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Skeleton } from "styles";
+
+import { Skeleton } from "~/styles";
 
 const Container = styled.div`
   display: flex;
@@ -14,7 +15,11 @@ const Container = styled.div`
     justify-content: space-between;
 
     padding: ${({ theme }) =>
-      `0 ${theme.ratio(20, 120, "tablet")} 0 ${theme.ratio(10, 100, "tablet")}`};
+      `0 ${theme.ratio(20, 120, "tablet")} 0 ${theme.ratio(
+        10,
+        100,
+        "tablet"
+      )}`};
     margin-bottom: ${({ theme }) => theme.ratio(16, 36, "mobileS")};
   }
 `;
@@ -53,4 +58,4 @@ const ImageSkeleton = styled(Skeleton)`
   }
 `;
 
-export { Container, ImageSkeleton, PageLeft, HeadingSkeleton };
+export { Container, HeadingSkeleton, ImageSkeleton, PageLeft };
