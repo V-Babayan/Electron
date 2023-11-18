@@ -18,7 +18,7 @@ const Image = styled.img`
   object-fit: contain;
 
   transition: transform 0.3s linear;
-  :hover {
+  &:hover {
     transform: scale(1.25);
   }
 `;
@@ -47,4 +47,4 @@ const FavButton = styled.button`
   }
 `;
 
-export { ImageBlock, Image, FavButton };
+export { FavButton, Image, ImageBlock };

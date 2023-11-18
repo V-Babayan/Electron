@@ -51,15 +51,16 @@ const BrandCheckbox = styled.input`
   justify-content: center;
   align-items: center;
   transition: background, border 0.2s linear;
+  position: relative;
 
   &:checked {
+    content: url(${CheckMarkIcon});
     background: #3f3f3f;
     border: 1px solid #a5a5a5;
-    border-radius: 8px;
-
-    &::after {
-      content: url(${CheckMarkIcon});
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
   }
 `;
 const BrandInfo = styled.div`
