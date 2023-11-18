@@ -1,18 +1,15 @@
-import { useState } from "react";
+import React, { FC, FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { ReactComponent as HeartIcon } from "assets/icons/heart.svg";
-
-import { addProduct } from "store";
-
-import { Button } from "components/core-ui";
-import CountBlock from "components/count-block";
+import { HeartIcon } from "~/assets/icons";
+import { Button, CountBlock } from "~/components";
+import { Product, addProduct } from "~/store";
 
 import * as Styled from "./styled";
 
-const formReset = (e) => e.preventDefault();
+const formReset = (e: FormEvent) => e.preventDefault();
 
-const AddToCartForm = ({ product }) => {
+const AddToCartForm: FC<{ product: Product }> = ({ product }) => {
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
 
@@ -32,15 +29,10 @@ const AddToCartForm = ({ product }) => {
       </Styled.CountWrapper>
 
       <Styled.ButtonsContainer>
-        <Button
-          large
-          color='orange'
-          onClick={addToCartHandler}>
+        <Button large color="orange" onClick={addToCartHandler}>
           Add to cart
         </Button>
-        <Button
-          large
-          color='orange'>
+        <Button large color="orange">
           Buy it now
         </Button>
         <Styled.FavButton>
