@@ -1,7 +1,9 @@
-export const getCategoriesByProducts = (products) => {
-  const categories = new Set<any>();
+import { Product } from "~/store";
 
-  for (let item of products) categories.add(item.category);
+export const getCategoriesByProducts = (products: Product[]) => {
+  const categories = new Set<string>();
+
+  for (const item of products) categories.add(item.category);
 
   return [...categories];
 };

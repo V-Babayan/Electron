@@ -1,10 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 import { getProduct } from "~/api";
 import { Description, Heading, Info, List, ProductSlider } from "~/components";
-import { Product, selectRelatedProducts } from "~/store";
+import { Product, selectRelatedProducts, useAppSelector } from "~/store";
 
 import * as Styled from "./styled";
 
@@ -12,7 +11,7 @@ const Product = () => {
   const { id } = useParams();
   const [item, setItem] = useState<Product>({} as Product);
 
-  const productsInRating = useSelector(selectRelatedProducts);
+  const productsInRating = useAppSelector(selectRelatedProducts);
 
   const relatedProducts = useMemo(() => productsInRating.slice(0, 4), []);
 

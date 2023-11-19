@@ -1,10 +1,10 @@
 import React, { FC, useCallback } from "react";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { CartIcon, EyeIcon } from "~/assets/icons";
 import { useMedia } from "~/hooks";
-import { Product, addProduct } from "~/store";
+import type { Product } from "~/store";
+import { addProduct, useAppDispatch } from "~/store";
 
 import * as Styled from "./styled";
 
@@ -14,7 +14,7 @@ type CardButtonsProps = {
 
 const CardButtons: FC<CardButtonsProps> = ({ item }) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const isDesktop = useMedia("desktop");
 
   const clickHandler = useCallback(

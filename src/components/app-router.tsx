@@ -21,24 +21,17 @@ const AppRouter = () => {
             }
           />
         ))}
-      {publicRotes.map(
-        ({
-          path,
-          Component,
-          // Skeleton
-        }) => (
-          <Route
-            path={path}
-            key={path}
-            element={
-              // <Suspense fallback={Skeleton ? <Skeleton /> : <Loader />}>
-              <Suspense fallback={<Loader />}>
-                <Component />
-              </Suspense>
-            }
-          />
-        )
-      )}
+      {publicRotes.map(({ path, Component, Skeleton }) => (
+        <Route
+          path={path}
+          key={path}
+          element={
+            <Suspense fallback={Skeleton ? <Skeleton /> : <Loader />}>
+              <Component />
+            </Suspense>
+          }
+        />
+      ))}
     </Routes>
   );
 };

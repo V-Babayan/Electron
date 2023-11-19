@@ -1,14 +1,13 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
 import { Table, Total } from "~/components/cart-layout/";
 import { HOME_PAGE } from "~/helpers";
-import { selectCartQuantity } from "~/store";
+import { selectCartQuantity, useAppSelector } from "~/store";
 
 import * as Styled from "./styled";
 
 const Cart = () => {
-  const cart = useSelector(selectCartQuantity);
+  const cart = useAppSelector(selectCartQuantity);
 
   return cart ? (
     <Styled.Container>

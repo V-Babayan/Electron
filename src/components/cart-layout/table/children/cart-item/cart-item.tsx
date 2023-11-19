@@ -1,10 +1,14 @@
 import React, { FC, memo } from "react";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { DeleteIcon } from "~/assets/icons";
 import { CountBlock } from "~/components";
-import { addProduct, CartProduct, deleteElement } from "~/store";
+import {
+  addProduct,
+  CartProduct,
+  deleteElement,
+  useAppDispatch,
+} from "~/store";
 
 import * as Styled from "./styled";
 
@@ -14,7 +18,7 @@ type CartItemProps = {
 
 const CartItem: FC<CartItemProps> = ({ cartItem }) => {
   const { id, product, count } = cartItem;
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const deleteCartElement = () => {
     dispatch(deleteElement({ id }));
