@@ -28,28 +28,26 @@ const Slider: FC<SliderProps> = ({ children, list, Skeleton }) => {
     changingPage && setPage(prev => prev + changingPage);
   };
 
+  if (!children.length) {
+    return <Skeleton />;
+  }
+
   return (
-    <>
-      {children?.length ? (
-        <Styled.Wrapper>
-          <Styled.Container onScroll={scrollHandler} ref={containerRef}>
-            {children}
-          </Styled.Container>
-          <Styled.Controls $list={list ? true : undefined}>
-            {[...Array(children.length)].map((_, index) => (
-              <Control
-                key={index}
-                containerRef={containerRef}
-                pageNumber={index}
-                active={index === page}
-              />
-            ))}
-          </Styled.Controls>
-        </Styled.Wrapper>
-      ) : (
-        <Skeleton />
-      )}
-    </>
+    <Styled.Wrapper>
+      <Styled.Container onScroll={scrollHandler} ref={containerRef}>
+        {children}
+      </Styled.Container>
+      <Styled.Controls $list={list ? true : undefined}>
+        {[...Array(children.length)].map((_, index) => (
+          <Control
+            key={index}
+            containerRef={containerRef}
+            pageNumber={index}
+            active={index === page}
+          />
+        ))}
+      </Styled.Controls>
+    </Styled.Wrapper>
   );
 };
 

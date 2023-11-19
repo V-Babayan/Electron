@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { AppRouter, Footer, Header } from "~/components";
 import { useMedia } from "~/hooks";
-import { asyncGetProducts, useAppDispatch } from "~/store";
+import { fetchProducts, useAppDispatch } from "~/store";
 import { Theme } from "~/styles/";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   const isLargeDisplay = useMedia("desctopL");
 
   useEffect(() => {
-    dispatch(asyncGetProducts());
+    dispatch(fetchProducts());
   }, [dispatch]);
 
   return (

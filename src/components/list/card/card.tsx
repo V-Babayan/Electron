@@ -1,5 +1,6 @@
-import React, { FC, memo, useState } from "react";
+import React, { FC, memo } from "react";
 
+import { useHover } from "~/hooks";
 import { Product } from "~/store";
 
 import { CardButtons, ProductImage, ProductInfo } from "./children";
@@ -11,13 +12,10 @@ type CardProps = {
 };
 
 const Card: FC<CardProps> = ({ item }) => {
-  const [hover, setHover] = useState(false);
-
-  const toggleEnter = () => setHover(true);
-  const toggleLeave = () => setHover(false);
+  const { hover, ref } = useHover<HTMLLIElement>();
 
   return (
-    <Styled.Container onMouseEnter={toggleEnter} onMouseLeave={toggleLeave}>
+    <Styled.Container ref={ref}>
       <ProductImage product={item} />
 
       {hover ? <CardButtons item={item} /> : <ProductInfo product={item} />}

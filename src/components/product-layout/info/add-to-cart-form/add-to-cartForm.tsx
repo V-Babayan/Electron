@@ -1,4 +1,4 @@
-import React, { FC, FormEvent, useState } from "react";
+import React, { FC, FormEvent, useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { HeartIcon } from "~/assets/icons";
@@ -17,14 +17,18 @@ const AddToCartForm: FC<{ product: Product }> = ({ product }) => {
     dispatch(addProduct({ product, quantity: count }));
   };
 
+  const incrementHandler = useCallback(() => setCount(prev => prev + 1), []);
+  const decrementHandler = useCallback(() => setCount(prev => prev - 1), []);
+
   return (
     <form onSubmit={formReset}>
       <Styled.CountWrapper>
         <label>Quantity :</label>
         <CountBlock
           count={count}
-          setCount={setCount}
           maxCount={product.count}
+          increment={incrementHandler}
+          decrement={decrementHandler}
         />
       </Styled.CountWrapper>
 
