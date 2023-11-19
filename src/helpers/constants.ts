@@ -14,8 +14,8 @@ export enum DeviceNames {
   mobileL = "mobileL",
   tablet = "tablet",
   notebook = "notebook",
-  desctop = "desctop",
-  desctopL = "desctopL",
+  desktop = "desktop",
+  desktopL = "desktopL",
 }
 
 export const devices = {
@@ -24,6 +24,6 @@ export const devices = {
   mobileL: 576, // mobileLarge
   tablet: 768,
   notebook: 992,
-  desctop: 1200,
-  desctopL: 1440, // desctopLarge
+  desktop: 1200,
+  desktopL: 1440, // desktopLarge
 };
