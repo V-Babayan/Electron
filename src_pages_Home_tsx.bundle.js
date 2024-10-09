@@ -1,0 +1,22 @@
+"use strict";
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+(self["webpackChunkstore"] = self["webpackChunkstore"] || []).push([["src_pages_Home_tsx"],{
+
+/***/ "./src/pages/Home.tsx":
+/*!****************************!*\
+  !*** ./src/pages/Home.tsx ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~/components */ \"./src/components/index.ts\");\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~/helpers */ \"./src/helpers/index.ts\");\n/* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~/hooks */ \"./src/hooks/index.ts\");\n/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~/store */ \"./src/store/index.ts\");\n\n\n\n\n\nconst Home = () => {\n    const products = (0,_store__WEBPACK_IMPORTED_MODULE_4__.useAppSelector)(_store__WEBPACK_IMPORTED_MODULE_4__.selectRelatedProducts);\n    const isMobile = (0,_hooks__WEBPACK_IMPORTED_MODULE_3__.useMedia)(_helpers__WEBPACK_IMPORTED_MODULE_2__.EDeviceNames.mobile);\n    const isTablet = (0,_hooks__WEBPACK_IMPORTED_MODULE_3__.useMedia)(_helpers__WEBPACK_IMPORTED_MODULE_2__.EDeviceNames.tablet);\n    const isNotebook = (0,_hooks__WEBPACK_IMPORTED_MODULE_3__.useMedia)(_helpers__WEBPACK_IMPORTED_MODULE_2__.EDeviceNames.notebook);\n    const sliderProducts = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => [...products].slice(0, 4), [products]);\n    const listProducts = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {\n        if (products.length === 0)\n            return [];\n        if (isNotebook)\n            return (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.sliceProductsToPages)(products, 8);\n        if (isTablet)\n            return (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.sliceProductsToPages)(products, 6);\n        if (isMobile)\n            return (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.sliceProductsToPages)(products, 4);\n        return (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.sliceProductsToPages)(products, 1);\n    }, [products, isMobile, isTablet, isNotebook]);\n    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,\n        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_1__.Slider, { Skeleton: _components__WEBPACK_IMPORTED_MODULE_1__.PageSkeleton }, sliderProducts.map((product, index) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_1__.Page, { key: product.id, product: product, index: index })))),\n        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_1__.Heading, null, \"Popular products\"),\n        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_1__.Slider, { list: true, Skeleton: _components__WEBPACK_IMPORTED_MODULE_1__.ListSkeleton }, listProducts.map(({ id, products }) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_1__.List, { key: id, products: products }))))));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);\n\n\n//# sourceURL=webpack://store/./src/pages/Home.tsx?");
+
+/***/ })
+
+}]);
